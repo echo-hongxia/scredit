@@ -32,6 +32,14 @@ Rails.application.routes.draw do
         post :hide
       end
     end
+    resources :activities do       #热门活动后台
+      member do
+        patch :move_up           #文章位置移动
+        patch :move_down         #文章位置移动
+        post :publish
+        post :hide
+      end
+    end
   end
 
   resources :products do      #前台product
