@@ -5,14 +5,13 @@ class ProductsController < ApplicationController
 
   # --CRUD--
   def index
-    @products = Product.all
+    @products = Product.where(:category => ["收纳品", "装饰品"]).all.order("position ASC").paginate(:page => params[:page], :per_page => 20)
   end
 
   def show
     @product = Product.find(params[:id])
     @reviews = Review.where(product_id: @product.id).order("created_at DESC")
     @review = Review.new
-    @projects = @product.projects
   end
 
   def add_to_cart
