@@ -104,6 +104,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :activities do         #热门活动前台
+    resources :activity_reviews
+    member do
+      post :join              #加入收藏
+      post :quit              #取消收藏
+    end
+  end
+
+
   resources :clubs do            #社群功能
     resources :club_reviews
     member do

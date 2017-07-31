@@ -90,7 +90,7 @@ class Admin::ActivitiesController < ApplicationController
 
   # ---private---
 
-  def actvity_params
+  def activity_params
     params.require(:activity).permit(:image, :title, :description,:summary, :user_id, :is_hidden)
   end
 end
