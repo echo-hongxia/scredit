@@ -1,29 +1,617 @@
-// 关于我们页面样式
 
-// 标题样式
-.about-title-box {
-  margin-top: -20px;
-  margin-bottom: 20px;
 
-}
-.about-title-e {
-  font-weight: lighter;
-  font-size: 2.3em;
-}
-.about-title-c {
-  font-weight: lighter;
-  font-size: 3.5em;
-  letter-spacing: 0.16em;
-  margin: 2px auto 60px;
+//复制的一加官网代码并做了修改袁龙
+
+
+#abtus-banner {
+    height: 510px;
+    width: 100%;
+    display: table;
+    background: url(https://i.loli.net/2017/08/04/5983da4d5c08f.jpg) center center no-repeat;
+    background-size: auto 100%;
+    margin-top: -20px;
 }
 
-// 信息样式
-.about-info {
-  font-size: 1.1em;
-  letter-spacing: 0.2em;
-  font-weight:normal;
-  line-height: 2em;
+
+
+#abtus-menu,#abtus-menu2 {
+    height: 72px;
+    text-align: center;
+    background: #f7f7f7;
+    width: 100%
 }
-.about-img {
-  margin-top: 50px
+
+#abtus-menu a,#abtus-menu2 a {
+    display: inline-block;
+    height: 72px;
+    font-size: 14px;
+    color: #999;
+    line-height: 72px;
+    padding: 0 30px;
+    margin: 0 5px
+}
+
+#abtus-menu a.now,#abtus-menu2 a.now {
+    color: #fff;
+    background: #eb0028
+}
+
+@media screen and (max-width: 420px) {
+    #abtus-menu a,#abtus-menu2 a {
+        padding:0 15px
+    }
+}
+
+#abtus-menu2 {
+    position: fixed;
+    z-index: 10;
+    display: none;
+    left: 0;
+    top: 0
+}
+
+#abtus-menu2.show {
+    display: block
+}
+
+#abtus-introduction {
+    padding: 60px 0 0;
+    text-align: center
+}
+
+#abtus-introduction h2 {
+    font-size: 24px;
+    font-weight: 400;
+    height: 54px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px
+}
+
+#abtus-introduction h2:after,#abtus-introduction ul li:after {
+    display: block;
+    content: "\00a0";
+    overflow: hidden;
+    height: 0;
+    border-bottom: 1px solid #000
+}
+
+#abtus-introduction h2:after {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    bottom: 0
+}
+
+#abtus-introduction p {
+    font-size: 14px;
+    color: #999;
+    line-height: 28px;
+    text-align: center
+}
+
+#abtus-introduction #abtus-map1 {
+    max-width: 1126px;
+    width: 100%;
+    display: block;
+    margin: 40px auto
+}
+
+#abtus-introduction ul {
+    max-width: 1126px;
+    width: 100%;
+    margin: 0 auto
+}
+
+#abtus-introduction ul li {
+    width: 33.3%;
+    font-size: 14px;
+    color: #999;
+    line-height: 28px;
+    text-align: left;
+    float: left;
+    position: relative;
+    padding-top: 24px
+}
+
+#abtus-introduction ul li:after {
+    width: 30px;
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+#abtus-introduction div {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 50px
+}
+
+#abtus-introduction div img {
+    width: 50%;
+    display: block;
+    float: left
+}
+
+#abtus-culture h2 {
+    height: 172px;
+    background: #e34c4e;
+    position: relative;
+    margin-bottom: 50px
+}
+
+#abtus-culture h2 span {
+    font-size: 24px;
+    color: #fff;
+    line-height: 1em;
+    font-weight: 400;
+    height: 54px;
+    display: block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    margin-top: -27px
+}
+
+#abtus-culture h2 span:after {
+    content: "\00a0";
+    display: block;
+    height: 0;
+    width: 30px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    bottom: 0;
+    border-bottom: 1px solid #fff
+}
+
+#abtus-culture #abtus-culture-ul1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 50px
+}
+
+#abtus-culture #abtus-culture-ul1 li {
+    background: #fff;
+    width: 50%;
+    float: left
+}
+
+#abtus-culture #abtus-culture-ul1 li h4 {
+    font-size: 20px;
+    color: #333;
+    line-height: 28px;
+    text-align: center;
+    font-weight: 400
+}
+
+#abtus-culture #abtus-culture-ul1 li img {
+    width: 140px;
+    display: block;
+    margin: 24px auto 50px
+}
+
+#abtus-culture #abtus-culture-ul1 li h5,#abtus-culture #abtus-culture-ul1 li p {
+    width: 86.66667%;
+    padding: 0 6.66667%;
+    font-size: 14px;
+    color: #999;
+    line-height: 28px;
+    margin-bottom: 30px;
+
+}
+
+#abtus-culture #abtus-culture-ul1 li h5 {
+    color: #666;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    margin-left: 35px;
+}
+
+#abtus-culture-article {
+    padding: 50px 0;
+    background: #f7f7f7;
+    width: 100%
+}
+
+#abtus-culture-article h4 {
+    width: 360px;
+    margin: 0 auto 60px;
+    font-size: 20px;
+    color: #333;
+    line-height: 1em;
+    font-weight: 400;
+    text-align: center
+}
+
+#abtus-culture-article h4 img {
+    width: 100%;
+    display: block;
+    margin-top: 24px;
+    left: 0;
+    bottom: 0
+}
+
+#abtus-culture-article ul {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+#abtus-culture-article ul li {
+    width: 33.3%;
+    float: left
+}
+
+#abtus-culture-article ul li div {
+    border: 6px solid #f5f5f5;
+    background: #fff;
+    padding: 30px
+}
+
+#abtus-culture-article ul li h5 {
+    font-size: 16px;
+    color: #666;
+    line-height: 28px;
+    font-weight: 400;
+    margin-bottom: 20px
+}
+
+#abtus-culture-article ul li p {
+    font-size: 14px;
+    color: #999;
+    line-height: 28px;
+    padding-top: 20px;
+    position: relative
+}
+
+#abtus-culture-article ul li p:after {
+    content: "\00a0";
+    display: block;
+    height: 0;
+    width: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-bottom: 1px solid #999
+}
+
+
+
+
+#abtus-contact h2 {
+    height: 172px;
+    background: #e34c4e;
+    position: relative;
+    margin-bottom: 50px
+}
+
+#abtus-contact h2 span {
+    font-size: 24px;
+    color: #fff;
+    line-height: 1em;
+    font-weight: 400;
+    height: 54px;
+    display: block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    margin-top: -27px
+}
+
+#abtus-contact h2 span:after {
+    content: "\00a0";
+    display: block;
+    height: 0;
+    width: 30px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    bottom: 0;
+    border-bottom: 1px solid #fff
+}
+
+
+
+#abtus-contact .left {
+
+    width: 50%;
+
+
+}
+
+
+
+
+#abtus-contact-map {
+    width: 50%;
+    float: right
+}
+
+
+//精英团队
+
+#abtus-contt h2 {
+    height: 172px;
+    background: #e34c4e;
+    position: relative;
+    margin-bottom: 50px
+}
+
+#abtus-contt h2 span {
+    font-size: 24px;
+    color: #fff;
+    line-height: 1em;
+    font-weight: 400;
+    height: 54px;
+    display: block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    margin-top: -27px
+}
+
+#abtus-contt h2 span:after {
+    content: "\00a0";
+    display: block;
+    height: 0;
+    width: 30px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    bottom: 0;
+    border-bottom: 1px solid #fff
+}
+
+
+
+#abtus-contt .left {
+
+    width: 50%;
+
+
+}
+
+
+
+
+#abtus-contt-map {
+    width: 50%;
+    float: right
+}
+//精英团队end
+
+
+#abtus-joinus {
+    height: 510px;
+    background: url(https://i.loli.net/2017/08/04/5983d9cc5867c.png) center no-repeat;
+    background-size: auto 100%;
+    position: relative
+}
+
+
+#abtus-joinus div {
+    height: 106px;
+    width: 340px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -53px 0 0 -170px;
+    text-align: center
+}
+
+#abtus-joinus div h3 {
+    font-size: 24px;
+    color: #fff;
+    line-height: 1em;
+    font-weight: 400;
+    text-align: center
+}
+
+#abtus-joinus div a {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #fff;
+    background: #eb0028;
+    display: block;
+    margin: 32px auto 0
+}
+
+#abtus-joinus div a:hover {
+    background: #c00
+}
+
+@media screen and (max-width: 1200px) {
+    #abtus-introduction ul {
+        width:96%
+    }
+
+    #abtus-introduction ul li {
+        width: 30%;
+        margin-right: 3.3%
+    }
+
+    #abtus-culture-article ul {
+        width: 90%
+    }
+
+    #abtus-culture-article ul li {
+        width: 50%;
+        clear: none
+    }
+
+    #abtus-culture-article ul .li05 {
+        float: right
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .abtus-contact-list ul {
+        width:90%;
+        float: left;
+        margin: 0 5% 50px
+    }
+
+    .abtus-contact-list li {
+        width: 31.3%;
+        padding-left: 2%
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #abtus-introduction ul li {
+        width:80%;
+        margin-right: 0;
+        margin-bottom: 7%;
+        margin-left: 10%
+    }
+
+    #abtus-introduction div {
+        margin-top: 50px
+    }
+
+    #abtus-introduction div img {
+        width: 100%
+    }
+
+    #abtus-culture-article ul {
+        width: 96%
+    }
+
+    #abtus-culture-article ul li {
+        width: 100%;
+        clear: none
+    }
+
+    #abtus-culture-article ul li div {
+        height: auto!important
+    }
+
+    #abtus-contact .left {
+        width: 100%;
+        padding: 5% 0;
+        height: auto;
+        position: relative
+    }
+
+    #abtus-contact .left img {
+        width: 62.5%;
+        position: relative;
+        top: 0;
+        right: 0;
+        left: 6.25%;
+        margin-bottom: 10%
+    }
+
+    #abtus-contact .left span {
+        width: 87.5%;
+        position: relative;
+        bottom: 0;
+        right: 0;
+        left: 6.25%
+    }
+
+    #abtus-contact-map {
+        width: 100%
+    }
+
+    .abtus-contact-list ul {
+        width: 92%;
+        margin: 0 4% 50px
+    }
+
+    .abtus-contact-list li {
+        width: 48%;
+        padding-left: 2%;
+        margin-bottom: 20px
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #abtus-banner p {
+        width:90%;
+        margin: 0 auto
+    }
+
+    #abtus-culture #abtus-culture-ul1 li {
+        width: 100%
+    }
+
+    #abtus-culture #abtus-culture-ul1 li h5 {
+        text-align: center
+    }
+
+    #abtus-contact .left {
+        padding: 8% 0
+    }
+
+    #abtus-contact .left img {
+        width: 75%;
+        left: 6.25%;
+        margin-bottom: 10%
+    }
+
+    #abtus-contact .left span {
+        left: 6.25%
+    }
+
+    .abtus-contact-list ul {
+        width: 80%;
+        margin: 0 10% 50px
+    }
+
+    .abtus-contact-list li {
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 20px
+    }
+
+    #abtus-joinus {
+        height: 510px
+    }
+
+    #abtus-joinus div {
+        height: 154px;
+        width: 200px;
+        margin: -77px 0 0 -100px
+    }
+
+    #abtus-joinus div h3 {
+        font-size: 24px;
+        color: #fff;
+        line-height: 1em;
+        line-height: 45px
+    }
+
+    #abtus-joinus div h3 span {
+        display: block
+    }
+
+    #abtus-joinus div a {
+        margin: 32px auto 0
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #abtus-introduction ul li {
+        width:90%;
+        margin-left: 5%
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #abtus-culture-article h4 {
+        width:100%
+    }
 }

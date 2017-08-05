@@ -76,3 +76,57 @@ function browserRedirect() {
 $(document).ready(function(){
   browserRedirect();
 });
+
+
+
+
+
+// 袁龙添加的代码
+define("js/aboutOneplus/aboutOneplus", [], function(t, o, i) {
+    function e(t) {
+        var o = t.getBoundingClientRect()
+          , i = document.documentElement.clientTop
+          , e = document.documentElement.clientLeft;
+        return {
+            top: o.top - i,
+            bottom: o.bottom - i,
+            left: o.left - e,
+            right: o.right - e
+        }
+    }
+    function n(t) {
+        $("#abtus-menu2 a").eq(t).addClass("now").siblings().removeClass("now"),
+        $("#abtus-menu a").eq(t).addClass("now").siblings().removeClass("now")
+    }
+    var u = document.getElementById("abtus-menu")
+      , l = $("#abtus-culture")[0]
+      , c = $("#abtus-contact")[0]
+
+      , s = $("#abtus-menu2");
+    $(window).scroll(function() {
+        var t = $("#abtus-menu2").height();
+        e(u).top < 0 ? s.addClass("show") : s.removeClass("show"),
+        n(e(c).top <= t + 5 ? 2 : e(l).top <= t + 5 && e(c).top > t ? 1 : 0)
+    }),
+    $("#abtus-culture-article li div").not($("#abtus-culture-article li.li03 div")).height($("#abtus-culture-article li.li03 div").height()),
+    $(window).resize(function() {
+        $("#abtus-culture-article li div").not($("#abtus-culture-article li.li03 div")).height($("#abtus-culture-article li.li03 div").height())
+    }),
+    $(".to-introduction").click(function() {
+        $("body,html").stop().animate({
+            scrollTop: $("#abtus-introduction").position().top - s.height()
+        }, "500")
+    }),
+    $(".to-culture").click(function() {
+        $("body,html").stop().animate({
+            scrollTop: $("#abtus-culture").position().top - s.height()
+        }, "500")
+    }),
+    $(".to-contact").click(function() {
+        $("body,html").stop().animate({
+            scrollTop: $("#abtus-contact").position().top - s.height()
+        }, "500")
+    })
+    
+
+});
