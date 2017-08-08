@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
+   </head>
 
   <body>
     <div class="content">
@@ -16,15 +16,15 @@
 
           <div class="">
 
-            <!-- 侧边分类选项栏 -->
+
             <div class="col-md-2 nav-left-style">
               <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
                 <hr>
-                <li><%= link_to("移民国家分类", admin_country_categories_path) %></li>
+                 <li><%= link_to("移民国家分类", admin_country_categories_path) %></li>
                 <li><%= link_to("移民国家管理", admin_products_path) %></li>
                 <li><%= link_to("成功案例管理", admin_stories_path) %></li>
 
-                <!-- <li><%= link_to("订单管理", admin_orders_path) %></li> -->
+
                 <li><%= link_to("资讯管理", admin_articles_path) %></li>
                 <li><%= link_to("资讯分类", admin_article_categories_path) %></li>
                 <li><%= link_to("客户咨询", admin_messages_path) %></li>
@@ -32,7 +32,7 @@
               </ul>
             </div>
 
-            <!-- 主内容 -->
+
             <div class="col-md-10">
               <%= yield %>
             </div>
@@ -42,7 +42,7 @@
     </div>
 
 
-    <!-- <%= render "common/footer" %> -->
+
 
   </body>
 </html>

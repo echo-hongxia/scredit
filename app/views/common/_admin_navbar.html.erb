@@ -1,7 +1,7 @@
-<nav class="navbar navbar-default navbar-fixed-top navbar-style" role="navigation">
+ <nav class="navbar navbar-default navbar-fixed-top navbar-style" role="navigation">
   <div class="container">
       <!--logo-->
-      <div class="navbar-header">
+       <div class="navbar-header">
         <a href="/" class="navbar-brand" style="font-size: 2.0em;">移民行业的教育领导者</a>
 
           <!-- 响应式导航 -->
@@ -16,7 +16,7 @@
 
 
       <!-- links -->
-      <div class="navbar-collapse navbar-ex1-collapse collapse navbar-right" aria-expanded="false">
+       <div class="navbar-collapse navbar-ex1-collapse collapse navbar-right" aria-expanded="false">
 
         <ul class="nav navbar-nav navbar-right">
 
@@ -26,8 +26,8 @@
 
 
           <% if !current_user %>
-            <!-- <li><%= link_to("注册", new_user_registration_path) %> </li> -->
-            <li><%= link_to(content_tag(:i, " 登入", class: "fa fa-sign-in"), new_user_session_path) %></li>
+             <li><%= link_to("注册", new_user_registration_path) %> </li>
+             <li><%= link_to(content_tag(:i, " 登入", class: "fa fa-sign-in"), new_user_session_path) %></li>
           <% else %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -37,9 +37,9 @@
               <ul class="dropdown-menu">
                 <% if current_user.admin? %>
                   <li><%= link_to("管理后台", admin_products_path, class: "li-style") %></li>
-                <% end %>
-                <!-- <li><%= link_to("个人中心", account_orders_path, class: "li-style") %></li> -->
-                <li><%= link_to("退出", destroy_user_session_path, method: :delete, class: "li-style") %></li>
+                <% end %> 
+                 <li><%= link_to("个人中心", account_orders_path, class: "li-style") %></li>
+                 <li><%= link_to("退出", destroy_user_session_path, method: :delete, class: "li-style") %></li>
               </ul>
             </li>
           <% end %>

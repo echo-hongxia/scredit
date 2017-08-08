@@ -127,6 +127,6 @@ define("js/aboutOneplus/aboutOneplus", [], function(t, o, i) {
             scrollTop: $("#abtus-contact").position().top - s.height()
         }, "500")
     })
-    
+
 
 });
