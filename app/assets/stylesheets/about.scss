@@ -4,12 +4,13 @@
 
 
 #abtus-banner {
-    height: 510px;
+    height: 525px;
     width: 100%;
     display: table;
     background: url(https://i.loli.net/2017/08/04/5983da4d5c08f.jpg) center center no-repeat;
     background-size: auto 100%;
     margin-top: -20px;
+
 }
 
 
@@ -338,63 +339,64 @@
 
 //精英团队
 
-#abtus-contt h2 {
-    height: 172px;
-    background: #e34c4e;
-    position: relative;
-    margin-bottom: 50px
-}
-
-#abtus-contt h2 span {
-    font-size: 24px;
-    color: #fff;
-    line-height: 1em;
-    font-weight: 400;
-    height: 54px;
-    display: block;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 50%;
-    margin-top: -27px
-}
-
-#abtus-contt h2 span:after {
-    content: "\00a0";
-    display: block;
-    height: 0;
-    width: 30px;
-    overflow: hidden;
-    position: absolute;
-    left: 50%;
-    margin-left: -15px;
-    bottom: 0;
-    border-bottom: 1px solid #fff
-}
-
-
-
-#abtus-contt .left {
-
-    width: 50%;
-
-
-}
-
-
-
-
-#abtus-contt-map {
-    width: 50%;
-    float: right
-}
+// #abtus-contt h2 {
+//     height: 172px;
+//     background: #e34c4e;
+//     position: relative;
+//     margin-bottom: 50px
+// }
+//
+// #abtus-contt h2 span {
+//     font-size: 24px;
+//     color: #fff;
+//     line-height: 1em;
+//     font-weight: 400;
+//     height: 54px;
+//     display: block;
+//     position: absolute;
+//     width: 100%;
+//     text-align: center;
+//     top: 50%;
+//     margin-top: -27px
+// }
+//
+// #abtus-contt h2 span:after {
+//     content: "\00a0";
+//     display: block;
+//     height: 0;
+//     width: 30px;
+//     overflow: hidden;
+//     position: absolute;
+//     left: 50%;
+//     margin-left: -15px;
+//     bottom: 0;
+//     border-bottom: 1px solid #fff
+// }
+//
+//
+//
+// #abtus-contt .left {
+//
+//     width: 50%;
+//
+//
+// }
+//
+//
+//
+//
+// #abtus-contt-map {
+//     width: 50%;
+//     float: right
+// }
 //精英团队end
 
 
 #abtus-joinus {
-    height: 510px;
+    height: 525px;
     background: url(https://i.loli.net/2017/08/04/5983d9cc5867c.png) center no-repeat;
     background-size: auto 100%;
+
     position: relative
 }
 
