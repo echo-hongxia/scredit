@@ -1,11 +1,24 @@
 class WelcomeController < ApplicationController
 
-  # --CRUD--
   def index
-    @products = Product.where(:category => ["收纳品", "装饰品"]).all.order("position ASC").paginate(:page => params[:page], :per_page => 12)
-    @courses = Product.where(:category => "课程").all.order("position ASC").paginate(:page => params[:page], :per_page => 3)
-    @articles = Article.where(:is_hidden => false).order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
-    @message = Message.first
+    @message = Message.new
   end
 
+  def create
+    @message = Message.new(message_params)
+    if @message.save
+      redirect_to root_path
+      flash[:notice] = "成功提交留言"
+    else
+      redirect_to root_path
+      flash[:warning] = "请正确填写，内容不得为空"
+    end
+  end
+
+
+  private
+
+  def message_params
+    params.require(:message).permit(:name, :telphone)
+  end
 end

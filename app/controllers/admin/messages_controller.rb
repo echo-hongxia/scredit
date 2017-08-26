@@ -4,9 +4,13 @@ class Admin::MessagesController < ApplicationController
     @messages = Message.all
   end
 
-  def is_read
+  def show
     @message = Message.find(params[:id])
-    @message.read!
-    redirect_to :back
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    redirect_to admin_messages_path
   end
 end
