@@ -6,46 +6,585 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
+    <script src="js/jquery.js"></script>    <!--jquery插件-->
+    <link href="css/base.css" rel="stylesheet" />   <!--基础样式引用-->
+    <link href="ctrl/font/font-awesome.min.css" rel="stylesheet" /> <!--字体-->
+    <!--菜单样式-->
+    <style type="text/css">
+        .vernav2 {
+            /*width: 230px;*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: #3E5469;
+        }
+            /*去控制台*/
+            .vernav2 .console-nav {
+                width: 100%;
+                height: 45px;
+                background: #89CC97;
+                text-align: center;
+                overflow: hidden;
+            }
+
+                .vernav2 .console-nav .item {
+                    height: 29px;
+                    margin: 8px auto;
+                }
+
+                .vernav2 .console-nav p {
+                    height: 29px;
+                    line-height: 29px;
+                    text-align: center;
+                    color: White;
+                    float: left;
+                }
+
+                    .vernav2 .console-nav p.icon {
+                        display: none;
+                        width: 20px;
+                        background: #3E5469;
+                        border-top-left-radius: 3px;
+                        border-bottom-left-radius: 3px;
+                    }
+
+                    .vernav2 .console-nav p.nav {
+                        display: none;
+                        background: #5FA776;
+                        border-top-right-radius: 3px;
+                        border-bottom-right-radius: 3px;
+                    }
+
+            .vernav2 ul {
+                list-style: none;
+                margin: 0;
+            }
+
+                .vernav2 ul li {
+                    display: block;
+                    border-bottom: 1px solid #455C71;
+                    position: relative;
+                }
+
+                    .vernav2 ul li .father {
+                        overflow: hidden;
+                    }
+
+                    .vernav2 ul li .nav_icon {
+                        position: relative;
+                        width: 50px;
+                        height: 50px;
+                        float: left;
+                        line-height: 50px;
+                        text-align: center;
+                        font-size: 16px;
+                        background: #3E5469;
+                    }
+
+                    .vernav2 ul li .father .nav_icon i:before {
+                        color: #ddd;
+                        position: absolute;
+                        top: 17px;
+                        left: 17px;
+                        z-index: 999;
+                    }
+
+                    .vernav2 ul li.current .father .nav_icon i:before {
+                        color: white;
+                    }
+
+                    .vernav2 ul li .nav_icon b {
+                        position: absolute;
+                        top: 0;
+                        background: #FFC333;
+                        width: 50px;
+                        height: 50px;
+                        -webkit-transition: left .25s;
+                        transition: left .25s;
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: White;
+                    }
+
+                    .vernav2 ul li.current .father .nav_icon b {
+                        left: 0;
+                    }
+
+                    .vernav2 ul li .nav_icon.nav1 b {
+                        background: #fb6b5b;
+                    }
+
+                    .vernav2 ul li .nav_icon.nav2 b {
+                        background: #ffc333;
+                    }
+
+                    .vernav2 ul li .nav_icon.nav3 b {
+                        background: #8ec165;
+                    }
+
+                    .vernav2 ul li .nav_icon.nav4 b {
+                        background: #65bd77;
+                    }
+
+                    .vernav2 ul li .nav_icon.nav5 b {
+                        background: #48a75b;
+                    }
+
+                    .vernav2 ul li .nav_icon.nav6 b {
+                        background: #4cc0c1;
+                    }
+
+                    .vernav2 ul li a {
+                        display: block;
+                        float: left;
+                        font-family: 'RobotoBoldCondensed', Arial, Helvetica, sans-serif;
+                        color: white;
+                        text-transform: uppercase;
+                        line-height: 14px;
+                        text-decoration: none;
+                    }
+
+                        .vernav2 ul li a:hover {
+                            background-color: #3E5469;
+                        }
+
+                    .vernav2 ul li:hover .nav_icon b {
+                        left: 0;
+                    }
+
+                .vernav2 ul ul {
+                    margin: 0;
+                    border-top: 1px solid #455C71;
+                    display: none;
+                    background: #3E5469;
+                }
+
+                    .vernav2 ul ul.show {
+                        display: block;
+                    }
+
+                    .vernav2 ul ul li {
+                        border-bottom: 0;
+                    }
+
+                        .vernav2 ul ul li:last-child {
+                            border-bottom: 0;
+                        }
+
+                        .vernav2 ul ul li a.active {
+                            color: White;
+                        }
+
+                        .vernav2 ul ul li a i {
+                            margin: -12px -15px;
+                            line-height: 44px;
+                            width: 44px;
+                            float: left;
+                            margin-right: 10px;
+                            font-size: 14px;
+                            border-right: 1px solid rgba(255, 255, 255, 0.05);
+                            text-align: center;
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+        @media screen and (min-width: 1367px) {
+            .vernav2 {
+                /*width: 230px*/
+            }
+
+                .vernav2 .console-nav .item {
+                    width: 118px;
+                }
+
+                .vernav2 .console-nav p.icon {
+                    display: block;
+                }
+
+                .vernav2 .console-nav p.nav {
+                    width: 98px;
+                }
+
+                    .vernav2 .console-nav p.nav.nav1 {
+                        display: block;
+                    }
+
+                .vernav2 ul li {
+                    overflow: hidden;
+                }
+
+                    .vernav2 ul li span.arrow {
+                        position: absolute;
+                        top: 23px;
+                        right: 10px;
+                        width: 11px;
+                        height: 5px;
+                        color: White;
+                    }
+
+                    .vernav2 ul li .father .nav_icon b {
+                        left: -48px;
+                    }
+
+                    .vernav2 ul li .father:hover .nav_icon b {
+                        left: 0;
+                    }
+
+                    .vernav2 ul li .father .nav_icon b span {
+                        display: none;
+                    }
+
+                    .vernav2 ul li .father a {
+                        padding: 18px 10px;
+                        width: 160px;
+                        background: #3E5469;
+                    }
+
+                .vernav2 ul ul {
+                    padding-left: 25px;
+                }
+
+                    .vernav2 ul ul li a {
+                        padding: 12px 10px;
+                        color: #999;
+                        background: #3E5469 url(/StoreCenter/images/controls/line.dashed.png) no-repeat -25px center;
+                        border-left: 1px dashed #ddd;
+                        padding-left: 15px;
+                    }
+
+                        .vernav2 ul ul li a:hover {
+                            background-color: #fff;
+                            color: #666;
+                        }
+
+                        .vernav2 ul ul li a i {
+                            display: none;
+                        }
+        }
+
+        @media screen and (max-width: 1366px) {
+            .vernav2 {
+                width: 50px
+            }
+
+                .vernav2 .console-nav .item {
+                    width: 40px;
+                }
+
+                .vernav2 .console-nav p.nav {
+                    width: 38px;
+                }
+
+                    .vernav2 .console-nav p.nav.nav2 {
+                        display: block;
+                        border-top-left-radius: 3px;
+                        border-bottom-left-radius: 3px;
+                    }
+
+                .vernav2 ul li span.arrow {
+                    display: none;
+                }
+
+                .vernav2 ul li:hover .father .nav_icon i:before {
+                    left: -17px;
+                }
+
+                .vernav2 ul li .father .nav_icon i:before {
+                    left: 17px;
+                }
+
+                .vernav2 ul li.current .father .nav_icon i:before {
+                    left: 17px;
+                }
+
+                .vernav2 ul li .father:hover .nav_icon i:before {
+                    left: -17px;
+                }
+
+                .vernav2 ul li .father .nav_icon b {
+                    left: 0;
+                }
+
+                .vernav2 ul li:hover .father .nav_icon b span {
+                    visibility: visible;
+                }
+
+                .vernav2 ul li .father .nav_icon b span {
+                    visibility: hidden;
+                }
+
+                .vernav2 ul li .father:hover .nav_icon b span {
+                    visibility: visible;
+                }
+
+                .vernav2 ul li .father a {
+                    display: none;
+                }
+
+                .vernav2 ul li:hover ul {
+                    display: block;
+                }
+
+                .vernav2 ul ul {
+                    position: absolute;
+                    left: 50px;
+                    top: 0;
+                    z-index: 99999;
+                    width: 230px;
+                }
+
+                    .vernav2 ul ul li {
+                        border-bottom: 0;
+                        width: 100%;
+                        overflow: hidden;
+                    }
+
+                        .vernav2 ul ul li a {
+                            display: block;
+                            float: none;
+                            padding: 11px 15px;
+                            color: #adbece;
+                            line-height: 20px;
+                            position: relative;
+                            font-weight: bold;
+                            font-size: 14px;
+                            border-top: 1px solid transparent;
+                            border-color: rgba(255, 255, 255, 0.05);
+                            transition: color .3s ease-in-out 0s;
+                        }
+
+                            .vernav2 ul ul li a span {
+                                font-size: 12px;
+                                font-weight: 400;
+                            }
+
+                            .vernav2 ul ul li a:hover {
+                                color: #fff;
+                                background-color: inherit;
+                                background-color: rgba(0, 0, 0, 0.05) !important;
+                                text-shadow: none;
+                            }
+
+                            .vernav2 ul ul li a i {
+                                display: inline;
+                            }
+        }
+    </style>
+    <!--菜单样式.end-->
+
+    <!--菜单点击下拉效果-->
+    <script type="text/javascript">
+    var resize = function () {
+        if ($(".vernav2 ul li .father a").css("display") != "block") {
+            $(".vernav2 ul li ul").removeAttr("style");
+        }
+    }
+    window.onresize = resize;
+    $(function () {
+        $('.title').click(function () {
+            var $ul = $(this).next('ul');
+            $('dd').find('ul').slideUp();
+            if ($ul.is(':visible')) {
+                $(this).next('ul').slideUp();
+            } else {
+                $(this).next('ul').slideDown();
+            }
+        });
+        resize();
+
+        jQuery('.vernav2 > ul li a').each(function () {
+            var url = jQuery(this).attr('href');
+            jQuery(this).click(function () {
+                $(".vernav2 > ul li").removeClass("current");
+                if (jQuery(url).length > 0) {
+                    if (jQuery(url).is(':visible')) {
+                        if (!jQuery(this).parents('div').hasClass('menucoll') && !jQuery(this).parents('div').hasClass('menucoll2')) {
+                            jQuery(url).slideUp();
+                        }
+                    } else {
+                        jQuery('.vernav2 ul ul').each(function () {
+                            jQuery(this).slideUp();
+                        });
+                        if (!jQuery(this).parents('div').hasClass('menucoll') && !jQuery(this).parents('div').hasClass('menucoll2')) {
+                            jQuery(url).slideDown();
+                            $(this).parent(".father").parent("li").addClass("current");
+                        }
+                    }
+                    return false;
+                }
+            });
+        });
+
+        var pageName = 'index.aspx';
+        var $li = $(".vernav2Ul li");
+        for (var i = 0; i < $li.length; i++) {
+            var $a = $li.eq(i).find("ul li a");
+            for (var j = 0; j < $a.length; j++) {
+                if ($a.eq(j).attr("href").indexOf(pageName) >= 0) {
+                    $li.eq(i).find(".editor").click();
+                    $a.eq(j).addClass("active");
+                    if ($(".vernav2 ").width() == 50) {
+                        $(".vernav2Ul li ul").hide();
+                        resize();
+                    }
+                }
+            }
+        }
+    });
+    </script>
+    <!--菜单点击下拉效果.end-->
   </head>
 
   <body>
     <div class="content">
-      <div class="container">
-        <%= render "common/admin_navbar" %>
-        <%= render "common/flashes" %>
+      <div class="row">
+        <div class="">
 
-          <div class="" style="margin-top:30px;">
+          <%= render "common/admin_navbar" %>
+          <%= render "common/flashes" %>
 
-            <!-- 侧边分类选项栏 -->
-            <div class="col-md-2 nav-left-style">
-              <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                <hr>
-                <li><%= link_to("移民国家分类", admin_country_categories_path) %></li>
-                <li><%= link_to("移民国家管理", admin_products_path) %></li>
-                <li><%= link_to("成功案例管理", admin_stories_path) %></li>
-                <li><%= link_to("资讯管理", admin_articles_path) %></li>
-                <li><%= link_to("资讯分类", admin_article_categories_path) %></li>
-                <li><%= link_to("客户咨询", admin_messages_path) %></li>
-                <li><%= link_to("热门活动管理", admin_activities_path) %></li>
+          <div class="">
 
-                <li><%= link_to("轮播管理", admin_banners_path) %></li>
+              <!-- 侧边分类选项栏 -->
+              <div class="col-md-2" style="height:1000px;">
+                <!-- <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+                  <hr>
+                  <li><%= link_to("移民国家分类", admin_country_categories_path) %></li>
+                  <li><%= link_to("移民国家管理", admin_products_path) %></li>
+                  <li><%= link_to("成功案例管理", admin_stories_path) %></li>
+                  <li><%= link_to("资讯管理", admin_articles_path) %></li>
+                  <li><%= link_to("资讯分类", admin_article_categories_path) %></li>
+                  <li><%= link_to("客户咨询", admin_messages_path) %></li>
+                  <li><%= link_to("热门活动管理", admin_activities_path) %></li>
 
-                <li><%= link_to("公司简介", admin_companyprofiles_path) %></li>
-                <li><%= link_to("企业荣誉", admin_companyhonors_path) %></li>
-                <li><%= link_to("企业文化", admin_companycultures_path) %></li>
-                <li><%= link_to("精英团队", admin_eliteteams_path) %></li>
+                  <li><%= link_to("轮播管理", admin_banners_path) %></li>
+
+                  <li><%= link_to("公司简介", admin_companyprofiles_path) %></li>
+                  <li><%= link_to("企业荣誉", admin_companyhonors_path) %></li>
+                  <li><%= link_to("企业文化", admin_companycultures_path) %></li>
+                  <li><%= link_to("精英团队", admin_eliteteams_path) %></li>
 
 
-              </ul>
+                </ul> -->
+                <div class="vernav2 iconmenu">
+                    <div class="console-nav">
+                        <div class="item">
+                            <a href="/StoreCenter/index.aspx">
+                                <p class="icon fa fa-angle-left"></p>
+                                <p class="nav nav1">去工作台</p>
+                                <p class="nav nav2">Work</p>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="vernav2Ul">
+                        <li>
+                            <div class="father">
+                                <span class="nav_icon nav2" title="店铺积分">
+                                    <i class="fa fa-eye-slash"></i>
+                                    <b class="bg"><span>店铺积分</span></b>
+                                </span>
+                                <a href="#nav101" class="editor">店铺积分</a>
+                            </div>
+                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
+                            <ul style="" id="nav101">
+                                <li><a href="/StoreCenter/ShopPoint/ShopGiveMemberPointTrace.aspx"><i class="fa fa-angle-right"></i><span>会员消费赠送积分记录</span></a></li>
+                                <li><a href="/StoreCenter/ShopPoint/ShopApplyPointTrace.aspx"><i class="fa fa-angle-right"></i><span>店铺积分申请记录</span></a></li>
+                                <li><a href="/StoreCenter/ShopPoint/ShopGiveMemberPoint.aspx"><i class="fa fa-angle-right"></i><span>会员消费积分赠送</span></a></li>
+                                <li><a href="/StoreCenter/ShopPoint/ShopPointTrace.aspx"><i class="fa fa-angle-right"></i><span>店铺积分流水</span></a></li>
+                                <li><a href="/StoreCenter/ShopPoint/ShopApplyPoint.aspx"><i class="fa fa-angle-right"></i><span>店铺积分申请</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="father">
+                                <span class="nav_icon nav2" title="消息中心">
+                                    <i class="fa fa-eye-slash"></i>
+                                    <b class="bg"><span>消息中心</span></b>
+                                </span>
+                                <a href="#nav102" class="editor">消息中心</a>
+                            </div>
+
+                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
+                            <ul style="" id="nav102">
+
+                                <li><a href="/StoreCenter/ShopMsg/ShopsMessageMag.aspx?id=1&amp;msg=客服消息"><i class="fa fa-angle-right"></i><span>客服消息</span></a></li>
+
+                                <li><a href="/StoreCenter/ShopMsg/ShopsFeedbackMag.aspx"><i class="fa fa-angle-right"></i><span>意见反馈</span></a></li>
+
+                                <li><a href="/StoreCenter/ShopMsg/ShopsNoticeMag.aspx"><i class="fa fa-angle-right"></i><span>店铺公告</span></a></li>
+
+                                <li><a href="/StoreCenter/ShopMsg/ShopsMessageMag.aspx?msg=全部消息"><i class="fa fa-angle-right"></i><span>全部消息</span></a></li>
+
+                            </ul>
+
+                        </li>
+                        <li>
+                            <div class="father">
+                                <span class="nav_icon nav2" title="订单管理">
+                                    <i class="fa fa-eye-slash"></i>
+                                    <b class="bg"><span>订单管理</span></b>
+                                </span>
+                                <a href="#nav103" class="editor">订单管理</a>
+                            </div>
+
+                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
+                            <ul style="" id="nav103">
+
+                                <li><a href="/StoreCenter/ShopOrder/ShopDeliveryMag.aspx"><i class="fa fa-angle-right"></i><span>物流单列表</span></a></li>
+
+                                <li><a href="/StoreCenter/ShopOrder/ShopOrderReturnMag.aspx"><i class="fa fa-angle-right"></i><span>退货订单</span></a></li>
+
+                                <li><a href="/StoreCenter/ShopOrder/ShopStockBalanceMag.aspx"><i class="fa fa-angle-right"></i><span>对账单</span></a></li>
+
+                                <li><a href="/StoreCenter/ShopOrder/ShopOrderMag.aspx"><i class="fa fa-angle-right"></i><span>配送订单列表</span></a></li>
+
+                                <li><a href="/StoreCenter/ShopOrder/ShopStockRecordMag.aspx"><i class="fa fa-angle-right"></i><span>库存记录</span></a></li>
+
+                                <li><a href="/StoreCenter/ShopOrder/ShopOrderFHList.aspx"><i class="fa fa-angle-right"></i><span>配送订单发货</span></a></li>
+
+                            </ul>
+
+                        </li>
+                        <li>
+                            <div class="father">
+                                <span class="nav_icon nav2" title="商品管理">
+                                    <i class="fa fa-eye-slash"></i>
+                                    <b class="bg"><span>商品管理</span></b>
+                                </span>
+                                <a href="#nav104" class="editor">商品管理</a>
+                            </div>
+
+                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
+                            <ul style="" id="nav104">
+
+                                <li><a href="/StoreCenter/product/ProductStockSellOutList.aspx"><i class="fa fa-angle-right"></i><span>已售罄产品</span></a></li>
+
+                                <li><a href="/StoreCenter/product/ProductEditStep1.aspx"><i class="fa fa-angle-right"></i><span>发布商品</span></a></li>
+
+                                <li><a href="/StoreCenter/product/navList.aspx"><i class="fa fa-angle-right"></i><span>商品分组</span></a></li>
+
+                                <li><a href="/StoreCenter/product/evaluateList.aspx"><i class="fa fa-angle-right"></i><span>评价管理</span></a></li>
+
+                                <li><a href="/StoreCenter/product/attrList.aspx"><i class="fa fa-angle-right"></i><span>属性库</span></a></li>
+
+                                <li><a href="/StoreCenter/product/ProductList.aspx"><i class="fa fa-angle-right"></i><span>商品库</span></a></li>
+
+                            </ul>
+
+                        </li>
+                    </ul>
+                </div>
+              </div>
+
+              <!-- 主内容 -->
+              <div class="col-md-10">
+                <%= yield %>
+              </div>
+
             </div>
-
-            <!-- 主内容 -->
-            <div class="col-md-10">
-              <%= yield %>
-            </div>
-
-          </div>
+        </div>
       </div>
+
     </div>
 
 
