@@ -1,6 +1,6 @@
 <style>
 /*right.html*/
-.place{height:45px; background:#eee;}
+.place{height:45px; background:#ffffff; border-bottom: solid 1px #f1f1f1;border-top: solid 1px #f1f1f1;}
 .place span{line-height:45px; font-size:14px; font-weight:400;float:left; font-family:"微软雅黑"; color:#3e4569;}
 .place span .fa { margin-right:5px; font-size:16px;}
 .placeul .big {}
@@ -9,6 +9,10 @@
 .placeul li:last-child{background:none;}
 </style>
 <div class="account-box" >
+  <div class="" style="padding-left:30px;font-size:24px; line-height:72px;background-color:#ffffff;border:solid 1px #f1f1f1;">
+    <i class="fa fa-eye-slash"></i>移民国家列表
+  </div>
+
   <div class="place">
       <span></span>
       <ul class="placeul">
@@ -23,13 +27,14 @@
   <!-- "增加商品"按钮 -->
   <br>
   <div class="" style="margin-bottom:10px;">
-    <%= link_to("+增加国家", new_admin_product_path, class: "btn btn-sm btn-default") %>
-    <a href="#" class="btn-font orange"><i class="fa fa-plus"></i>添加产品</a>
+    <%= link_to(new_admin_product_path,:class=> "btn btn-primary" )  do %>
+      <i class="fa fa-plus"></i>添加国家
+    <% end %>
   </div>
 
 
   <!-- 所有商品列表 -->
-  <table class="table table-hover table-striped  table-responsive">
+  <table class="table table-hover table-striped table-advance table-responsive" style="background-color:#ffffff;border:solid 2px #eee;">
     <thead>
       <tr>
         <td>ID</td>

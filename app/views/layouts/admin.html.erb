@@ -13,11 +13,12 @@
     <style type="text/css">
         .vernav2 {
             /*width: 230px;*/
+            width: 100%;
             position: absolute;
             left: 0;
             top: 0;
             bottom: 0;
-            background: #3E5469;
+            background: #2a3442;
         }
             /*去控制台*/
             .vernav2 .console-nav {
@@ -44,7 +45,7 @@
                     .vernav2 .console-nav p.icon {
                         display: none;
                         width: 20px;
-                        background: #3E5469;
+                        background: #2a3342;
                         border-top-left-radius: 3px;
                         border-bottom-left-radius: 3px;
                     }
@@ -79,7 +80,7 @@
                         line-height: 50px;
                         text-align: center;
                         font-size: 16px;
-                        background: #3E5469;
+                        background: #2a3342;
                     }
 
                     .vernav2 ul li .father .nav_icon i:before {
@@ -146,7 +147,7 @@
                     }
 
                         .vernav2 ul li a:hover {
-                            background-color: #3E5469;
+                            background-color: #2a3342;
                         }
 
                     .vernav2 ul li:hover .nav_icon b {
@@ -157,7 +158,7 @@
                     margin: 0;
                     border-top: 1px solid #455C71;
                     display: none;
-                    background: #3E5469;
+                    background: #2a3342;
                 }
 
                     .vernav2 ul ul.show {
@@ -238,7 +239,7 @@
                     .vernav2 ul li .father a {
                         padding: 18px 10px;
                         width: 160px;
-                        background: #3E5469;
+                        background: #2a3342;
                     }
 
                 .vernav2 ul ul {
@@ -248,7 +249,7 @@
                     .vernav2 ul ul li a {
                         padding: 12px 10px;
                         color: #999;
-                        background: #3E5469 url(/StoreCenter/images/controls/line.dashed.png) no-repeat -25px center;
+                        background: #2a3342 url(/StoreCenter/images/controls/line.dashed.png) no-repeat -25px center;
                         border-left: 1px dashed #ddd;
                         padding-left: 15px;
                     }
@@ -444,7 +445,7 @@
           <%= render "common/admin_navbar" %>
           <%= render "common/flashes" %>
 
-          <div class="">
+          <div class="container-fluid">
 
               <!-- 侧边分类选项栏 -->
               <div class="col-md-2" style="height:1000px;">
@@ -480,95 +481,126 @@
                     <ul class="vernav2Ul">
                         <li>
                             <div class="father">
-                                <span class="nav_icon nav2" title="店铺积分">
+                                <span class="nav_icon nav2" title="关于尚德信">
                                     <i class="fa fa-eye-slash"></i>
-                                    <b class="bg"><span>店铺积分</span></b>
+                                    <b class="bg"><span>关于尚德信</span></b>
                                 </span>
-                                <a href="#nav101" class="editor">店铺积分</a>
+                                <a href="#nav101" class="editor">关于尚德信</a>
                             </div>
                             <span class="arrow"><i class="fa fa-angle-down"></i></span>
                             <ul style="" id="nav101">
-                                <li><a href="/StoreCenter/ShopPoint/ShopGiveMemberPointTrace.aspx"><i class="fa fa-angle-right"></i><span>会员消费赠送积分记录</span></a></li>
-                                <li><a href="/StoreCenter/ShopPoint/ShopApplyPointTrace.aspx"><i class="fa fa-angle-right"></i><span>店铺积分申请记录</span></a></li>
-                                <li><a href="/StoreCenter/ShopPoint/ShopGiveMemberPoint.aspx"><i class="fa fa-angle-right"></i><span>会员消费积分赠送</span></a></li>
-                                <li><a href="/StoreCenter/ShopPoint/ShopPointTrace.aspx"><i class="fa fa-angle-right"></i><span>店铺积分流水</span></a></li>
-                                <li><a href="/StoreCenter/ShopPoint/ShopApplyPoint.aspx"><i class="fa fa-angle-right"></i><span>店铺积分申请</span></a></li>
+                                <li><%= link_to admin_companyprofiles_path     do %><i class="fa fa-angle-right"></i><span>公司简介</span> <% end %></li>
+                                <li><%= link_to admin_companyhonors_path       do %><i class="fa fa-angle-right"></i><span>企业荣誉</span> <% end %></li>
+                                <li><%= link_to admin_eliteteams_path          do %><i class="fa fa-angle-right"></i><span>精英团队</span> <% end %></li>
+                                <li><%= link_to admin_companycultures_path     do %><i class="fa fa-angle-right"></i><span>企业文化</span> <% end %></li>
+
                             </ul>
                         </li>
                         <li>
                             <div class="father">
-                                <span class="nav_icon nav2" title="消息中心">
+                                <span class="nav_icon nav2" title="移民服务">
                                     <i class="fa fa-eye-slash"></i>
-                                    <b class="bg"><span>消息中心</span></b>
+                                    <b class="bg"><span>移民服务</span></b>
                                 </span>
-                                <a href="#nav102" class="editor">消息中心</a>
+                                <a href="#nav102" class="editor">移民服务管理</a>
                             </div>
-
                             <span class="arrow"><i class="fa fa-angle-down"></i></span>
                             <ul style="" id="nav102">
 
-                                <li><a href="/StoreCenter/ShopMsg/ShopsMessageMag.aspx?id=1&amp;msg=客服消息"><i class="fa fa-angle-right"></i><span>客服消息</span></a></li>
-
-                                <li><a href="/StoreCenter/ShopMsg/ShopsFeedbackMag.aspx"><i class="fa fa-angle-right"></i><span>意见反馈</span></a></li>
-
-                                <li><a href="/StoreCenter/ShopMsg/ShopsNoticeMag.aspx"><i class="fa fa-angle-right"></i><span>店铺公告</span></a></li>
-
-                                <li><a href="/StoreCenter/ShopMsg/ShopsMessageMag.aspx?msg=全部消息"><i class="fa fa-angle-right"></i><span>全部消息</span></a></li>
+                                <li><%= link_to admin_country_categories_path  do %><i class="fa fa-angle-right"></i><span>移民国家分类</span> <% end %></li>
+                                <li><%= link_to admin_products_path  do %><i class="fa fa-angle-right"></i><span>移民国家列表</span> <% end %></li>
+                                <li><%= link_to admin_country_categories_path  do %><i class="fa fa-angle-right"></i><span>移民项目列表</span> <% end %></li>
 
                             </ul>
-
                         </li>
                         <li>
                             <div class="father">
-                                <span class="nav_icon nav2" title="订单管理">
+                                <span class="nav_icon nav2" title="客户咨询">
                                     <i class="fa fa-eye-slash"></i>
-                                    <b class="bg"><span>订单管理</span></b>
+                                    <b class="bg"><span>客户咨询管理</span></b>
                                 </span>
-                                <a href="#nav103" class="editor">订单管理</a>
+                                <a href="#nav103" class="editor">客户咨询管理</a>
                             </div>
 
                             <span class="arrow"><i class="fa fa-angle-down"></i></span>
                             <ul style="" id="nav103">
-
-                                <li><a href="/StoreCenter/ShopOrder/ShopDeliveryMag.aspx"><i class="fa fa-angle-right"></i><span>物流单列表</span></a></li>
-
-                                <li><a href="/StoreCenter/ShopOrder/ShopOrderReturnMag.aspx"><i class="fa fa-angle-right"></i><span>退货订单</span></a></li>
-
-                                <li><a href="/StoreCenter/ShopOrder/ShopStockBalanceMag.aspx"><i class="fa fa-angle-right"></i><span>对账单</span></a></li>
-
-                                <li><a href="/StoreCenter/ShopOrder/ShopOrderMag.aspx"><i class="fa fa-angle-right"></i><span>配送订单列表</span></a></li>
-
-                                <li><a href="/StoreCenter/ShopOrder/ShopStockRecordMag.aspx"><i class="fa fa-angle-right"></i><span>库存记录</span></a></li>
-
-                                <li><a href="/StoreCenter/ShopOrder/ShopOrderFHList.aspx"><i class="fa fa-angle-right"></i><span>配送订单发货</span></a></li>
-
+                                <li><%= link_to admin_messages_path do %><i class="fa fa-angle-right"></i><span>客服消息列表</span> <% end %></li>        
                             </ul>
 
                         </li>
                         <li>
                             <div class="father">
-                                <span class="nav_icon nav2" title="商品管理">
+                                <span class="nav_icon nav2" title="成功案例管理">
                                     <i class="fa fa-eye-slash"></i>
-                                    <b class="bg"><span>商品管理</span></b>
+                                    <b class="bg"><span>成功案例管理</span></b>
                                 </span>
-                                <a href="#nav104" class="editor">商品管理</a>
+                                <a href="#nav104" class="editor">成功案例管理</a>
                             </div>
 
                             <span class="arrow"><i class="fa fa-angle-down"></i></span>
                             <ul style="" id="nav104">
+                                <li><%= link_to admin_stories_path do %><i class="fa fa-angle-right"></i><span>成功案例列表</span> <% end %></li>
+                            </ul>
 
-                                <li><a href="/StoreCenter/product/ProductStockSellOutList.aspx"><i class="fa fa-angle-right"></i><span>已售罄产品</span></a></li>
+                        </li>
+                        <li>
+                            <div class="father">
+                                <span class="nav_icon nav2" title="资讯管理">
+                                    <i class="fa fa-eye-slash"></i>
+                                    <b class="bg"><span>资讯管理</span></b>
+                                </span>
+                                <a href="#nav105" class="editor">资讯管理</a>
+                            </div>
 
-                                <li><a href="/StoreCenter/product/ProductEditStep1.aspx"><i class="fa fa-angle-right"></i><span>发布商品</span></a></li>
+                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
+                            <ul style="" id="nav105">
+                                <li><%= link_to admin_article_categories_path do %><i class="fa fa-angle-right"></i><span>资讯分类列表</span> <% end %></li>
+                                <li><%= link_to admin_articles_path           do %><i class="fa fa-angle-right"></i><span>资讯文章列表</span> <% end %></li>
+                            </ul>
 
-                                <li><a href="/StoreCenter/product/navList.aspx"><i class="fa fa-angle-right"></i><span>商品分组</span></a></li>
+                        </li>
+                        <li>
+                            <div class="father">
+                                <span class="nav_icon nav2" title="热门活动管理">
+                                    <i class="fa fa-eye-slash"></i>
+                                    <b class="bg"><span>热门活动管理</span></b>
+                                </span>
+                                <a href="#nav106" class="editor">热门活动管理</a>
+                            </div>
 
-                                <li><a href="/StoreCenter/product/evaluateList.aspx"><i class="fa fa-angle-right"></i><span>评价管理</span></a></li>
+                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
+                            <ul style="" id="nav106">
+                                <li><%= link_to admin_activities_path do %><i class="fa fa-angle-right"></i><span>热门活动列表</span> <% end %></li>
+                            </ul>
 
-                                <li><a href="/StoreCenter/product/attrList.aspx"><i class="fa fa-angle-right"></i><span>属性库</span></a></li>
+                        </li>
+                        <li>
+                            <div class="father">
+                                <span class="nav_icon nav2" title="广告管理">
+                                    <i class="fa fa-eye-slash"></i>
+                                    <b class="bg"><span>广告管理</span></b>
+                                </span>
+                                <a href="#nav107" class="editor">广告管理</a>
+                            </div>
 
-                                <li><a href="/StoreCenter/product/ProductList.aspx"><i class="fa fa-angle-right"></i><span>商品库</span></a></li>
+                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
+                            <ul style="" id="nav107">
+                                <li><%= link_to admin_banners_path do %><i class="fa fa-angle-right"></i><span>广告图列表</span> <% end %></li>
+                            </ul>
 
+                        </li>
+                        <li>
+                            <div class="father">
+                                <span class="nav_icon nav2" title="友情链接管理">
+                                    <i class="fa fa-eye-slash"></i>
+                                    <b class="bg"><span>友情链接管理</span></b>
+                                </span>
+                                <a href="#nav108" class="editor">友情链接管理</a>
+                            </div>
+
+                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
+                            <ul style="" id="nav108">
+                                <li><%= link_to admin_activities_path do %><i class="fa fa-angle-right"></i><span>友情链接列表</span> <% end %></li>
                             </ul>
 
                         </li>
@@ -577,7 +609,7 @@
               </div>
 
               <!-- 主内容 -->
-              <div class="col-md-10">
+              <div class="col-md-10" style="background-color:#f1f2f7;">
                 <%= yield %>
               </div>
 
