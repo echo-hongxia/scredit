@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   get "about/index"
+  get 'comments', to: 'welcome#index'
+  post 'comments', to: 'welcome#create'
+
 
   root 'welcome#index'
 
