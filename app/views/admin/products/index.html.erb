@@ -7,18 +7,19 @@
 .placeul .line { padding:0 6px; display:inline-block; color:#bbb;}
 .placeul li{float:left; line-height:50px; padding-left:7px; padding-right:12px;/*background:url(../images/rlist.gif) no-repeat right;*/}
 .placeul li:last-child{background:none;}
+.account-box .table > tbody > tr > td { vertical-align: middle;}
 </style>
 <div class="account-box" >
   <div class="" style="padding-left:30px;font-size:24px; line-height:72px;background-color:#ffffff;border:solid 1px #f1f1f1;">
-    <i class="fa fa-eye-slash"></i>移民国家列表
+    <i class="fa fa-paper-plane-o" style="padding-right:8px;"></i>移民国家列表
   </div>
 
   <div class="place">
       <span></span>
       <ul class="placeul">
-          <li><span><i class="fa fa-product"></i>移民国家管理</span>
-              <span class="line">/</span> <span><i class="fa fa-fangdajing"></i>移民国家列表</span>
-               <!-- <span class="line">/</span> <span class="big">产品列表</span></li> -->
+          <li><span><i class="fa fa-map-marker"></i>移民国家管理</span>
+              <span class="line">/</span> <span>移民国家列表</span>
+          </li>
       </ul>
   </div>
 
@@ -52,8 +53,8 @@
     <tbody>
       <% @products.each do |product| %>
         <tr>
-          <td><%= product.id %></td>
-          <td>
+          <td valign="middle"><%= product.id %></td>
+          <td valign="middle">
             <%= link_to product_path(product) do%>
               <% if product.image.present? %>
                 <%= image_tag(product.image.avatar.url, class: "thumbnail") %>
@@ -67,7 +68,7 @@
           <td><%= link_to(product.title, product_path(product)) %></td>
           <!-- <td><%= simple_format(product.description) %></td> -->
 
-          <td>
+          <td valign="bottom">
             <%= link_to("Edit", edit_admin_product_path(product)) %> |
             <%= link_to("destroy", admin_product_path(product), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
             <br>
@@ -81,4 +82,8 @@
     </tbody>
   </table>
 
+
+  <div class="page-box text-center" style="margin-top: 50px;">
+     <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => t('previous'), :next_label => t('next') %>
+   </div>
 </div>

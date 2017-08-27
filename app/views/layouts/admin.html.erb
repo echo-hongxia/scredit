@@ -445,29 +445,11 @@
           <%= render "common/admin_navbar" %>
           <%= render "common/flashes" %>
 
-          <div class="container-fluid">
+          <div class="container-fluid" style="background-color:#f1f2f7;">
 
               <!-- 侧边分类选项栏 -->
               <div class="col-md-2" style="height:1000px;">
-                <!-- <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                  <hr>
-                  <li><%= link_to("移民国家分类", admin_country_categories_path) %></li>
-                  <li><%= link_to("移民国家管理", admin_products_path) %></li>
-                  <li><%= link_to("成功案例管理", admin_stories_path) %></li>
-                  <li><%= link_to("资讯管理", admin_articles_path) %></li>
-                  <li><%= link_to("资讯分类", admin_article_categories_path) %></li>
-                  <li><%= link_to("客户咨询", admin_messages_path) %></li>
-                  <li><%= link_to("热门活动管理", admin_activities_path) %></li>
 
-                  <li><%= link_to("轮播管理", admin_banners_path) %></li>
-
-                  <li><%= link_to("公司简介", admin_companyprofiles_path) %></li>
-                  <li><%= link_to("企业荣誉", admin_companyhonors_path) %></li>
-                  <li><%= link_to("企业文化", admin_companycultures_path) %></li>
-                  <li><%= link_to("精英团队", admin_eliteteams_path) %></li>
-
-
-                </ul> -->
                 <div class="vernav2 iconmenu">
                     <div class="console-nav">
                         <div class="item">
@@ -482,7 +464,7 @@
                         <li>
                             <div class="father">
                                 <span class="nav_icon nav2" title="关于尚德信">
-                                    <i class="fa fa-eye-slash"></i>
+                                    <i class="fa fa-home"></i>
                                     <b class="bg"><span>关于尚德信</span></b>
                                 </span>
                                 <a href="#nav101" class="editor">关于尚德信</a>
@@ -499,7 +481,7 @@
                         <li>
                             <div class="father">
                                 <span class="nav_icon nav2" title="移民服务">
-                                    <i class="fa fa-eye-slash"></i>
+                                    <i class="fa fa-paper-plane-o"></i>
                                     <b class="bg"><span>移民服务</span></b>
                                 </span>
                                 <a href="#nav102" class="editor">移民服务管理</a>
@@ -516,7 +498,7 @@
                         <li>
                             <div class="father">
                                 <span class="nav_icon nav2" title="客户咨询">
-                                    <i class="fa fa-eye-slash"></i>
+                                    <i class="fa fa-comments-o"></i>
                                     <b class="bg"><span>客户咨询管理</span></b>
                                 </span>
                                 <a href="#nav103" class="editor">客户咨询管理</a>
@@ -524,14 +506,14 @@
 
                             <span class="arrow"><i class="fa fa-angle-down"></i></span>
                             <ul style="" id="nav103">
-                                <li><%= link_to admin_messages_path do %><i class="fa fa-angle-right"></i><span>客服消息列表</span> <% end %></li>        
+                                <li><%= link_to admin_messages_path do %><i class="fa fa-angle-right"></i><span>客服消息列表</span> <% end %></li>
                             </ul>
 
                         </li>
                         <li>
                             <div class="father">
                                 <span class="nav_icon nav2" title="成功案例管理">
-                                    <i class="fa fa-eye-slash"></i>
+                                    <i class="fa fa-th"></i>
                                     <b class="bg"><span>成功案例管理</span></b>
                                 </span>
                                 <a href="#nav104" class="editor">成功案例管理</a>
@@ -546,7 +528,7 @@
                         <li>
                             <div class="father">
                                 <span class="nav_icon nav2" title="资讯管理">
-                                    <i class="fa fa-eye-slash"></i>
+                                    <i class="fa fa-file-text-o"></i>
                                     <b class="bg"><span>资讯管理</span></b>
                                 </span>
                                 <a href="#nav105" class="editor">资讯管理</a>
@@ -562,7 +544,7 @@
                         <li>
                             <div class="father">
                                 <span class="nav_icon nav2" title="热门活动管理">
-                                    <i class="fa fa-eye-slash"></i>
+                                    <i class="fa fa-wpexplorer"></i>
                                     <b class="bg"><span>热门活动管理</span></b>
                                 </span>
                                 <a href="#nav106" class="editor">热门活动管理</a>
@@ -577,7 +559,7 @@
                         <li>
                             <div class="father">
                                 <span class="nav_icon nav2" title="广告管理">
-                                    <i class="fa fa-eye-slash"></i>
+                                    <i class="fa  fa-picture-o"></i>
                                     <b class="bg"><span>广告管理</span></b>
                                 </span>
                                 <a href="#nav107" class="editor">广告管理</a>
@@ -592,7 +574,7 @@
                         <li>
                             <div class="father">
                                 <span class="nav_icon nav2" title="友情链接管理">
-                                    <i class="fa fa-eye-slash"></i>
+                                    <i class="fa fa-chain-broken"></i>
                                     <b class="bg"><span>友情链接管理</span></b>
                                 </span>
                                 <a href="#nav108" class="editor">友情链接管理</a>
@@ -609,7 +591,7 @@
               </div>
 
               <!-- 主内容 -->
-              <div class="col-md-10" style="background-color:#f1f2f7;">
+              <div class="col-md-10">
                 <%= yield %>
               </div>
 
