@@ -3,9 +3,10 @@
 .place{height:45px; background:#ffffff; border-bottom: solid 1px #f1f1f1;border-top: solid 1px #f1f1f1;}
 .place span{line-height:45px; font-size:14px; font-weight:400;float:left; font-family:"微软雅黑"; color:#3e4569;}
 .place span .fa { margin-right:5px; font-size:16px;}
+.place ul{list-style-type:none;}
 .placeul .big {}
 .placeul .line { padding:0 6px; display:inline-block; color:#bbb;}
-.placeul li{float:left; line-height:50px; padding-left:7px; padding-right:12px;/*background:url(../images/rlist.gif) no-repeat right;*/}
+.placeul li{float:left; line-height:50px; padding-left:0px; padding-right:12px;/*background:url(../images/rlist.gif) no-repeat right;*/}
 .placeul li:last-child{background:none;}
 .account-box .table > tbody > tr > td { vertical-align: middle;}
 .account-box .table .thumbnail { margin-bottom: 0px; }
@@ -76,11 +77,19 @@
           <!-- <td><%= simple_format(product.description) %></td> -->
 
           <td>
-            <%= link_to("Edit", edit_admin_product_path(product)) %> |
-            <%= link_to("destroy", admin_product_path(product), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
-        
-            <%= link_to "向上", move_up_admin_product_path(product), method: :patch %>
-            <%= link_to "向下", move_down_admin_product_path(product), method: :patch %>
+            <%= link_to(edit_admin_product_path(product),class: :"btn btn-success")  do %>
+              <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+            <%= link_to(admin_product_path(product),class: :"btn btn-danger",method: :delete, data: { confirm: "你确定要删除吗？"})  do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
+            <%= link_to(move_up_admin_product_path(product),class: :"btn btn-info",method: :patch, data: { confirm: "你确定要删除吗？"})  do %>
+              <i class="fa fa-arrow-up"></i>
+            <% end %>
+            <%= link_to(move_down_admin_product_path(product),class: :"btn btn-warning",method: :patch, data: { confirm: "你确定要删除吗？"})  do %>
+              <i class="fa fa-arrow-down"></i>
+            <% end %>
+
           </td>
           <td><%= product.updated_at %></td>
           <td><%= link_to("查看项目", admin_product_path(product))%></td>
