@@ -648,11 +648,15 @@
           <img src="https://i.loli.net/2017/08/28/59a37a1b8ee29.png" alt="" width="60%">
         </div>
           <div class="col-xs-12 col-sm-12 col-md-6 landing-page-eva-style">
-            <div class="col-xs-12 col-sm-12 col-md-3 text-center">
+            <div class="col-xs-12 col-sm-12 col-md-3 text-center video-btn-block">
               <div class="" style="width:110px; display: inline-block;">
-                <%= image_tag("https://ww3.sinaimg.cn/large/006tNc79gy1fhrmzrrrgjj315u15tb29.jpg", class: "img-circle img-responsive img-center frontpage-img") %>
+                <a href="#" class="video-btn"  data-toggle="modal" data-target="#video-modal">
+                  <%= image_tag("https://ww3.sinaimg.cn/large/006tNc79gy1fhrmzrrrgjj315u15tb29.jpg", class: "img-circle img-responsive img-center frontpage-img") %>
+                </a>
               </div>
             </div>
+
+
 
             <div class="col-xs-12 col-sm-12 col-md-9" >
               <h5 style="color:black;">康思斌-北加州湖北同乡会副会长 </h5>
@@ -664,11 +668,7 @@
             </div>
             <!-- 模态框测试 -->
 
-            <div class="video-btn-block">
-              <a href="#" class="video-btn"  data-toggle="modal" data-target="#video-modal">
-                <i class="fa fa-play-circle-o" aria-hidden="true"></i><span class="text">公司介绍</span>
-              </a>
-            </div>
+
 
             <div class="modal fade welcom-modal" id="video-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
@@ -696,6 +696,7 @@
               </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-9" >
+
               <h5 style="color:black;">张瑞兰-加州武汉创新科技董事长</h5>
               <h7>@XiaoLanZhang</h7>
               <p>女儿从一个在国内每天打游戏的假小子，变成了东海岸
@@ -736,6 +737,9 @@
 
 
 <!-- 立即行动 -->
+<style>
+.landing-page-adv  .form-control {height: 40px;}
+</style>
 <div class="row ">
     <div class="landing-page-adv">
       <div class="container">
@@ -755,7 +759,7 @@
               <div class="form-group">
                 <%= f.input :telphone,style: "height:60px;" ,inline_label: '手机号码', label: false%>
               </div>
-              <%= f.submit "预约咨询顾问", class: "btn btn-sm btn-default",style:"background-color: #e1424b;width: 274px; height: 54px;color:#f1f1f1;font-size:16px;", data: {disable_with: "Submiting..."} %>
+              <%= f.submit "预约咨询顾问", class: "btn btn-lg btn-default",style:"background-color: #e1424b; height: 50px;color:#f1f1f1;font-size:16px;", data: {disable_with: "Submiting..."} %>
             <% end %>
           </div>
 
