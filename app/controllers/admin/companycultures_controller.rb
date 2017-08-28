@@ -30,7 +30,7 @@ class Admin::CompanyculturesController < ApplicationController
   end
 
   def edit
-    @companyculture = Companyculturer.find(params[:id])
+    @companyculture = Companyculture.find(params[:id])
   end
 
   def update

@@ -65,7 +65,7 @@ class Admin::CompanyhonorsController < ApplicationController
   # ---private---
 
   def companyhonor_params
-    params.require(:companyhonor).permit(:description)
+    params.require(:companyhonor).permit(:description, :image, :title)
   end
 
 end
