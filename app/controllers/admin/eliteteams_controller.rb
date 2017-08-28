@@ -65,7 +65,7 @@ class Admin::EliteteamsController < ApplicationController
   # ---private---
 
   def eliteteam_params
-    params.require(:eliteteam).permit(:description)
+    params.require(:eliteteam).permit(:description, :image, :title)
   end
 
 end
