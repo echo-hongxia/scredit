@@ -1,0 +1,38 @@
+<div class="account-box">
+
+  <h3 class="text-center">友情链接列表（Sitelink List）</h3>
+
+  <!-- "增加文章"按钮 -->
+  <br>
+  <div>
+    <%= link_to("新增友链", new_admin_sitelink_path, class: "btn btn-sm btn-default pull-right") %>
+  </div>
+
+
+  <!-- 所有文章列表 -->
+  <table class="table table-hover table-bordered table-responsive">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>标题</td>
+        <td>链接</td>
+        <td>操作</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sitelinks.each do |sitelink| %>
+        <tr>
+          <td><%= sitelink.id %></td>
+          <td><%= link_to(sitelink.site_title, admin_sitelink_path(sitelink)) %></td>
+            <td><%= sitelink.site_link %></td>
+          <td>
+            <%= link_to("Edit", edit_admin_sitelink_path(sitelink)) %> |
+            <%= link_to("destroy", admin_sitelink_path(sitelink), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+          </td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
