@@ -7,6 +7,20 @@ class Admin::BannersController < ApplicationController
     @banners = Banner.all
   end
 
+  def new
+    @banner = Banner.new
+  end
+
+  def create
+      @banner = Banner.new(banner_params)
+      if @banner.save
+        redirect_to admin_banners_path
+      else
+        render :new
+      end
+
+  end
+
   def edit
     @banner = Banner.find(params[:id])
   end

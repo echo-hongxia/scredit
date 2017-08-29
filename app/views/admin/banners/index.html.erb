@@ -17,7 +17,7 @@
         <td><%= banner.id %></td>
         <td><%= banner.name %></td>
         <td>
-          <% if banner.pic.present? %>
+          <% if banner.img_url.present? %>
             <%= image_tag(banner.img_url, class: "thumbnail minipic") %>
           <% else %>
             <%= image_tag("http://placehold.it/200x200&text=No Pic", class:"thumbnail") %>
