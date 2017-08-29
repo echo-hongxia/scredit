@@ -221,11 +221,14 @@
          </h4>
         <div class="container">
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a396bca1022.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">色块</div>
-            </div>
+            <%= link_to Banner.find(4).img_link do%>
+              <div class="img-rela">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a396bca1022.png", class: "img-responsive img-center frontpage-img") %> -->
+                <%= image_tag(Banner.find(4).img_url, class: "img-responsive img-center frontpage-img") %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font"><%= raw Banner.find(4).title %></div>
+              </div>
+            <% end %>
             <div class="img-rela" style="margin-top:10px;">
               <%= image_tag("https://i.loli.net/2017/08/28/59a396e3a6d3a.png", class: "img-responsive img-center frontpage-img") %>
               <div class="img-rela-bg"></div>
