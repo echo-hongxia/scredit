@@ -12,30 +12,29 @@
 
     <div class="col-md-12" style="font-size:2.0em;">
 
-    <% @companycultures.each do |companyculture| %>
+
       <div class="activity-all col-md-12 container">
         <div class="article-box row">
 
             <div class="">
 
 
-              <!-- 文章列表标题、作者、日期 -->
+
               <div class="col-md-12">
-                <div class="companyculture-description">
-                  <%= raw companyculture.description %>
-                </div>
-                <div class="companyculture-img">
-                  <% if companyculture.image.present? %>
-                    <%= link_to image_tag(companyculture.image.companycultureimg.url, class: "product-list-style-img img-responsive"), "#" %>
+                <div class="pull-left">
+                  <% if @eliteteam.image.present? %>
+                    <%= link_to image_tag(@eliteteam.image.eliteteamimg.url, class: "product-list-style-img img-responsive"), "#" %>
                   <% else %>
                     <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "product-list-style-img img-responsive"), "#"%>
                   <% end %>
                 </div>
 
-                <div class="">
-                  <%= raw companyculture.title %>
+                <!-- <div class="eliteteam-title">
+                  <%= raw @eliteteam.title %>
+                </div> -->
+                <div class="eliteteam-description">
+                  <%= raw @eliteteam.description %>
                 </div>
-
 
               </div>
 
@@ -49,7 +48,7 @@
 
 
 
-    <% end %>
+
 
 
 

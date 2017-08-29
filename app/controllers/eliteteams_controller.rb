@@ -7,11 +7,11 @@ class EliteteamsController < ApplicationController
 
   def index
     @eliteteams = Eliteteam.order("created_at DESC")
-
-
   end
 
-
+  def show
+    @eliteteam = Eliteteam.find(params[:id])
+  end
 
 
   # ---private---

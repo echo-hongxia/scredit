@@ -1,9 +1,10 @@
 <%= simple_form_for [:admin, @companyculture] do |f| %>
   <div class="form-group">
 
-    <%= f.input :image, as: :file, :label => "封面(要求：300px*300px)" %>
+
     <%= f.input :title, :label => "标题" %>
     <%= f.input :description, as: :wysihtml5, :label => "内容" %>
+    <%= f.input :image, as: :file, :label => "封面(要求：宽1200px*高600px)" %>
 
     <hr>
 
