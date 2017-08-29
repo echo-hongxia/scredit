@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829023432) do
+ActiveRecord::Schema.define(version: 20170829054918) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "image"
@@ -80,10 +80,11 @@ ActiveRecord::Schema.define(version: 20170829023432) do
     t.string   "name"
     t.string   "title"
     t.string   "pic"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "img_url"
     t.string   "img_link"
+    t.integer  "category_id", default: 1
   end
 
   create_table "cart_items", force: :cascade do |t|
@@ -230,6 +231,12 @@ ActiveRecord::Schema.define(version: 20170829023432) do
     t.string   "aasm_state",       default: "order_placed"
     t.string   "phonenum"
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
+  end
+
+  create_table "pic_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "product_lists", force: :cascade do |t|

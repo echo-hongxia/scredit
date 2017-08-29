@@ -9,10 +9,12 @@ class Admin::BannersController < ApplicationController
 
   def new
     @banner = Banner.new
+    @pic_categories = PicCategory.all.map { |c| [c.name, c.id] }
   end
 
   def create
       @banner = Banner.new(banner_params)
+      @banner.category_id = params[:pic_category_id]
       if @banner.save
         redirect_to admin_banners_path
       else
@@ -23,10 +25,12 @@ class Admin::BannersController < ApplicationController
 
   def edit
     @banner = Banner.find(params[:id])
+    @pic_categories = PicCategory.all.map { |c| [c.name, c.id] }
   end
 
   def update
     @banner = Banner.find(params[:id])
+    @banner.category_id = params[:pic_category_id]
     if @banner.update(banner_params)
       redirect_to admin_banners_path
     else
@@ -37,7 +41,7 @@ class Admin::BannersController < ApplicationController
   private
 
   def banner_params
-    params.require(:banner).permit(:title,:pic,:img_link,:img_url)
+    params.require(:banner).permit(:title,:pic,:img_link,:img_url,:category_id)
   end
 
 end

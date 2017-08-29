@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <td>ID</td>
-      <td>图片顺序</td>
+      <td>图片分类</td>
       <td>广告图片</td>
       <td>广告文字</td>
       <td>广告链接</td>
@@ -15,7 +15,7 @@
   <% @banners.each do |banner| %>
       <tr>
         <td><%= banner.id %></td>
-        <td><%= banner.name %></td>
+        <td><%= PicCategory.find(banner.category_id).name %></td>
         <td>
           <% if banner.img_url.present? %>
             <%= image_tag(banner.img_url, class: "thumbnail minipic") %>

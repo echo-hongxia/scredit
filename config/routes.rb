@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     end
     resources :article_categories
     resources :country_categories
+    resources :pic_categories
 
     resources :products do
        #后台上架网址 admin/products

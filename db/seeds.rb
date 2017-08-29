@@ -145,6 +145,26 @@ end
     title: "请到后台修改"
   )
 
+  PicCategory.create!(
+    name: "首页轮播图",
+  )
+  PicCategory.create!(
+    name: "内页轮播图",
+  )
+  PicCategory.create!(
+    name: "北美移民楼层图",
+  )
+  PicCategory.create!(
+    name: "欧洲移民楼层图",
+  )
+  PicCategory.create!(
+    name: "大洋洲移民楼层图",
+  )
+  PicCategory.create!(
+    name: "其他移民楼层图",
+  )
+
+
 #种子样例
 # Product.create!(title: "小型琴叶榕",
 #    description: "高度约60cm（含盆）",
