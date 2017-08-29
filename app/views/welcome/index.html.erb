@@ -9,6 +9,8 @@
           <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
           <li data-target="#bs-carousel" data-slide-to="1"></li>
           <li data-target="#bs-carousel" data-slide-to="2"></li>
+          <li data-target="#bs-carousel" data-slide-to="3"></li>
+          <li data-target="#bs-carousel" data-slide-to="4"></li>
         </ul>
       </div>
 
@@ -39,6 +41,26 @@
              <div class="hero">
                <hgroup>
                  <%= raw Banner.find(3).title %>
+               </hgroup>
+               <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+             </div>
+         </div>
+         <div class="item slides">
+
+            <%= link_to image_tag(Banner.find(4).img_url, class:  "slide-4"),Banner.find(4).img_link,target: "_blank"  %>
+             <div class="hero">
+               <hgroup>
+                 <%= raw Banner.find(4).title %>
+               </hgroup>
+               <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+             </div>
+         </div>
+         <div class="item slides">
+
+            <%= link_to image_tag(Banner.find(5).img_url, class:  "slide-3"),Banner.find(5).img_link,target: "_blank"  %>
+             <div class="hero">
+               <hgroup>
+                 <%= raw Banner.find(5).title %>
                </hgroup>
                <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
              </div>
@@ -221,19 +243,21 @@
          </h4>
         <div class="container">
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <%= link_to Banner.find(4).img_link do%>
+            <%= link_to Banner.find(6).img_link do%>
               <div class="img-rela">
                 <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a396bca1022.png", class: "img-responsive img-center frontpage-img") %> -->
-                <%= image_tag(Banner.find(4).img_url, class: "img-responsive img-center frontpage-img") %>
+                <%= image_tag(Banner.find(6).img_url, class: "img-responsive img-center frontpage-img") %>
                 <div class="img-rela-bg"></div>
-                <div class="img-rela-font"><%= raw Banner.find(4).title %></div>
+                <div class="img-rela-font"><%= raw Banner.find(6).title %></div>
               </div>
             <% end %>
-            <div class="img-rela" style="margin-top:10px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a396e3a6d3a.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">美国移民优势</div>
-            </div>
+            <%= link_to Banner.find(7).img_link do%> 
+              <div class="img-rela" style="margin-top:10px;">
+                <%= image_tag(Banner.find(7).img_url, class: "img-responsive img-center frontpage-img") %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font"><%= raw Banner.find(7).title %></div>
+              </div>
+            <% end %>
 
           </div>
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
