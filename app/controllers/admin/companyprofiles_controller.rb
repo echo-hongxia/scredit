@@ -65,7 +65,7 @@ class Admin::CompanyprofilesController < ApplicationController
   # ---private---
 
   def companyprofile_params
-    params.require(:companyprofile).permit(:title, :description)
+    params.require(:companyprofile).permit(:title, :description,:image)
   end
 
 end

@@ -191,6 +191,15 @@
       font-size: 15px;
   }
 
+  // banner 图片样式
+  .carousel-inner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    line-height: 1;
+  }
+
   //首页主题内容样式
   .landing-page-topic{                                   //给图片整好形
     //height: 534px;

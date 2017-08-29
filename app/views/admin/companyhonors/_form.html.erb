@@ -1,8 +1,8 @@
 <%= simple_form_for [:admin, @companyhonor] do |f| %>
   <div class="form-group">
-    
 
-    <%= f.input :description, as: :wysihtml5, :label => "内容" %>
+
+    <%= f.input :description, as: :ckeditor, :label => "内容" %>
 
     <hr>
 

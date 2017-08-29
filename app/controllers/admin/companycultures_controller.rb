@@ -65,7 +65,7 @@ class Admin::CompanyculturesController < ApplicationController
   # ---private---
 
   def companyculture_params
-    params.require(:companyculture).permit(:description)
+    params.require(:companyculture).permit(:description,:title,:image)
   end
 
 end

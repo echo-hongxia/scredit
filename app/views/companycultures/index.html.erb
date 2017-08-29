@@ -21,10 +21,22 @@
 
               <!-- 文章列表标题、作者、日期 -->
               <div class="col-md-12">
-
-                <div class="">
+                <div class="companyculture-description">
                   <%= raw companyculture.description %>
                 </div>
+                <div class="companyculture-img">
+                  <% if companyculture.image.present? %>
+                    <%= link_to image_tag(companyculture.image.companycultureimg.url, class: "product-list-style-img img-responsive"), "#" %>
+                  <% else %>
+                    <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "product-list-style-img img-responsive"), "#"%>
+                  <% end %>
+                </div>
+
+                <div class="">
+                  <%= raw companyculture.title %>
+                </div>
+
+
               </div>
 
             </div>

@@ -8,7 +8,7 @@ class CompanyhonorsController < ApplicationController
   def index
     @companyhonors = Companyhonor.order("created_at DESC")
 
-        
+
   end
 
 
@@ -19,6 +19,6 @@ class CompanyhonorsController < ApplicationController
   private
 
   def companyhonor_params
-    params.require(:companyhonor).permit(:description)
+    params.require(:companyhonor).permit(:description,:title,:image)
   end
 end
