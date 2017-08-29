@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170826032749) do
+ActiveRecord::Schema.define(version: 20170829023432) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "image"
@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 20170826032749) do
     t.string   "pic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "img_url"
+    t.string   "img_link"
   end
 
   create_table "cart_items", force: :cascade do |t|
@@ -96,6 +98,36 @@ ActiveRecord::Schema.define(version: 20170826032749) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "club_collections", force: :cascade do |t|
+    t.integer  "club_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "club_reviews", force: :cascade do |t|
+    t.string   "comment"
+    t.integer  "club_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "club_votes", force: :cascade do |t|
+    t.integer  "club_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  create_table "clubs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "collections", force: :cascade do |t|

@@ -4,10 +4,11 @@
   <thead>
     <tr>
       <td>ID</td>
-      <td>轮播顺序</td>
-      <td>轮播图片</td>
-      <td>配图文字</td>
-      <td>修改轮播</td>
+      <td>图片顺序</td>
+      <td>广告图片</td>
+      <td>广告文字</td>
+      <td>广告链接</td>
+      <td>操作</td>
     </tr>
   </thead>
   <tbody>
@@ -17,12 +18,13 @@
         <td><%= banner.name %></td>
         <td>
           <% if banner.pic.present? %>
-            <%= image_tag(banner.pic, class: "thumbnail minipic") %>
+            <%= image_tag(banner.img_url, class: "thumbnail minipic") %>
           <% else %>
             <%= image_tag("http://placehold.it/200x200&text=No Pic", class:"thumbnail") %>
           <% end %>
         </td>
         <td><%= raw banner.title %></td>
+        <td><%= banner.img_link %></td>
         <td><%= link_to("Edit", edit_admin_banner_path(banner)) %></td>
 
 

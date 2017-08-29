@@ -23,7 +23,7 @@ class Admin::BannersController < ApplicationController
   private
 
   def banner_params
-    params.require(:banner).permit(:title,:pic)
+    params.require(:banner).permit(:title,:pic,:img_link,:img_url)
   end
 
 end
