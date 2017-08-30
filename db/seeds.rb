@@ -132,7 +132,7 @@ end
 
   Banner.create!(
     name: "轮播图片1",
-    title: "请到后台修改"
+    title: "请到后台修改",
   )
 
   Banner.create!(

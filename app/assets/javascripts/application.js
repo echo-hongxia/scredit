@@ -70,6 +70,7 @@ function browserRedirect() {
         //alert("pctest");
         // $(".navbar-rwd").removeClass("navbar-rwd");
         $(".header-logo-phone").hide();
+        $(".navbar-header").hide();
         $(".fade-carousel").css("height","616px");
         $(".fade-carousel .carousel-inner .item ").css("height","616px");
         $(".slide-1").css("height","616px");

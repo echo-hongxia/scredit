@@ -19,6 +19,6 @@ class EliteteamsController < ApplicationController
   private
 
   def eliteteam_params
-    params.require(:eliteteam).permit(:description)
+    params.require(:eliteteam).permit(:description,:title,:image)
   end
 end
