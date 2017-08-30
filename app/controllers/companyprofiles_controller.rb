@@ -7,8 +7,10 @@ class CompanyprofilesController < ApplicationController
 
   def index
     @companyprofiles = Companyprofile.order("created_at DESC")
+  end
 
-
+  def show
+    @companyprofile = Companyprofile.find(params[:id])
   end
 
 

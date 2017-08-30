@@ -68,7 +68,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :eliteteamimg do
-    process resize_to_fit: [400, 400]
+    process resize_to_fit: [800, 600]
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

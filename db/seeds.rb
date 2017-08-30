@@ -130,19 +130,24 @@ end
 
 
 
-  Banner.create!(
-    name: "轮播图片1",
-    title: "请到后台修改",
+  Companyprofile.create!(
+    titie:"公司介绍",
+    description:"武汉尚德信出国咨询有限公司自成立以来一直专注于海外投资移民业务，
+    以专业的外籍律师团队、完善的客户服务体系、贴心的海外安家服务，
+    与战略合作伙伴携手为客户提供高品质、诚信的海外投资移民咨询、文案制作、海外接待以及多种增值服务，
+    立志让所有尚德信投资移民的客户都享受到尊贵的一站式专属移民服务。"
   )
-
-  Banner.create!(
-    name: "轮播图片2",
-    title: "请到后台修改"
-  )
-
-  Banner.create!(
-    name: "轮播图片3",
-    title: "请到后台修改"
+  Companyprofile.create!(
+    titie:"联系我们"
+    description:"武汉尚德信出国咨询有限公司  
+       服务热线：027-59239771
+       24小时出国咨询热线：13971188229
+       官方微博：@武汉尚德信出国咨询有限公司
+       手机官方网站：m.sdxvisa.com
+       地址：湖北省武汉市江汉区新华路151号纽宾凯国际酒店25楼2503室
+       E-mail：whsdx@sdxvisa.com   传真：027-59239770    邮编：430022
+       下方关注尚德信官方微信，了解更多移民动态
+       微信公众号：sdxvisa"
   )
 
   PicCategory.create!(
@@ -163,6 +168,57 @@ end
   PicCategory.create!(
     name: "其他移民楼层图",
   )
+
+
+  Banner.create!(
+    name: "轮播图片1",
+    title: "请到后台修改",
+    category_id: 1,
+    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+
+  )
+
+  Banner.create!(
+    name: "轮播图片2",
+    title: "请到后台修改"
+    category_id: 1,
+    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  )
+
+  Banner.create!(
+    name: "轮播图片3",
+    title: "请到后台修改"
+    category_id: 1,
+    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  )
+
+  Banner.create!(
+    name: "轮播图片3",
+    title: "请到后台修改"
+    category_id: 1,
+    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  )
+
+  Banner.create!(
+    name: "轮播图片3",
+    title: "请到后台修改"
+    category_id: 1,
+    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  )
+
+  Banner.create!(
+    name: "轮播图片3",
+    title: "请到后台修改"
+    category_id: 1,
+    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  )
+
 
 
 #种子样例

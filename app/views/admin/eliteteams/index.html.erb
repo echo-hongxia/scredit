@@ -14,10 +14,10 @@
     <thead>
       <tr>
         <td>ID</td>
-
-
+        <td>封面</td>
+        <td>标题</td>
         <td>更新时间</td>
-        <td>编辑</td>
+        <td>操作</td>
 
 
 
@@ -26,11 +26,17 @@
     <tbody>
       <% @eliteteams.each do |eliteteam| %>
         <tr>
-          <td><%= link_to(eliteteam.id, eliteteams_path) %></td>
-
-
-
-
+          <td><%= eliteteam.id %></td>
+          <td>
+            <%= link_to admin_eliteteam_path(eliteteam) do %>
+              <% if eliteteam.image.present? %>
+                <%= image_tag(eliteteam.image.avatar.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/100x100&text=No Pic", class:"thumbnail") %>
+              <% end %>
+            <% end %>
+          </td>
+          <td><%= eliteteam.title %></td>
           <td><%= eliteteam.updated_at %></td>
           <td>
             <%= link_to("Edit", edit_admin_eliteteam_path(eliteteam)) %> |

@@ -1,9 +1,8 @@
 <%= simple_form_for [:admin, @eliteteam] do |f| %>
   <div class="form-group">
-
-
+    <%= f.input :title, :label => "标题" %>
+    <%= f.input :image, as: :file, :label => "封面(要求：400px*400px)" %>
     <%= f.input :description, as: :ckeditor, :label => "内容" %>
-
     <hr>
 
   </div>
