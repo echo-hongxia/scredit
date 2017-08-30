@@ -149,7 +149,34 @@ end
        下方关注尚德信官方微信，了解更多移民动态
        微信公众号：sdxvisa",
   )
-  puts "新建公司简介&联系我们"
+  puts "新建公司简介&联系我们."
+
+  ArticleCategory.create!{
+     name: "企业动态",
+  }
+
+  ArticleCategory.create!{
+     name: "行业动态",
+  }
+
+  ArticleCategory.create!{
+     name: "移民知识",
+  }
+  puts "创建资讯分类。"
+
+  CountryCategory.create!{
+    title: "北美国家",
+  }
+  CountryCategory.create!{
+    title: "欧洲国家",
+  }
+  CountryCategory.create!{
+    title: "大洋洲国家",
+  }
+  CountryCategory.create!{
+    title: "护照其他国家",
+  }
+  puts "创建广告分类。"
 
   PicCategory.create!(
     name: "首页轮播图",
@@ -170,6 +197,7 @@ end
     name: "其他移民楼层图",
   )
 puts "创建广告分类。"
+
 
   Banner.create!(
     name: "轮播图片1",
@@ -220,7 +248,48 @@ puts "创建广告分类。"
     img_link: "/products/1",
   )
 
+  Banner.create!(
+    name: "轮播图片7",
+    title: "请到后台修改",
+    category_id: 3,
+    img_url: "https://i.loli.net/2017/08/28/59a396e3a6d3a.png",
+    img_link: "/products/1",
+  )
+
 puts "初始化广告图数据。"
+
+Sitelink.create!{
+  site_title: "美国移民局",
+  site_link: "http://www.baidu.com",
+
+}
+Sitelink.create!{
+  site_title: "美国驻广州总领事馆",
+  site_link: "http://www.baidu.com",
+
+}
+Sitelink.create!{
+  site_title: "美国移民局",
+  site_link: "http://www.baidu.com",
+}
+Sitelink.create!{
+  site_title: "加拿大移民局",
+  site_link: "http://www.baidu.com",
+}
+Sitelink.create!{
+  site_title: "美国签证中心",
+  site_link: "http://www.baidu.com",
+}
+Sitelink.create!{
+  site_title: "香港出入境事务处",
+  site_link: "http://www.baidu.com",
+}
+Sitelink.create!{
+  site_title: "加拿大签证中心",
+  site_link: "http://www.baidu.com",
+}
+
+
 
 #种子样例
 # Product.create!(title: "小型琴叶榕",
