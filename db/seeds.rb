@@ -182,7 +182,7 @@ puts "创建广告分类。"
 
   Banner.create!(
     name: "轮播图片2",
-    title: "请到后台修改"
+    title: "请到后台修改",
     category_id: 1,
     img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
     img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
@@ -190,7 +190,7 @@ puts "创建广告分类。"
 
   Banner.create!(
     name: "轮播图片3",
-    title: "请到后台修改"
+    title: "请到后台修改",
     category_id: 1,
     img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
     img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
@@ -198,7 +198,7 @@ puts "创建广告分类。"
 
   Banner.create!(
     name: "轮播图片4",
-    title: "请到后台修改"
+    title: "请到后台修改",
     category_id: 1,
     img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
     img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
@@ -206,18 +206,18 @@ puts "创建广告分类。"
 
   Banner.create!(
     name: "轮播图片5",
-    title: "请到后台修改"
+    title: "请到后台修改",
     category_id: 1,
     img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
     img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
   )
 
   Banner.create!(
-    name: "轮播图片3",
-    title: "请到后台修改"
-    category_id: 1,
-    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
-    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+    name: "轮播图片6",
+    title: "请到后台修改",
+    category_id: 3,
+    img_url: "https://i.loli.net/2017/08/28/59a396bca1022.png",
+    img_link: "/products/1",
   )
 
 puts "初始化广告图数据。"
