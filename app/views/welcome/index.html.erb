@@ -290,27 +290,29 @@
                 <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
               </div>
               <script>
-                //默认样式浮动事件
-                $(".img-rela.rela1").hover(function(){
-                  var obj =$(this); //保存当前对象
-                  $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
-                  $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
-                    'width':"92%"
-                  },300);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"0"
-                  },300);
-                },function(){
-                  var obj =$(this);
-                  $(this).find(".font-line").animate({
-                    'width':"0"
-                  },100);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"100%"
-                  },100,function(){ //该动画完成后，将font-title隐藏
-                    $(obj).find(".font-title").hide();
-                  });
-                })
+              $(function(){
+                  //默认样式浮动事件
+                  $(".img-rela.rela1").hover(function(){
+                    var obj =$(this); //保存当前对象
+                    $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                    $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                      'width':"92%"
+                    },300);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"0"
+                    },300);
+                  },function(){
+                    var obj =$(this);
+                    $(this).find(".font-line").animate({
+                      'width':"0"
+                    },100);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"100%"
+                    },100,function(){ //该动画完成后，将font-title隐藏
+                      $(obj).find(".font-title").hide();
+                    });
+                  })
+              });
               </script>
             </div>
           </div>
@@ -396,10 +398,6 @@
           </div>
         </div>
 
-        <!-- <p  class="titspan text-center">
-          180万人民币起购房享欧洲福利 <br>
-          帮助您构建海外资产蓝图
-        </p> -->
 
          <h4 class="text-center tagp">
              精选欧洲移民项目
@@ -407,17 +405,23 @@
 
         <div class="container">
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <style>
+            <!--<style>
               .img-rela {position:relative;}
               .img-rela .img-rela-bg {position:absolute;top:0;left:0;bottom:0;right: 0;display: none;background: #333; opacity: 0.5;z-index: 1;}
               .img-rela .img-rela-font {position:absolute;top:45%;left:0;bottom:0;right: 0;display: none;z-index: 2;text-align: center;color: white;font-size: 18px;}
               .img-rela:hover .img-rela-bg{display: block;}
               .img-rela:hover .img-rela-font{display: block;}
-            </style>
-            <div class="img-rela">
+            </style>-->
+            <div class="img-rela anim1 rela1">
               <%= image_tag("https://i.loli.net/2017/08/28/59a4058aebcb6.png", class: "img-responsive img-center frontpage-img") %>
               <div class="img-rela-bg"></div>
-              <div class="img-rela-font">爱尔兰移民</div>
+              <div class="img-rela-font">
+                <div class="font-title">爱尔兰移民</div>
+                <hr class="font-line">
+                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+              </div>
+
+              
             </div>
             <div class="img-rela" style="margin-top:10px;background-color:#e09576;" >
               <%= image_tag("https://i.loli.net/2017/08/28/59a405ae81977.png", class: "img-responsive img-center frontpage-img") %>
@@ -462,10 +466,38 @@
               <div class="img-rela-bg"></div>
               <div class="img-rela-font">法国移民</div>
             </div>
-            <div class="img-rela" style="margin-top:10px;">
+            <div class="img-rela anim1 rela4" style="margin-top:10px;">
               <%= image_tag("https://i.loli.net/2017/08/28/59a406910bab9.png", class: "img-responsive img-center frontpage-img") %>
               <div class="img-rela-bg"></div>
-              <div class="img-rela-font">英国移民</div>
+              <div class="img-rela-font">
+                <div class="font-title">英国移民</div>
+                <hr class="font-line">
+                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+              </div>
+
+              <script>
+                //默认样式浮动事件
+                $(".img-rela.rela4").hover(function(){
+                  var obj =$(this); //保存当前对象
+                  $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                  $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                    'width':"92%"
+                  },300);
+                  $(this).find(".font-content").animate({
+                    'marginLeft':"0"
+                  },300);
+                },function(){
+                  var obj =$(this);
+                  $(this).find(".font-line").animate({
+                    'width':"0"
+                  },100);
+                  $(this).find(".font-content").animate({
+                    'marginLeft':"100%"
+                  },100,function(){ //该动画完成后，将font-title隐藏
+                    $(obj).find(".font-title").hide();
+                  });
+                })
+              </script>
             </div>
           </div>
         </div>
@@ -490,10 +522,6 @@
           </div>
         </div>
 
-        <!-- <p  class="titspan text-center">
-          180万人民币起购房享欧洲福利 <br>
-          帮助您构建海外资产蓝图
-        </p> -->
 
          <h4 class="text-center tagp">
              精选欧洲移民项目
@@ -524,10 +552,37 @@
               .img-rela:hover .img-rela-bg{display: block;}
               .img-rela:hover .img-rela-font{display: block;}
             </style>
-            <div class="img-rela">
+            <div class="img-rela anim1 rela6">
               <%= image_tag("https://i.loli.net/2017/08/28/59a40768b0a96.png", class: "img-responsive img-center frontpage-img") %>
               <div class="img-rela-bg"></div>
-              <div class="img-rela-font">澳大利亚移民</div>
+              <div class="img-rela-font">
+                <div class="font-title">澳大利亚移民</div>
+                <hr class="font-line">
+                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+              </div>
+              <script>
+                //默认样式浮动事件
+                $(".img-rela.rela6").hover(function(){
+                  var obj =$(this); //保存当前对象
+                  $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                  $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                    'width':"92%"
+                  },300);
+                  $(this).find(".font-content").animate({
+                    'marginLeft':"0"
+                  },300);
+                },function(){
+                  var obj =$(this);
+                  $(this).find(".font-line").animate({
+                    'width':"0"
+                  },100);
+                  $(this).find(".font-content").animate({
+                    'marginLeft':"100%"
+                  },100,function(){ //该动画完成后，将font-title隐藏
+                    $(obj).find(".font-title").hide();
+                  });
+                })
+              </script>
             </div>
             <div class="img-rela" style="margin-top:10px;" >
               <%= image_tag("https://i.loli.net/2017/08/28/59a407689f706.png", class: "img-responsive img-center frontpage-img") %>
@@ -550,10 +605,39 @@
           </div>
 
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela">
+            <div class="img-rela anim1 rela5">
               <%= image_tag("https://i.loli.net/2017/08/28/59a4070368e04.png", class: "img-responsive img-center frontpage-img") %>
               <div class="img-rela-bg"></div>
-              <div class="img-rela-font">新西兰移民</div>
+
+              <div class="img-rela-font">
+                <div class="font-title">新西兰移民</div>
+                <hr class="font-line">
+                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+              </div>
+
+              <script>
+                //默认样式浮动事件
+                $(".img-rela.rela5").hover(function(){
+                  var obj =$(this); //保存当前对象
+                  $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                  $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                    'width':"92%"
+                  },300);
+                  $(this).find(".font-content").animate({
+                    'marginLeft':"0"
+                  },300);
+                },function(){
+                  var obj =$(this);
+                  $(this).find(".font-line").animate({
+                    'width':"0"
+                  },100);
+                  $(this).find(".font-content").animate({
+                    'marginLeft':"100%"
+                  },100,function(){ //该动画完成后，将font-title隐藏
+                    $(obj).find(".font-title").hide();
+                  });
+                })
+              </script>
             </div>
 
           </div>
@@ -579,10 +663,7 @@
           </div>
         </div>
 
-        <!-- <p  class="titspan text-center">
-          180万人民币起购房享欧洲福利 <br>
-          帮助您构建海外资产蓝图
-        </p> -->
+
 
          <h4 class="text-center tagp">
              精选欧洲移民项目
@@ -596,10 +677,37 @@
               .img-rela:hover .img-rela-bg{display: block;}
               .img-rela:hover .img-rela-font{display: block;}
             </style>
-            <div class="img-rela">
+            <div class="img-rela  anim1 rela7">
               <%= image_tag("https://i.loli.net/2017/08/28/59a408278fec4.png", class: "img-responsive img-center frontpage-img") %>
               <div class="img-rela-bg"></div>
-              <div class="img-rela-font">圣基茨移民</div>
+              <div class="img-rela-font">
+                <div class="font-title">圣基茨移民</div>
+                <hr class="font-line">
+                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+              </div>
+              <script>
+                //默认样式浮动事件
+                $(".img-rela.rela7").hover(function(){
+                  var obj =$(this); //保存当前对象
+                  $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                  $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                    'width':"92%"
+                  },300);
+                  $(this).find(".font-content").animate({
+                    'marginLeft':"0"
+                  },300);
+                },function(){
+                  var obj =$(this);
+                  $(this).find(".font-line").animate({
+                    'width':"0"
+                  },100);
+                  $(this).find(".font-content").animate({
+                    'marginLeft':"100%"
+                  },100,function(){ //该动画完成后，将font-title隐藏
+                    $(obj).find(".font-title").hide();
+                  });
+                })
+              </script>
             </div>
 
           </div>
@@ -622,10 +730,37 @@
               <div class="img-rela-bg"></div>
               <div class="img-rela-font">移民优势</div>
             </div>
-            <div class="img-rela" style="margin-top:10px;">
+            <div class="img-rela anim1 rela8" style="margin-top:10px;">
               <%= image_tag("https://i.loli.net/2017/08/28/59a4087accf95.png", class: "img-responsive img-center frontpage-img") %>
               <div class="img-rela-bg"></div>
-              <div class="img-rela-font">安提瓜移民</div>
+              <div class="img-rela-font">
+                <div class="font-title">安提瓜移民</div>
+                <hr class="font-line">
+                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+              </div>
+              <script>
+                //默认样式浮动事件
+                $(".img-rela.rela8").hover(function(){
+                  var obj =$(this); //保存当前对象
+                  $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                  $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                    'width':"92%"
+                  },300);
+                  $(this).find(".font-content").animate({
+                    'marginLeft':"0"
+                  },300);
+                },function(){
+                  var obj =$(this);
+                  $(this).find(".font-line").animate({
+                    'width':"0"
+                  },100);
+                  $(this).find(".font-content").animate({
+                    'marginLeft':"100%"
+                  },100,function(){ //该动画完成后，将font-title隐藏
+                    $(obj).find(".font-title").hide();
+                  });
+                })
+              </script>
             </div>
           </div>
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
