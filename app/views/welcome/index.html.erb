@@ -17,7 +17,8 @@
       <!-- 文案部分 -->
       <div class="carousel-inner">
          <div class="item slides active">
-           <%= link_to image_tag(Banner.find(1).img_url, class:  "slide-1"),Banner.find(1).img_link,target: "_blank"  %>
+           <!-- <%= link_to image_tag(Banner.find(1).img_url, class:  "slide-1"),Banner.find(1).img_link,target: "_blank"  %> -->
+           <%= link_to image_tag(Banner.find(1).pic.url, class:  "slide-1"),Banner.find(1).img_link,target: "_blank"  %>
            <div class="hero row">
              <hgroup>
                <%= raw Banner.find(1).title %>
@@ -232,11 +233,6 @@
             <img src="https://i.loli.net/2017/08/28/59a3797962a8f.png" alt="" width="60%">
           </div>
         </div>
-
-        <!-- <p  class="titspan text-center">
-          180万人民币起购房享欧洲福利 <br>
-          帮助您构建海外资产蓝图
-        </p> -->
 
          <h4 class="text-center tagp">
              精选欧洲移民项目
@@ -609,7 +605,7 @@
           </div>
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
             <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a40851d1bf9.png", class: "img-responsive img-center frontpage-img") %>
+              <%= image_tag("https://i.loli.net/2017/09/01/59a900a8ac048.png", class: "img-responsive img-center frontpage-img") %>
               <div class="img-rela-bg"></div>
               <div class="img-rela-font">格林纳达移民</div>
             </div>
