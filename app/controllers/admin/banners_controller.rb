@@ -50,7 +50,7 @@ class Admin::BannersController < ApplicationController
   private
 
   def banner_params
-    params.require(:banner).permit(:title,:pic,:img_link,:img_url,:category_id)
+    params.require(:banner).permit(:title,:pic,:img_link,:img_url,:category_id,:description)
   end
 
 end
