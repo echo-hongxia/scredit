@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901125946) do
+ActiveRecord::Schema.define(version: 20170901131915) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "image"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20170901125946) do
     t.string   "img_link"
     t.integer  "category_id", default: 1
     t.text     "description"
+    t.string   "position"
   end
 
   create_table "cart_items", force: :cascade do |t|

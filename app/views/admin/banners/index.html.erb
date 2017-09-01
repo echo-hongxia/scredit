@@ -18,6 +18,7 @@
     <tr>
       <td>ID</td>
       <td>图片分类</td>
+      <td>图片位置</td>
       <td>广告图片</td>
       <td>广告图片链接</td>
       <td>广告文字</td>
@@ -30,6 +31,7 @@
       <tr>
         <td><%= banner.id %></td>
         <td><%= PicCategory.find(banner.category_id).name %></td>
+        <td><%= banner.position %></td>
         <td>
           <% if banner.pic.present? %>
             <%= image_tag(banner.pic, class: "thumbnail minipic") %>
