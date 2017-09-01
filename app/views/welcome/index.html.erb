@@ -18,7 +18,11 @@
       <div class="carousel-inner">
          <div class="item slides active">
            <!-- <%= link_to image_tag(Banner.find(1).img_url, class:  "slide-1"),Banner.find(1).img_link,target: "_blank"  %> -->
-           <%= link_to image_tag(Banner.find(1).pic.url, class:  "slide-1"),Banner.find(1).img_link,target: "_blank"  %>
+           <% if Banner.find(1).pic.present? %>
+              <%= link_to image_tag(Banner.find(1).pic.url, class:  "slide-1"),Banner.find(1).img_link,target: "_blank"  %>
+           <% else %>
+             <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "slide-1"),"#" %>
+           <% end %>
            <div class="hero row">
              <hgroup>
                <%= raw Banner.find(1).title %>
@@ -28,7 +32,11 @@
          </div>
 
          <div class="item slides">
-          <%= link_to image_tag(Banner.find(2).img_url, class:  "slide-2"),Banner.find(2).img_link,target: "_blank"  %>
+           <% if Banner.find(2).pic.present? %>
+              <%= link_to image_tag(Banner.find(2).pic.url, class:  "slide-1"),Banner.find(2).img_link,target: "_blank"  %>
+           <% else %>
+             <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "slide-2"),"#" %>
+           <% end %>
              <div class="hero">
                <hgroup>
                  <%= raw Banner.find(2).title %>
@@ -38,7 +46,11 @@
          </div>
          <div class="item slides">
 
-            <%= link_to image_tag(Banner.find(3).img_url, class:  "slide-3"),Banner.find(3).img_link,target: "_blank"  %>
+           <% if Banner.find(3).pic.present? %>
+              <%= link_to image_tag(Banner.find(3).pic.url, class:  "slide-1"),Banner.find(3).img_link,target: "_blank"  %>
+           <% else %>
+             <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "slide-3"),"#" %>
+           <% end %>
              <div class="hero">
                <hgroup>
                  <%= raw Banner.find(3).title %>
@@ -48,7 +60,11 @@
          </div>
          <div class="item slides">
 
-            <%= link_to image_tag(Banner.find(4).img_url, class:  "slide-4"),Banner.find(4).img_link,target: "_blank"  %>
+           <% if Banner.find(4).pic.present? %>
+              <%= link_to image_tag(Banner.find(4).pic.url, class:  "slide-3"),Banner.find(4).img_link,target: "_blank"  %>
+           <% else %>
+             <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "slide-1"),"#" %>
+           <% end %>
              <div class="hero">
                <hgroup>
                  <%= raw Banner.find(4).title %>
@@ -58,7 +74,11 @@
          </div>
          <div class="item slides">
 
-            <%= link_to image_tag(Banner.find(5).img_url, class:  "slide-3"),Banner.find(5).img_link,target: "_blank"  %>
+           <% if Banner.find(5).pic.present? %>
+              <%= link_to image_tag(Banner.find(5).pic.url, class:  "slide-1"),Banner.find(5).img_link,target: "_blank"  %>
+           <% else %>
+             <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "slide-1"),"#" %>
+           <% end %>
              <div class="hero">
                <hgroup>
                  <%= raw Banner.find(5).title %>
@@ -235,21 +255,30 @@
         </div>
 
          <h4 class="text-center tagp">
-             精选欧洲移民项目
+             精选北美移民项目
          </h4>
         <div class="container">
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
             <%= link_to Banner.find(6).img_link do%>
               <div class="img-rela">
                 <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a396bca1022.png", class: "img-responsive img-center frontpage-img") %> -->
-                <%= image_tag(Banner.find(6).img_url, class: "img-responsive img-center frontpage-img") %>
+
+                <% if Banner.find(6).pic.present? %>
+                   <%= link_to image_tag(Banner.find(6).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
                 <div class="img-rela-bg"></div>
                 <div class="img-rela-font"><%= raw Banner.find(6).title %></div>
               </div>
             <% end %>
             <%= link_to Banner.find(7).img_link do%>
               <div class="img-rela" style="margin-top:10px;">
-                <%= image_tag(Banner.find(7).img_url, class: "img-responsive img-center frontpage-img") %>
+                <% if Banner.find(7).pic.present? %>
+                   <%= link_to image_tag(Banner.find(7).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
                 <div class="img-rela-bg"></div>
                 <div class="img-rela-font"><%= raw Banner.find(7).title %></div>
               </div>
@@ -281,100 +310,143 @@
               .img-rela.anim1.rela2:hover .img-rela-font .font-title{display: block; }
               /*------------------------------------声东击西.end--------------------------------------------*/
             </style>
-            <div class="img-rela anim1 rela1">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a3970fa2ca7.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">
-                <div class="font-title">美国移民</div>
-                <hr class="font-line">
-                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+              <%= link_to Banner.find(8).img_link do %>
+                <div class="img-rela anim1 rela1">
+                  <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a3970fa2ca7.png", class: "img-responsive img-center frontpage-img") %> -->
+                  <% if Banner.find(8).pic.present? %>
+                     <%= link_to image_tag(Banner.find(8).pic.url, class: "img-responsive img-center frontpage-img")%>
+                  <% else %>
+                    <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                  <% end %>
+
+                  <div class="img-rela-bg"></div>
+                  <div class="img-rela-font">
+                    <div class="font-title">美国移民</div>
+                    <hr class="font-line">
+                    <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+                  </div>
+                  <script>
+                  $(function(){
+                      //默认样式浮动事件
+                      $(".img-rela.rela1").hover(function(){
+                        var obj =$(this); //保存当前对象
+                        $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                        $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                          'width':"92%"
+                        },300);
+                        $(this).find(".font-content").animate({
+                          'marginLeft':"0"
+                        },300);
+                      },function(){
+                        var obj =$(this);
+                        $(this).find(".font-line").animate({
+                          'width':"0"
+                        },100);
+                        $(this).find(".font-content").animate({
+                          'marginLeft':"100%"
+                        },100,function(){ //该动画完成后，将font-title隐藏
+                          $(obj).find(".font-title").hide();
+                        });
+                      })
+                  });
+                  </script>
+                </div>
+             <% end %>
+          </div>
+
+          <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
+            <%= link_to Banner.find(9).img_link do %>
+              <div class="img-rela">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397545cb54.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(9).pic.present? %>
+                   <%= link_to image_tag(Banner.find(9).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">色块</div>
               </div>
-              <script>
-              $(function(){
-                  //默认样式浮动事件
-                  $(".img-rela.rela1").hover(function(){
-                    var obj =$(this); //保存当前对象
-                    $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
-                    $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+            <% end %>
+            <%= link_to Banner.find(10).img_link do %>
+              <div class="img-rela anim1 rela2" style="margin-top:10px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397547ce6c.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(10).pic.present? %>
+                   <%= link_to image_tag(Banner.find(10).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">加拿大移民
+                </div>
+                <script>
+                  //
+                  $(".img-rela.rela2").hover(function(){  //指定对象的浮动事件
+                    $(".img-rela.rela3 .font-title").show();  //需要显示的对象的font-title元素显示
+                    $(".img-rela.rela3 .img-rela-bg").show();
+                    $(".img-rela.rela3").find(".font-line").show().animate({
                       'width':"92%"
                     },300);
-                    $(this).find(".font-content").animate({
+                    $(".img-rela.rela3").find(".font-content").show().animate({
                       'marginLeft':"0"
                     },300);
                   },function(){
-                    var obj =$(this);
-                    $(this).find(".font-line").animate({
+                    $(".img-rela.rela3").find(".font-line").animate({
                       'width':"0"
                     },100);
-                    $(this).find(".font-content").animate({
+                    $(".img-rela.rela3").find(".font-content").animate({
                       'marginLeft':"100%"
-                    },100,function(){ //该动画完成后，将font-title隐藏
-                      $(obj).find(".font-title").hide();
+                    },100,function(){
+                      $(".img-rela.rela3 .img-rela-bg").hide();
+                      $(".img-rela.rela3 .font-title").hide();
                     });
                   })
-              });
-              </script>
-            </div>
-          </div>
-
-          <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a397545cb54.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">色块</div>
-            </div>
-            <div class="img-rela anim1 rela2" style="margin-top:10px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a397547ce6c.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">加拿大移民
+                </script>
               </div>
-              <script>
-                //
-                $(".img-rela.rela2").hover(function(){  //指定对象的浮动事件
-                  $(".img-rela.rela3 .font-title").show();  //需要显示的对象的font-title元素显示
-                  $(".img-rela.rela3 .img-rela-bg").show();
-                  $(".img-rela.rela3").find(".font-line").show().animate({
-                    'width':"92%"
-                  },300);
-                  $(".img-rela.rela3").find(".font-content").show().animate({
-                    'marginLeft':"0"
-                  },300);
-                },function(){
-                  $(".img-rela.rela3").find(".font-line").animate({
-                    'width':"0"
-                  },100);
-                  $(".img-rela.rela3").find(".font-content").animate({
-                    'marginLeft':"100%"
-                  },100,function(){
-                    $(".img-rela.rela3 .img-rela-bg").hide();
-                    $(".img-rela.rela3 .font-title").hide();
-                  });
-                })
-              </script>
-            </div>
-
+            <% end %>
 
           </div>
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a397d0127c6.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">加拿大优势</div>
-            </div>
-            <div class="img-rela anim1 rela3" style="margin-top:5px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a397d01875b.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">
-                <div class="font-title">加拿大移民</div>
-                <hr class="font-line">
-                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+            <%= link_to Banner.find(11).img_link do %>
+              <div class="img-rela">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397d0127c6.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(11).pic.present? %>
+                   <%= link_to image_tag(Banner.find(11).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">加拿大优势</div>
               </div>
-            </div>
-            <div class="img-rela" style="margin-top:5px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a397d00b52e.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">色块</div>
-            </div>
+            <% end %>
+            <%= link_to Banner.find(12).img_link do %>
+              <div class="img-rela anim1 rela3" style="margin-top:5px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397d01875b.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(12).pic.present? %>
+                   <%= link_to image_tag(Banner.find(12).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">
+                  <div class="font-title">加拿大移民</div>
+                  <hr class="font-line">
+                  <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+                </div>
+              </div>
+            <% end %>
+            <%= link_to Banner.find(13).img_link do %>
+              <div class="img-rela" style="margin-top:5px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397d00b52e.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(13).pic.present? %>
+                   <%= link_to image_tag(Banner.find(13).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">色块</div>
+              </div>
+            <% end %>
           </div>
         </div>
 
@@ -405,100 +477,155 @@
 
         <div class="container">
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <!--<style>
-              .img-rela {position:relative;}
-              .img-rela .img-rela-bg {position:absolute;top:0;left:0;bottom:0;right: 0;display: none;background: #333; opacity: 0.5;z-index: 1;}
-              .img-rela .img-rela-font {position:absolute;top:45%;left:0;bottom:0;right: 0;display: none;z-index: 2;text-align: center;color: white;font-size: 18px;}
-              .img-rela:hover .img-rela-bg{display: block;}
-              .img-rela:hover .img-rela-font{display: block;}
-            </style>-->
-            <div class="img-rela anim1 rela1">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a4058aebcb6.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">
-                <div class="font-title">爱尔兰移民</div>
-                <hr class="font-line">
-                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+
+            <%= link_to Banner.find(14).img_link do %>
+              <div class="img-rela anim1 rela1">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a4058aebcb6.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(14).pic.present? %>
+                   <%= link_to image_tag(Banner.find(14).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">
+                  <div class="font-title">爱尔兰移民</div>
+                  <hr class="font-line">
+                  <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+                </div>
               </div>
-
-              
-            </div>
-            <div class="img-rela" style="margin-top:10px;background-color:#e09576;" >
-              <%= image_tag("https://i.loli.net/2017/08/28/59a405ae81977.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">塞浦路斯移民</div>
-            </div>
-
+            <% end %>
+            <%= link_to Banner.find(15).img_link do %>
+              <div class="img-rela" style="margin-top:10px;background-color:#e09576;" >
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a405ae81977.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(15).pic.present? %>
+                   <%= link_to image_tag(Banner.find(15).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">塞浦路斯移民</div>
+              </div>
+            <% end %>
           </div>
-          <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a404c367c65.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">希腊移民</div>
-            </div>
-            <div class="img-rela" style="margin-top:10px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a405e9d8291.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">西班牙移民</div>
-            </div>
 
-          </div>
+
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
+            <%= link_to Banner.find(16).img_link do %>
+              <div class="img-rela">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a404c367c65.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(16).pic.present? %>
+                   <%= link_to image_tag(Banner.find(16).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">希腊移民</div>
+              </div>
+            <% end %>
+            <%= link_to Banner.find(17).img_link do %>
+              <div class="img-rela" style="margin-top:10px;">
+                <% if Banner.find(17).pic.present? %>
+                   <%= link_to image_tag(Banner.find(17).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a405e9d8291.png", class: "img-responsive img-center frontpage-img") %> -->
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">西班牙移民</div>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
+            <%= link_to Banner.find(18).img_link do %>
             <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a405e9d16ca.png", class: "img-responsive img-center frontpage-img") %>
+              <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a405e9d16ca.png", class: "img-responsive img-center frontpage-img") %> -->
+              <% if Banner.find(18).pic.present? %>
+                 <%= link_to image_tag(Banner.find(18).pic.url, class: "img-responsive img-center frontpage-img")%>
+              <% else %>
+                <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+              <% end %>
               <div class="img-rela-bg"></div>
               <div class="img-rela-font">葡萄牙移民</div>
             </div>
-            <div class="img-rela" style="margin-top:5px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a406626683e.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">马耳他移民</div>
-            </div>
-            <div class="img-rela" style="margin-top:5px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a406626a7b8.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">意大利移民</div>
-            </div>
+            <% end %>
+            <%= link_to Banner.find(19).img_link do %>
+              <div class="img-rela" style="margin-top:5px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a406626683e.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(19).pic.present? %>
+                   <%= link_to image_tag(Banner.find(19).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">马耳他移民</div>
+              </div>
+            <% end %>
+            <%= link_to Banner.find(20).img_link do %>
+              <div class="img-rela" style="margin-top:5px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a406626a7b8.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(20).pic.present? %>
+                   <%= link_to image_tag(Banner.find(20).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">意大利移民</div>
+              </div>
+            <% end %>
           </div>
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a40690f088c.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">法国移民</div>
-            </div>
-            <div class="img-rela anim1 rela4" style="margin-top:10px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a406910bab9.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">
-                <div class="font-title">英国移民</div>
-                <hr class="font-line">
-                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+            <%= link_to Banner.find(21).img_link do %>
+              <div class="img-rela">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a40690f088c.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(21).pic.present? %>
+                   <%= link_to image_tag(Banner.find(21).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">法国移民</div>
               </div>
-
-              <script>
-                //默认样式浮动事件
-                $(".img-rela.rela4").hover(function(){
-                  var obj =$(this); //保存当前对象
-                  $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
-                  $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
-                    'width':"92%"
-                  },300);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"0"
-                  },300);
-                },function(){
-                  var obj =$(this);
-                  $(this).find(".font-line").animate({
-                    'width':"0"
-                  },100);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"100%"
-                  },100,function(){ //该动画完成后，将font-title隐藏
-                    $(obj).find(".font-title").hide();
-                  });
-                })
-              </script>
-            </div>
+            <% end %>
+            <%= link_to Banner.find(22).img_link do %>
+              <div class="img-rela anim1 rela4" style="margin-top:10px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a406910bab9.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(22).pic.present? %>
+                   <%= link_to image_tag(Banner.find(22).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">
+                  <div class="font-title">英国移民</div>
+                  <hr class="font-line">
+                  <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+                </div>
+                <script>
+                  //默认样式浮动事件
+                  $(".img-rela.rela4").hover(function(){
+                    var obj =$(this); //保存当前对象
+                    $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                    $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                      'width':"92%"
+                    },300);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"0"
+                    },300);
+                  },function(){
+                    var obj =$(this);
+                    $(this).find(".font-line").animate({
+                      'width':"0"
+                    },100);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"100%"
+                    },100,function(){ //该动画完成后，将font-title隐藏
+                      $(obj).find(".font-title").hide();
+                    });
+                  })
+                </script>
+              </div>
+            <% end %>
           </div>
         </div>
 
@@ -528,21 +655,42 @@
          </h4>
         <div class="container">
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a40730ddd01.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">澳大利亚移民优势</div>
-            </div>
-            <div class="img-rela" style="margin-top:5px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a40730db33f.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">澳大利亚移民优势</div>
-            </div>
-            <div class="img-rela" style="margin-top:5px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a40730e45a4.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">澳大利亚移民优势</div>
-            </div>
+            <%= link_to Banner.find(23).img_link do %>
+              <div class="img-rela">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a40730ddd01.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(23).pic.present? %>
+                   <%= link_to image_tag(Banner.find(23).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">澳大利亚移民优势</div>
+              </div>
+            <% end %>
+            <%= link_to Banner.find(24).img_link do %>
+              <div class="img-rela" style="margin-top:5px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a40730db33f.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(24).pic.present? %>
+                   <%= link_to image_tag(Banner.find(24).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">澳大利亚移民优势</div>
+              </div>
+            <% end %>
+            <%= link_to Banner.find(25).img_link do %>
+              <div class="img-rela" style="margin-top:5px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a40730e45a4.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(25).pic.present? %>
+                   <%= link_to image_tag(Banner.find(25).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">澳大利亚移民优势</div>
+              </div>
+            <% end %>
           </div>
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
             <style>
@@ -552,93 +700,127 @@
               .img-rela:hover .img-rela-bg{display: block;}
               .img-rela:hover .img-rela-font{display: block;}
             </style>
-            <div class="img-rela anim1 rela6">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a40768b0a96.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">
-                <div class="font-title">澳大利亚移民</div>
-                <hr class="font-line">
-                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+            <%= link_to Banner.find(26).img_link do %>
+              <div class="img-rela anim1 rela6">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a40768b0a96.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(26).pic.present? %>
+                   <%= link_to image_tag(Banner.find(26).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">
+                  <div class="font-title">澳大利亚移民</div>
+                  <hr class="font-line">
+                  <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+                </div>
+                <script>
+                  //默认样式浮动事件
+                  $(".img-rela.rela6").hover(function(){
+                    var obj =$(this); //保存当前对象
+                    $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                    $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                      'width':"92%"
+                    },300);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"0"
+                    },300);
+                  },function(){
+                    var obj =$(this);
+                    $(this).find(".font-line").animate({
+                      'width':"0"
+                    },100);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"100%"
+                    },100,function(){ //该动画完成后，将font-title隐藏
+                      $(obj).find(".font-title").hide();
+                    });
+                  })
+                </script>
               </div>
-              <script>
-                //默认样式浮动事件
-                $(".img-rela.rela6").hover(function(){
-                  var obj =$(this); //保存当前对象
-                  $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
-                  $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
-                    'width':"92%"
-                  },300);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"0"
-                  },300);
-                },function(){
-                  var obj =$(this);
-                  $(this).find(".font-line").animate({
-                    'width':"0"
-                  },100);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"100%"
-                  },100,function(){ //该动画完成后，将font-title隐藏
-                    $(obj).find(".font-title").hide();
-                  });
-                })
-              </script>
-            </div>
-            <div class="img-rela" style="margin-top:10px;" >
-              <%= image_tag("https://i.loli.net/2017/08/28/59a407689f706.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">色块</div>
-            </div>
+            <% end %>
+            <%= link_to Banner.find(27).img_link do %>
+              <div class="img-rela" style="margin-top:10px;" >
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a407689f706.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(27).pic.present? %>
+                   <%= link_to image_tag(Banner.find(27).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">色块</div>
+              </div>
+            <% end %>
           </div>
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a4079630730.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">新西兰移民优势</div>
-            </div>
-            <div class="img-rela" style="margin-top:10px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a407962d32b.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">新西兰移民项目</div>
-            </div>
-
+            <%= link_to Banner.find(28).img_link do %>
+              <div class="img-rela">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a4079630730.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(28).pic.present? %>
+                   <%= link_to image_tag(Banner.find(28).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">新西兰移民优势</div>
+              </div>
+            <% end %>
+            <%= link_to Banner.find(29).img_link do %>
+              <div class="img-rela" style="margin-top:10px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a407962d32b.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(29).pic.present? %>
+                   <%= link_to image_tag(Banner.find(29).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">新西兰移民项目</div>
+              </div>
+            <% end %>
           </div>
 
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela anim1 rela5">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a4070368e04.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
+            <%= link_to Banner.find(30).img_link do %>
+              <div class="img-rela anim1 rela5">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a4070368e04.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(30).pic.present? %>
+                   <%= link_to image_tag(Banner.find(30).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
 
-              <div class="img-rela-font">
-                <div class="font-title">新西兰移民</div>
-                <hr class="font-line">
-                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+                <div class="img-rela-font">
+                  <div class="font-title">新西兰移民</div>
+                  <hr class="font-line">
+                  <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+                </div>
+
+                <script>
+                  //默认样式浮动事件
+                  $(".img-rela.rela5").hover(function(){
+                    var obj =$(this); //保存当前对象
+                    $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                    $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                      'width':"92%"
+                    },300);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"0"
+                    },300);
+                  },function(){
+                    var obj =$(this);
+                    $(this).find(".font-line").animate({
+                      'width':"0"
+                    },100);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"100%"
+                    },100,function(){ //该动画完成后，将font-title隐藏
+                      $(obj).find(".font-title").hide();
+                    });
+                  })
+                </script>
               </div>
-
-              <script>
-                //默认样式浮动事件
-                $(".img-rela.rela5").hover(function(){
-                  var obj =$(this); //保存当前对象
-                  $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
-                  $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
-                    'width':"92%"
-                  },300);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"0"
-                  },300);
-                },function(){
-                  var obj =$(this);
-                  $(this).find(".font-line").animate({
-                    'width':"0"
-                  },100);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"100%"
-                  },100,function(){ //该动画完成后，将font-title隐藏
-                    $(obj).find(".font-title").hide();
-                  });
-                })
-              </script>
-            </div>
+            <% end %>
 
           </div>
         </div>
@@ -666,7 +848,7 @@
 
 
          <h4 class="text-center tagp">
-             精选欧洲移民项目
+             精选护照移民项目
          </h4>
         <div class="container">
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
@@ -677,108 +859,162 @@
               .img-rela:hover .img-rela-bg{display: block;}
               .img-rela:hover .img-rela-font{display: block;}
             </style>
-            <div class="img-rela  anim1 rela7">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a408278fec4.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">
-                <div class="font-title">圣基茨移民</div>
-                <hr class="font-line">
-                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+            <%= link_to Banner.find(31).img_link do %>
+              <div class="img-rela  anim1 rela7">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a408278fec4.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(31).pic.present? %>
+                   <%= link_to image_tag(Banner.find(31).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">
+                  <div class="font-title">圣基茨移民</div>
+                  <hr class="font-line">
+                  <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+                </div>
+                <script>
+                  //默认样式浮动事件
+                  $(".img-rela.rela7").hover(function(){
+                    var obj =$(this); //保存当前对象
+                    $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                    $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                      'width':"92%"
+                    },300);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"0"
+                    },300);
+                  },function(){
+                    var obj =$(this);
+                    $(this).find(".font-line").animate({
+                      'width':"0"
+                    },100);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"100%"
+                    },100,function(){ //该动画完成后，将font-title隐藏
+                      $(obj).find(".font-title").hide();
+                    });
+                  })
+                </script>
               </div>
-              <script>
-                //默认样式浮动事件
-                $(".img-rela.rela7").hover(function(){
-                  var obj =$(this); //保存当前对象
-                  $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
-                  $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
-                    'width':"92%"
-                  },300);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"0"
-                  },300);
-                },function(){
-                  var obj =$(this);
-                  $(this).find(".font-line").animate({
-                    'width':"0"
-                  },100);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"100%"
-                  },100,function(){ //该动画完成后，将font-title隐藏
-                    $(obj).find(".font-title").hide();
-                  });
-                })
-              </script>
-            </div>
-
+            <% end %>
           </div>
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/09/01/59a900a8ac048.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">格林纳达移民</div>
-            </div>
-            <div class="img-rela" style="margin-top:10px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a40851d9a75.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">多米尼克移民</div>
-            </div>
-
-          </div>
-          <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a4087abb69a.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">移民优势</div>
-            </div>
-            <div class="img-rela anim1 rela8" style="margin-top:10px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a4087accf95.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">
-                <div class="font-title">安提瓜移民</div>
-                <hr class="font-line">
-                <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+            <%= link_to Banner.find(32).img_link do %>
+              <div class="img-rela">
+                <!-- <%= image_tag("https://i.loli.net/2017/09/01/59a900a8ac048.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(32).pic.present? %>
+                   <%= link_to image_tag(Banner.find(32).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">格林纳达移民</div>
               </div>
-              <script>
-                //默认样式浮动事件
-                $(".img-rela.rela8").hover(function(){
-                  var obj =$(this); //保存当前对象
-                  $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
-                  $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
-                    'width':"92%"
-                  },300);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"0"
-                  },300);
-                },function(){
-                  var obj =$(this);
-                  $(this).find(".font-line").animate({
-                    'width':"0"
-                  },100);
-                  $(this).find(".font-content").animate({
-                    'marginLeft':"100%"
-                  },100,function(){ //该动画完成后，将font-title隐藏
-                    $(obj).find(".font-title").hide();
-                  });
-                })
-              </script>
-            </div>
+            <% end %>
+            <%= link_to Banner.find(33).img_link do %>
+              <div class="img-rela" style="margin-top:10px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a40851d9a75.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(33).pic.present? %>
+                   <%= link_to image_tag(Banner.find(33).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">多米尼克移民</div>
+              </div>
+            <% end %>
           </div>
           <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <div class="img-rela">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a408a5e2343.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">移民优势</div>
-            </div>
-            <div class="img-rela" style="margin-top:5px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a408a5e6be2.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">移民优势</div>
-            </div>
-            <div class="img-rela" style="margin-top:5px;">
-              <%= image_tag("https://i.loli.net/2017/08/28/59a408a5e814d.png", class: "img-responsive img-center frontpage-img") %>
-              <div class="img-rela-bg"></div>
-              <div class="img-rela-font">移民优势</div>
-            </div>
+            <%= link_to Banner.find(34).img_link do %>
+              <div class="img-rela">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a4087abb69a.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(34).pic.present? %>
+                   <%= link_to image_tag(Banner.find(34).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">移民优势</div>
+              </div>
+            <% end %>
+            <%= link_to Banner.find(35).img_link do %>
+              <div class="img-rela anim1 rela8" style="margin-top:10px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a4087accf95.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(35).pic.present? %>
+                   <%= link_to image_tag(Banner.find(35).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">
+                  <div class="font-title">安提瓜移民</div>
+                  <hr class="font-line">
+                  <div class="font-content">美国移民反对撒发来的急撒开发力度将阿斯科利发动机啊索科洛夫的撒酒疯快乐的撒酒疯扣篮大赛阿警方看到了撒</div>
+                </div>
+                <script>
+                  //默认样式浮动事件
+                  $(".img-rela.rela8").hover(function(){
+                    var obj =$(this); //保存当前对象
+                    $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                    $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                      'width':"92%"
+                    },300);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"0"
+                    },300);
+                  },function(){
+                    var obj =$(this);
+                    $(this).find(".font-line").animate({
+                      'width':"0"
+                    },100);
+                    $(this).find(".font-content").animate({
+                      'marginLeft':"100%"
+                    },100,function(){ //该动画完成后，将font-title隐藏
+                      $(obj).find(".font-title").hide();
+                    });
+                  })
+                </script>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
+            <%= link_to Banner.find(36).img_link do %>
+              <div class="img-rela">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a408a5e2343.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(36).pic.present? %>
+                   <%= link_to image_tag(Banner.find(36).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">移民优势</div>
+              </div>
+            <% end %>
+            <%= link_to Banner.find(37).img_link do %>
+              <div class="img-rela" style="margin-top:5px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a408a5e6be2.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(37).pic.present? %>
+                   <%= link_to image_tag(Banner.find(37).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">移民优势</div>
+              </div>
+            <% end %>
+            <%= link_to Banner.find(38).img_link do %>
+              <div class="img-rela" style="margin-top:5px;">
+                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a408a5e814d.png", class: "img-responsive img-center frontpage-img") %> -->
+                <% if Banner.find(38).pic.present? %>
+                   <%= link_to image_tag(Banner.find(38).pic.url, class: "img-responsive img-center frontpage-img")%>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", class: "img-responsive img-center frontpage-img"),"#" %>
+                <% end %>
+                <div class="img-rela-bg"></div>
+                <div class="img-rela-font">移民优势</div>
+              </div>
+            <% end %>
           </div>
 
         </div>

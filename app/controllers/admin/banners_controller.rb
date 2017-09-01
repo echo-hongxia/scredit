@@ -6,12 +6,14 @@ class Admin::BannersController < ApplicationController
   def index
     if params[:category].blank?
       # @pic_category_id = PicCategory.find_by(name: "首页轮播图").id
-      @pic_category_id = 3
+      # @pic_category_id = 3
+      @banners = Banner.all
     else
       @pic_category_id = PicCategory.find_by(name: params[:category]).id
+        @banners = Banner.where(:category_id => @pic_category_id)
     end
 
-      @banners = Banner.where(:category_id => @pic_category_id)
+
   end
 
   def new
