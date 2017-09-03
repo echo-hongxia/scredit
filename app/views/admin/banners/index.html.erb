@@ -1,6 +1,30 @@
+<style>
+  .minipic{
+    width: 200px;
+    height: 200px;
+  }
+</style>
 
 <div class="account-box">
-  <div class="dropdown text-center"  style="width:200px;">
+  <!-- 主标题 -->
+  <div class="account-maintitle">
+    <i class="fa fa-picture-o" style="padding-right:8px;"></i>广告图列表（Banner List）
+  </div>
+
+  <!-- 副标题 -->
+  <div class="place">
+      <span></span>
+      <ul class="placeul">
+          <li><span><i class="fa fa-map-marker"></i>广告管理</span>
+              <span class="line">/</span> <span>广告图列表</span>
+          </li>
+      </ul>
+  </div>
+
+
+  <!-- "增加活动"按钮 -->
+  <br>
+  <div class="account-btn dropdown text-center" style="width:200px;">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
       广告图楼层选择
       <b class="caret"></b>
@@ -13,46 +37,53 @@
 
     </ul>
   </div>
-<table class="table table-hover table-bordered table-responsive">
-  <thead>
-    <tr>
-      <td>ID</td>
-      <td>图片分类</td>
-      <td>图片位置</td>
-      <td>广告图片</td>
-      <td>广告图片链接</td>
-      <td>广告文字</td>
-      <td>广告链接</td>
-      <td>操作</td>
-    </tr>
-  </thead>
-  <tbody>
-  <% @banners.each do |banner| %>
+
+
+  <table class="table table-hover table-striped table-advance table-responsive bg-table">
+    <thead>
       <tr>
-        <td><%= banner.id %></td>
-        <td><%= PicCategory.find(banner.category_id).name %></td>
-        <td><%= banner.position %></td>
-        <td>
-          <% if banner.pic.present? %>
-            <%= image_tag(banner.pic, class: "thumbnail minipic") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class:"thumbnail") %>
-          <% end %>
-        </td>
-        <td>
-          <% if banner.img_url.present? %>
-            <%= image_tag(banner.img_url, class: "thumbnail minipic") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class:"thumbnail") %>
-          <% end %>
-        </td>
-        <td><%= raw banner.title %></td>
-        <td><%= banner.img_link %></td>
-        <td><%= link_to("Edit", edit_admin_banner_path(banner)) %></td>
-
-
+        <td>ID</td>
+        <td>图片分类</td>
+        <td>图片位置</td>
+        <td>广告图片</td>
+        <td>广告图片链接</td>
+        <td>广告文字</td>
+        <td>广告链接</td>
+        <td>操作</td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+    <% @banners.each do |banner| %>
+        <tr>
+          <td><%= banner.id %></td>
+          <td><%= PicCategory.find(banner.category_id).name %></td>
+          <td><%= banner.position %></td>
+          <td>
+            <% if banner.pic.present? %>
+              <%= image_tag(banner.pic.avatar.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/100x100&text=No Pic", class:"thumbnail") %>
+            <% end %>
+          </td>
+          <td>
+            <% if banner.img_url.present? %>
+              <%= image_tag(banner.img_url, class: "thumbnail minipic") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/100x100&text=No Pic", class:"thumbnail") %>
+            <% end %>
+          </td>
+          <td><%= raw banner.title %></td>
+          <td><%= banner.img_link %></td>
+          <td>
+            <%= link_to(edit_admin_banner_path(banner),class: :"btn btn-success")  do %>
+              <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="bg-pagebox">
+     <%= will_paginate @activities, renderer: BootstrapPagination::Rails, :previous_label => t('previous'), :next_label => t('next') %>
+  </div>
 </div>

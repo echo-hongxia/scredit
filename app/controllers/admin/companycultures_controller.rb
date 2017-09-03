@@ -6,7 +6,7 @@ class Admin::CompanyculturesController < ApplicationController
   # ---CRUD---
 
   def index
-    @companycultures = Companyculture.all.order("created_at DESC")
+    @companycultures = Companyculture.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
   end
 
   def show

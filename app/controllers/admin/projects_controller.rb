@@ -1,7 +1,7 @@
 class Admin::ProjectsController < ApplicationController
   layout "admin"
   def index
-    @projects = Project.all
+    @projects = Project.all.paginate(:page => params[:page], :per_page => 5)
   end
   def new
     @product = Product.find(params[:product_id])
@@ -34,7 +34,7 @@ class Admin::ProjectsController < ApplicationController
   def update
     @product = Product.find(params[:product_id])
     @project = Project.find(params[:id])
-    
+
     if @project.update(project_params)
       redirect_to admin_products_path,notice: "项目编辑成功！"
     else

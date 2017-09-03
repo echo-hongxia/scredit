@@ -6,7 +6,7 @@ class Admin::EliteteamsController < ApplicationController
   # ---CRUD---
 
   def index
-    @eliteteams = Eliteteam.all.order("created_at DESC")
+    @eliteteams = Eliteteam.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
   end
 
   def show

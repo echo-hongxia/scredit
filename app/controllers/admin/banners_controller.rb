@@ -7,7 +7,7 @@ class Admin::BannersController < ApplicationController
     if params[:category].blank?
       # @pic_category_id = PicCategory.find_by(name: "首页轮播图").id
       # @pic_category_id = 3
-      @banners = Banner.all
+      @banners = Banner.all.paginate(:page => params[:page], :per_page => 10)
     else
       @pic_category_id = PicCategory.find_by(name: params[:category]).id
         @banners = Banner.where(:category_id => @pic_category_id)

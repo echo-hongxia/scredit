@@ -1,16 +1,33 @@
 <div class="account-box">
+  <!-- 主标题 -->
+  <div class="account-maintitle">
+    <i class="fa  fa-chain-broken" style="padding-right:8px;"></i>友情链接列表（Sitelink List）
+  </div>
 
-  <h3 class="text-center">友情链接列表（Sitelink List）</h3>
-
-  <!-- "增加文章"按钮 -->
-  <br>
-  <div>
-    <%= link_to("新增友链", new_admin_sitelink_path, class: "btn btn-sm btn-default pull-right") %>
+  <!-- 副标题 -->
+  <div class="place">
+      <span></span>
+      <ul class="placeul">
+          <li><span><i class="fa fa-map-marker"></i>友情链接管理</span>
+              <span class="line">/</span> <span>友情链接列表</span>
+          </li>
+      </ul>
   </div>
 
 
+  <!-- "新增友链"按钮 -->
+  <br>
+  <div class="account-btn">
+    <%= link_to(new_admin_sitelink_path,:class=> "btn btn-primary" )  do %>
+      <i class="fa fa-plus"></i>新增友链
+    <% end %>
+  </div>
+
+
+
+
   <!-- 所有文章列表 -->
-  <table class="table table-hover table-bordered table-responsive">
+  <table class="table table-hover table-striped table-advance table-responsive bg-table">
     <thead>
       <tr>
         <td>ID</td>
@@ -26,13 +43,20 @@
           <td><%= link_to(sitelink.site_title, admin_sitelink_path(sitelink)) %></td>
             <td><%= sitelink.site_link %></td>
           <td>
-            <%= link_to("Edit", edit_admin_sitelink_path(sitelink)) %> |
-            <%= link_to("destroy", admin_sitelink_path(sitelink), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+            <%= link_to(edit_admin_sitelink_path(sitelink),class: :"btn btn-success")  do %>
+              <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+            <%= link_to(admin_sitelink_path(sitelink),class: :"btn btn-danger",method: :delete, data: { confirm: "你确定要删除吗？"})  do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
           </td>
 
         </tr>
       <% end %>
     </tbody>
   </table>
+  <div class="bg-pagebox">
+     <%= will_paginate @activities, renderer: BootstrapPagination::Rails, :previous_label => t('previous'), :next_label => t('next') %>
+   </div>
 
 </div>

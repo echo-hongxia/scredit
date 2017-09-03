@@ -1,16 +1,31 @@
 <div class="account-box">
 
-  <h3 class="text-center">精英团队（Elite Team）</h3>
+  <!-- 主标题 -->
+  <div class="account-maintitle">
+    <i class="fa fa-home" style="padding-right:8px;"></i>精英团队（Elite Team）
+  </div>
 
-  <!-- "增加文章"按钮 -->
-  <br>
-  <div>
-    <%= link_to("增加", new_admin_eliteteam_path, class: "btn btn-sm btn-default pull-right") %>
+  <!-- 副标题 -->
+  <div class="place">
+      <span></span>
+      <ul class="placeul">
+          <li><span><i class="fa fa-map-marker"></i>关于尚德信</span>
+              <span class="line">/</span> <span>精英团队</span>
+          </li>
+      </ul>
   </div>
 
 
+  <!-- "增加"按钮 -->
+  <br>
+  <div class="account-btn">
+    <%= link_to(new_admin_eliteteam_path,:class=> "btn btn-primary" )  do %>
+      <i class="fa fa-plus"></i>添加团队
+    <% end %>
+  </div>
+
   <!-- 所有文章列表 -->
-  <table class="table table-hover table-bordered table-responsive">
+  <table class="table table-hover table-striped table-advance table-responsive bg-table">
     <thead>
       <tr>
         <td>ID</td>
@@ -18,9 +33,6 @@
         <td>标题</td>
         <td>更新时间</td>
         <td>操作</td>
-
-
-
       </tr>
     </thead>
     <tbody>
@@ -39,8 +51,12 @@
           <td><%= eliteteam.title %></td>
           <td><%= eliteteam.updated_at %></td>
           <td>
-            <%= link_to("Edit", edit_admin_eliteteam_path(eliteteam)) %> |
-            <%= link_to("destroy", admin_eliteteam_path(eliteteam), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+            <%= link_to( edit_admin_eliteteam_path(eliteteam),class: :"btn btn-success")  do %>
+              <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+            <%= link_to(admin_eliteteam_path(eliteteam),class: :"btn btn-danger",method: :delete, data: { confirm: "你确定要删除吗？"})  do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
           </td>
 
 
@@ -48,5 +64,9 @@
       <% end %>
     </tbody>
   </table>
+
+  <div class="bg-pagebox">
+     <%= will_paginate @activities, renderer: BootstrapPagination::Rails, :previous_label => t('previous'), :next_label => t('next') %>
+   </div>
 
 </div>

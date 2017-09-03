@@ -6,7 +6,7 @@ class Admin::CompanyhonorsController < ApplicationController
   # ---CRUD---
 
   def index
-    @companyhonors = Companyhonor.all.order("created_at DESC")
+    @companyhonors = Companyhonor.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
   end
 
   def show

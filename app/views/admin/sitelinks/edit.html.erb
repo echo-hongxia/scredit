@@ -1,12 +1,9 @@
-<%= simple_form_for [:admin, @sitelink ] do |f| %>
-
-
-  <div class="form-group">
-
-    <%= f.input :site_title,:label => "友链名称" %>
-    <%= f.input :site_link, :label => "友链地址" %>
-
-    <hr>
+<div class="account-box">
+  <div class="account-maintitle">
+    <i class="fa  fa-chain-broken" style="padding-right:8px;"></i>编辑友链
   </div>
-  <%= f.submit "提交", class: "btn btn-sm btn-default", data: {disable_with: "Submiting..."} %>
-<% end %>
+
+  <hr>
+  <%= render "form" %>
+
+</div>

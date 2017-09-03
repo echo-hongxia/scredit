@@ -4,7 +4,7 @@ class Admin::SitelinksController < ApplicationController
     layout "admin"
 
     def index
-      @sitelinks= Sitelink.all
+      @sitelinks= Sitelink.all.paginate(:page => params[:page], :per_page => 10)
     end
 
     def new

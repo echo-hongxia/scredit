@@ -2,15 +2,24 @@
 
 <div class="account-box">
 
-  <h3 class="text-center">客户咨询留言（Message List）</h3>
 
+  <!-- 主标题 -->
+  <div class="account-maintitle">
+    <i class="fa fa-comments-o" style="padding-right:8px;"></i>客户咨询留言（Message List）
+  </div>
 
-  <br>
-
-
+  <!-- 副标题 -->
+  <div class="place">
+      <span></span>
+      <ul class="placeul">
+          <li><span><i class="fa fa-map-marker"></i>客户咨询管理</span>
+              <span class="line">/</span> <span>客户消息列表</span>
+          </li>
+      </ul>
+  </div>
 
   <!-- 所有咨询反馈消息 -->
-  <table class="table table-hover table-bordered table-responsive">
+  <table class="table table-hover table-striped table-advance table-responsive bg-table">
     <thead>
       <tr>
         <td>ID</td>
@@ -32,11 +41,17 @@
           <td><%= message.description %></td>
           <td><%= message.created_at %></td>
           <td>
-            <%= link_to("删除", admin_message_path(message), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+            <%= link_to(admin_message_path(message),class: :"btn btn-danger",method: :delete, data: { confirm: "你确定要删除吗？"})  do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
+
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
+  <div class="bg-pagebox">
+     <%= will_paginate @activities, renderer: BootstrapPagination::Rails, :previous_label => t('previous'), :next_label => t('next') %>
+   </div>
 </div>

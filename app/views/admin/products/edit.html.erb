@@ -1,17 +1,15 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <h2 class="text-center">编辑商品</h2>
 
-      <hr>
-      <%= render "form" %>
-
-      <!-- 当前商品图 -->
-      <% if @product.image.present? %>
-        <span>目前商品图</span>
-        <%= image_tag(@product.image.thumb.url) %>
-      <% end %>
-
-    </div>
+<div class="account-box">
+  <div class="account-maintitle">
+    <i class="fa fa-paper-plane-o" style="padding-right:8px;"></i>编辑国家信息
   </div>
+
+  <hr>
+  <%= render "form" %>
+
+  <% if @product.image.present? %>
+    <span>封面图</span>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+
 </div>

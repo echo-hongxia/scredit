@@ -1,16 +1,31 @@
 <div class="account-box">
+  <!-- 主标题 -->
+  <div class="account-maintitle">
+    <i class="fa fa-home" style="padding-right:8px;"></i>企业荣誉（Company Honor）
+  </div>
 
-  <h3 class="text-center">企业荣誉（Company Honor）</h3>
+  <!-- 副标题 -->
+  <div class="place">
+      <span></span>
+      <ul class="placeul">
+          <li><span><i class="fa fa-map-marker"></i>关于尚德信</span>
+              <span class="line">/</span> <span>企业荣誉</span>
+          </li>
+      </ul>
+  </div>
 
-  <!-- "增加文章"按钮 -->
+
+  <!-- "增加"按钮 -->
   <br>
-  <div>
-    <%= link_to("增加", new_admin_companyhonor_path, class: "btn btn-sm btn-default pull-right") %>
+  <div class="account-btn">
+    <%= link_to(new_admin_companyhonor_path,:class=> "btn btn-primary" )  do %>
+      <i class="fa fa-plus"></i>添加荣誉
+    <% end %>
   </div>
 
 
   <!-- 所有文章列表 -->
-  <table class="table table-hover table-bordered table-responsive">
+  <table class="table table-hover table-striped table-advance table-responsive bg-table">
     <thead>
       <tr>
         <td>ID</td>
@@ -36,12 +51,18 @@
         <td><%= companyhonor.title %></td>
         <td><%= companyhonor.updated_at %></td>
         <td>
-          <%= link_to("Edit", edit_admin_companyhonor_path(companyhonor)) %> |
-          <%= link_to("destroy", admin_companyhonor_path(companyhonor), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
-        </td>
+          <%= link_to(edit_admin_companyhonor_path(companyhonor),class: :"btn btn-success")  do %>
+            <i class="fa fa-pencil-square-o"></i>
+          <% end %>
+          <%= link_to(admin_companyhonor_path(companyhonor),class: :"btn btn-danger",method: :delete, data: { confirm: "你确定要删除吗？"})  do %>
+            <i class="fa fa-trash"></i>
+          <% end %>
+
       </tr>
       <% end %>
     </tbody>
   </table>
-
+  <div class="bg-pagebox">
+     <%= will_paginate @activities, renderer: BootstrapPagination::Rails, :previous_label => t('previous'), :next_label => t('next') %>
+   </div>
 </div>

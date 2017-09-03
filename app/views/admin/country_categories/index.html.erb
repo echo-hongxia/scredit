@@ -2,17 +2,34 @@
 
 <div class="account-box">
 
-  <h3 class="text-center">国家分类列表（Article List）</h3>
+  <!-- 主标题 -->
+  <div class="account-maintitle">
+    <i class="fa fa-paper-plane-o" style="padding-right:8px;"></i>国家分类列表（Article List）
+  </div>
 
-  <!-- "增加文章"按钮 -->
-  <br>
-  <div>
-    <%= link_to("增加分类", new_admin_country_category_path, class: "btn btn-sm btn-default pull-right") %>
+  <!-- 副标题 -->
+  <div class="place">
+      <span></span>
+      <ul class="placeul">
+          <li><span><i class="fa fa-map-marker"></i>国家管理</span>
+              <span class="line">/</span> <span>国家分类列表</span>
+          </li>
+      </ul>
   </div>
 
 
+  <!-- "增加分类按钮 -->
+  <br>
+  <div class="account-btn">
+    <%= link_to(new_admin_country_category_path,:class=> "btn btn-primary" )  do %>
+      <i class="fa fa-plus"></i>增加分类
+    <% end %>
+  </div>
+
+
+
   <!-- 所有文章列表 -->
-  <table class="table table-hover table-bordered table-responsive">
+  <table class="table table-hover table-striped table-advance table-responsive bg-table">
     <thead>
       <tr>
         <td>ID</td>
@@ -28,8 +45,13 @@
           <td><%= category.title %></td>
           <td><%= category.created_at %></td>
           <td>
-            <%= link_to("Edit", edit_admin_country_category_path(category)) %> |
-            <%= link_to("destroy", admin_country_category_path(category), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+            <%= link_to(edit_admin_country_category_path(category),class: :"btn btn-success")  do %>
+              <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+            <%= link_to(admin_country_category_path(category),class: :"btn btn-danger",method: :delete, data: { confirm: "你确定要删除吗？"})  do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
+
           </td>
         </tr>
       <% end %>

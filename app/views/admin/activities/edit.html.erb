@@ -1,17 +1,15 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <h2 class="text-center">编辑文章</h2>
-
-      <hr>
-      <%= render "form" %>
-
-      <!-- 当前商品图 -->
-      <% if @activity.image.present? %>
-        <span>目前商品图</span>
-        <%= image_tag(@activity.image.thumb.url) %>
-      <% end %>
-
-    </div>
+<div class="account-box">
+  <div class="account-maintitle">
+    <i class="fa fa-wpexplorer" style="padding-right:8px;"></i>编辑活动
   </div>
+
+  <hr>
+  <%= render "form" %>
+
+  <!-- 当前商品图 -->
+  <% if @activity.image.present? %>
+    <span>目前商品图</span>
+    <%= image_tag(@activity.image.thumb.url) %>
+  <% end %>
+
 </div>
