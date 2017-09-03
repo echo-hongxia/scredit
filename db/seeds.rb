@@ -30,7 +30,7 @@ Product.create!(title: "美国移民概况",
   <p>一人申请全家移民，可自由出入美国，无移民监；</p>
   <p>持绿卡五年后，可申请美国国籍，免签出入160多个国家；</p>
   <p>子女免费接受12年义务高素质教育，轻松进入世界一流高等学府。</p>",
-  country_category_id:1;
+  country_category_id:1,
   yieldly: "中国",
   particulars: "琴叶榕是非常适合在室内种植的植物，造型优雅<br>成活率高，易于打理<br><br>应用场景<br><img alt=\"\" src=\"http://ww1.sinaimg.cn/large/006tNbRwgy1fftw5bii0cj30d5084753.jpg\">",
   )
