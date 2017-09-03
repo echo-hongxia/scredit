@@ -285,7 +285,7 @@ puts "创建广告分类。"
   puts "初始化其他国家广告图数据。"
 
   create_banners = for i in 39..40 do
-    Banner.create!([title: "内页广告图片#{i}", category_id: 6])
+    Banner.create!([title: "内页广告图片#{i}", category_id: 2])
   end
   puts "初始化内页广告图数据。"
 
