@@ -4,8 +4,7 @@
     <%= f.input :image, as: :file, :label => "封面(要求：600px*400px)" %>
     <%= f.input :summary, :label => "摘要" %>
     <%= f.input :description, as: :ckeditor, :label => "内容" %>
-    <%= select_tag(:article_category_id, options_for_select(@article_categories), :prompt => "类别") %>
-
+    所属类别： <%= select_tag(:article_category_id, options_for_select(@article_categories), :prompt => ArticleCategory.find(@article.article_category_id).name) %>
     <%= f.input :is_hidden, :label => "隐藏(审核不通过)" %>
     <hr>
 

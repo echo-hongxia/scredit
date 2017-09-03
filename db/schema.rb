@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901131915) do
+ActiveRecord::Schema.define(version: 20170903165418) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "image"
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20170901131915) do
     t.integer  "position"
     t.boolean  "is_hidden",           default: true
     t.text     "summary"
-    t.integer  "article_category_id"
     t.integer  "weight",              default: 0
+    t.integer  "article_category_id", default: 2
   end
 
   create_table "banners", force: :cascade do |t|
@@ -261,15 +261,15 @@ ActiveRecord::Schema.define(version: 20170901131915) do
     t.text     "description"
     t.integer  "price"
     t.integer  "quantity"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "image"
     t.text     "particulars"
     t.integer  "position"
     t.string   "category"
     t.string   "yieldly"
     t.string   "courseimg"
-    t.integer  "country_category_id"
+    t.integer  "country_category_id", default: 2
   end
 
   create_table "projects", force: :cascade do |t|
@@ -311,7 +311,7 @@ ActiveRecord::Schema.define(version: 20170901131915) do
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.integer  "story_category_id"
-    t.integer  "product_id"
+    t.integer  "product_id",        default: 1
   end
 
   create_table "users", force: :cascade do |t|

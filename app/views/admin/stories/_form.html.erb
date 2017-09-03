@@ -1,7 +1,11 @@
 <%= simple_form_for [:admin, @story] do |f| %>
   <div class="form-group">
     <%= f.input :title, :label => "标题" %>
-    <%= select_tag(:product_id, options_for_select(@story_categories), :prompt => "类别") %>
+    <!-- 所属分类 <%= Product.find( @story.product_id).title %> -->
+    <!-- 所属分类:<%= select_tag(:product_id, options_for_select(@story_categories), :prompt => "选择分类") %> -->
+
+    所属分类:<%= select_tag(:product_id, options_for_select(@story_categories), :prompt => Product.find( @story.product_id).title) %>
+
     <%= f.input :image, as: :file, :label => "封面(要求：600px*400px)" %>
     <%= f.input :summary, :label => "摘要" %>
     <%= f.input :description, as: :ckeditor, :label => "内容" %>

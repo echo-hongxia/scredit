@@ -38,6 +38,10 @@ class Admin::ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
+    if params[:article_category_id].blank?
+      params[:article_category_id] = @article.article_category_id
+    end
+  
     @article.article_category_id = params[:article_category_id]
     #@article.weight = params[:id]
 

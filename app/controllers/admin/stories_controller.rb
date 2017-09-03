@@ -37,7 +37,12 @@ class Admin::StoriesController < ApplicationController
 
   def update
     @story= Story.find(params[:id])
+    if params[:product_id].blank?
+      params[:product_id] = @story.product_id
+    end
     @story.product_id = params[:product_id]
+
+
     if @story.update(story_params)
       redirect_to admin_stories_path
     else
