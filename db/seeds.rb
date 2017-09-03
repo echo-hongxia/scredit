@@ -149,31 +149,36 @@ Product.create!(title: "美国移民概况",
   )
   puts "新建公司简介&联系我们."
 
-  ArticleCategory.create!{
+  ArticleCategory.create!(
      name: "企业动态",
-  }
+  )
 
-  ArticleCategory.create!{
-     name:"行业动态",
-  }
+  ArticleCategory.create!(
+    name:"行业动态",
 
-  ArticleCategory.create!{
+  )
+
+  ArticleCategory.create!(
      name:"移民知识",
-  }
+  )
   puts "创建资讯分类。"
 
-  CountryCategory.create!{
+  CountryCategory.create!(
     title:"北美国家",
-  }
-  CountryCategory.create!{
+  )
+
+  CountryCategory.create!(
     title:"欧洲国家",
-  }
-  CountryCategory.create!{
+  )
+
+  CountryCategory.create!(
     title:"大洋洲国家",
-  }
-  CountryCategory.create!{
+  )
+
+  CountryCategory.create!(
     title:"护照其他国家",
-  }
+  )
+
   puts "创建广告分类。"
 
   PicCategory.create!(
@@ -284,36 +289,37 @@ puts "创建广告分类。"
   end
   puts "初始化内页广告图数据。"
 
-Sitelink.create!{
+Sitelink.create!(
   site_title: "美国移民局",
   site_link: "http://www.baidu.com",
 
-}
-Sitelink.create!{
+)
+
+Sitelink.create!(
   site_title: "美国驻广州总领事馆",
   site_link: "http://www.baidu.com",
 
-}
-Sitelink.create!{
+)
+Sitelink.create!(
   site_title: "美国移民局",
   site_link: "http://www.baidu.com",
-}
-Sitelink.create!{
+)
+Sitelink.create!(
   site_title: "加拿大移民局",
   site_link: "http://www.baidu.com",
-}
-Sitelink.create!{
+)
+Sitelink.create!(
   site_title: "美国签证中心",
   site_link: "http://www.baidu.com",
-}
-Sitelink.create!{
+)
+Sitelink.create!(
   site_title: "香港出入境事务处",
   site_link: "http://www.baidu.com",
-}
-Sitelink.create!{
+)
+Sitelink.create!(
   site_title: "加拿大签证中心",
   site_link: "http://www.baidu.com",
-}
+)
 
 
 
