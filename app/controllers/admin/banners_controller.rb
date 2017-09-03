@@ -10,7 +10,7 @@ class Admin::BannersController < ApplicationController
       @banners = Banner.all.paginate(:page => params[:page], :per_page => 10)
     else
       @pic_category_id = PicCategory.find_by(name: params[:category]).id
-        @banners = Banner.where(:category_id => @pic_category_id)
+        @banners = Banner.where(:category_id => @pic_category_id).all.paginate(:page => params[:page], :per_page => 10)
     end
 
 
