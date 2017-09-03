@@ -154,45 +154,45 @@ Product.create!(title: "美国移民概况",
   }
 
   ArticleCategory.create!{
-     name: "行业动态",
+     name:"行业动态",
   }
 
   ArticleCategory.create!{
-     name: "移民知识",
+     name:"移民知识",
   }
   puts "创建资讯分类。"
 
   CountryCategory.create!{
-    title: "北美国家",
+    title:"北美国家",
   }
   CountryCategory.create!{
-    title: "欧洲国家",
+    title:"欧洲国家",
   }
   CountryCategory.create!{
-    title: "大洋洲国家",
+    title:"大洋洲国家",
   }
   CountryCategory.create!{
-    title: "护照其他国家",
+    title:"护照其他国家",
   }
   puts "创建广告分类。"
 
   PicCategory.create!(
-    name: "首页轮播图",
+    name:"首页轮播图",
   )
   PicCategory.create!(
-    name: "内页轮播图",
+    name:"内页轮播图",
   )
   PicCategory.create!(
-    name: "北美移民楼层图",
+    name:"北美移民楼层图",
   )
   PicCategory.create!(
-    name: "欧洲移民楼层图",
+    name:"欧洲移民楼层图",
   )
   PicCategory.create!(
-    name: "大洋洲移民楼层图",
+    name:"大洋洲移民楼层图",
   )
   PicCategory.create!(
-    name: "其他移民楼层图",
+    name:"其他移民楼层图",
   )
 puts "创建广告分类。"
 
@@ -255,12 +255,12 @@ puts "创建广告分类。"
   # )
 
   create_banners = for i in 1..5 do
-    Banner.create!([title: "轮播图片#{i}", category_id: 1])
+    Banner.create!([title:"轮播图片#{i}", category_id: 1])
   end
   puts "初始化轮播广告图数据。"
 
   create_banners = for i in 6..13 do
-    Banner.create!([title: "北美国家广告图片#{i}", category_id: 3,img_link: "/products/1",])
+    Banner.create!([title:"北美国家广告图片#{i}", category_id: 3,img_link: "/products/1",])
   end
   puts "初始化北美洲广告图数据。"
 
@@ -275,7 +275,7 @@ puts "创建广告分类。"
   puts "初始化大洋洲广告图数据。"
 
   create_banners = for i in 31..38 do
-    Banner.create!([title: "其他国家广告图片#{i}", category_id: 6])
+    Banner.create!([title:"其他国家广告图片#{i}", category_id: 6])
   end
   puts "初始化其他国家广告图数据。"
 
