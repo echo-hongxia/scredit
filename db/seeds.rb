@@ -24,18 +24,16 @@ end
 
 # Initialize Product
 #
-# Product.create!(title: "美国移民概况",
-#   description: "<p>申请周期短，无学历、语言和商业背景要求；</p>
-#   <p>无需创业，无需亲自管理企业；</p>
-#   <p>一人申请全家移民，可自由出入美国，无移民监；</p>
-#   <p>持绿卡五年后，可申请美国国籍，免签出入160多个国家；</p>
-#   <p>子女免费接受12年义务高素质教育，轻松进入世界一流高等学府。</p>",
-#   price: 59,
-#   quantity: 50,
-#   category: "美国移民",
-#   yieldly: "中国",
-#   particulars: "琴叶榕是非常适合在室内种植的植物，造型优雅<br>成活率高，易于打理<br><br>应用场景<br><img alt=\"\" src=\"http://ww1.sinaimg.cn/large/006tNbRwgy1fftw5bii0cj30d5084753.jpg\">",
-#   )
+Product.create!(title: "美国移民概况",
+  description: "<p>申请周期短，无学历、语言和商业背景要求；</p>
+  <p>无需创业，无需亲自管理企业；</p>
+  <p>一人申请全家移民，可自由出入美国，无移民监；</p>
+  <p>持绿卡五年后，可申请美国国籍，免签出入160多个国家；</p>
+  <p>子女免费接受12年义务高素质教育，轻松进入世界一流高等学府。</p>",
+  country_category_id:1;
+  yieldly: "中国",
+  particulars: "琴叶榕是非常适合在室内种植的植物，造型优雅<br>成活率高，易于打理<br><br>应用场景<br><img alt=\"\" src=\"http://ww1.sinaimg.cn/large/006tNbRwgy1fftw5bii0cj30d5084753.jpg\">",
+  )
 #
 # Product.create!(title: "希腊移民概况",
 #   description: "<p>投资额最低：仅需25万欧元购房，一步到位获得绿卡；</p>
@@ -199,64 +197,92 @@ end
 puts "创建广告分类。"
 
 
-  Banner.create!(
-    name: "轮播图片1",
-    title: "请到后台修改",
-    category_id: 1,
-    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
-    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  # Banner.create!(
+  #   name: "轮播图片1",
+  #   title: "请到后台修改",
+  #   category_id: 1,
+  #   img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  #   img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  #
+  # )
+  #
+  # Banner.create!(
+  #   name: "轮播图片2",
+  #   title: "请到后台修改",
+  #   category_id: 1,
+  #   img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  #   img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  # )
+  #
+  # Banner.create!(
+  #   name: "轮播图片3",
+  #   title: "请到后台修改",
+  #   category_id: 1,
+  #   img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  #   img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  # )
+  #
+  # Banner.create!(
+  #   name: "轮播图片4",
+  #   title: "请到后台修改",
+  #   category_id: 1,
+  #   img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  #   img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  # )
+  #
+  # Banner.create!(
+  #   name: "轮播图片5",
+  #   title: "请到后台修改",
+  #   category_id: 1,
+  #   img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  #   img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
+  # )
+  #
+  # Banner.create!(
+  #   name: "轮播图片6",
+  #   title: "请到后台修改",
+  #   category_id: 3,
+  #   img_url: "https://i.loli.net/2017/08/28/59a396bca1022.png",
+  #   img_link: "/products/1",
+  # )
+  #
+  # Banner.create!(
+  #   name: "轮播图片7",
+  #   title: "请到后台修改",
+  #   category_id: 3,
+  #   img_url: "https://i.loli.net/2017/08/28/59a396e3a6d3a.png",
+  #   img_link: "/products/1",
+  # )
 
-  )
+  create_banners = for i in 1..5 do
+    Banner.create!([title: "轮播图片#{i}", category_id: 1])
+  end
+  puts "初始化轮播广告图数据。"
 
-  Banner.create!(
-    name: "轮播图片2",
-    title: "请到后台修改",
-    category_id: 1,
-    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
-    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
-  )
+  create_banners = for i in 6..13 do
+    Banner.create!([title: "北美国家广告图片#{i}", category_id: 3,img_link: "/products/1",])
+  end
+  puts "初始化北美洲广告图数据。"
 
-  Banner.create!(
-    name: "轮播图片3",
-    title: "请到后台修改",
-    category_id: 1,
-    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
-    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
-  )
+  create_banners = for i in 14..22 do
+    Banner.create!([title: "欧洲国家广告图片#{i}", category_id: 4])
+  end
+  puts "初始化欧洲广告图数据。"
 
-  Banner.create!(
-    name: "轮播图片4",
-    title: "请到后台修改",
-    category_id: 1,
-    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
-    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
-  )
+  create_banners = for i in 23..30 do
+    Banner.create!([title: "大洋洲国家广告图片#{i}", category_id: 5])
+  end
+  puts "初始化大洋洲广告图数据。"
 
-  Banner.create!(
-    name: "轮播图片5",
-    title: "请到后台修改",
-    category_id: 1,
-    img_url: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
-    img_link: "https://ww1.sinaimg.cn/large/006tKfTcgy1fhuxsi8534j30lm0a00un.jpg",
-  )
+  create_banners = for i in 31..38 do
+    Banner.create!([title: "其他国家广告图片#{i}", category_id: 6])
+  end
+  puts "初始化其他国家广告图数据。"
 
-  Banner.create!(
-    name: "轮播图片6",
-    title: "请到后台修改",
-    category_id: 3,
-    img_url: "https://i.loli.net/2017/08/28/59a396bca1022.png",
-    img_link: "/products/1",
-  )
-
-  Banner.create!(
-    name: "轮播图片7",
-    title: "请到后台修改",
-    category_id: 3,
-    img_url: "https://i.loli.net/2017/08/28/59a396e3a6d3a.png",
-    img_link: "/products/1",
-  )
-
-puts "初始化广告图数据。"
+  create_banners = for i in 39..40 do
+    Banner.create!([title: "内页广告图片#{i}", category_id: 6])
+  end
+  puts "初始化内页广告图数据。"
 
 Sitelink.create!{
   site_title: "美国移民局",
