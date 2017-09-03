@@ -1,6 +1,6 @@
 <div class="row" >
   <div class="decorative_picture col-md-12" >
-  
+
     <% if Banner.find(39).pic.present? %>
        <%= image_tag(Banner.find(39).pic.url, class: "img-responsive center-block")%>
     <% else %>
@@ -49,7 +49,8 @@
               <%= project.description %>
             </div>
             <div class="project-list-position">
-                所属国家：<i class="fa fa-map-marker" style="width:20px;"></i>美国
+                所属区域：<i class="fa fa-map-marker" style="width:20px;"></i>
+               <%= CountryCategory.find(project.country_category_id).title%>
             </div>
           </div>
         <% end %>

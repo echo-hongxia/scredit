@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :articlealls  # 资讯聚合页
   resources :messages
   resources :stories
+  resources :projects
 
 
   namespace :admin do
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
 
     resources :products do
        #后台上架网址 admin/products
-      resources :projects
+
       member do
         patch :move_up         #商品位置移动
         patch :move_down       #商品位置移动
@@ -59,6 +60,7 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :projects
     resources :stories do       #成功案例后台
       member do
         patch :move_up           #文章位置移动
@@ -106,7 +108,7 @@ Rails.application.routes.draw do
 
     end
     resources :reviews
-    resources :projects       #国家下的具体移民项目
+    # resources :projects       #国家下的具体移民项目
   end
 
   resources :courses do         #前台显示课程

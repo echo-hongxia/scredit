@@ -23,9 +23,11 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @reviews = Review.where(product_id: @product.id).order("created_at DESC")
     @review = Review.new
-    @projects = @product.projects
-    @stories = Story.where(:product_id => @product.id)
     
+    @projects = Project.where(:product_id => @product.id)
+
+    @stories = Story.where(:product_id => @product.id)
+
   end
 
   def add_to_cart

@@ -1,6 +1,7 @@
-<%= simple_form_for [@product,@project] do |f| %>
+<%= simple_form_for [:admin,@project] do |f| %>
   <div class="form-group">
     <%= f.input :title, :label => "项目名称" %>
+    所属分类:<%= select_tag(:product_id, options_for_select(@project_categories), :prompt => Product.find( @project.product_id).title) %>
     <%= f.input :content, :label => "简述" %>
     <%= f.input :image, as: :file, :label => "项目主图" %>
 

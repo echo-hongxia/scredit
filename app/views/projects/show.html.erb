@@ -34,7 +34,8 @@
       <div class="col-sm-12" >
         <!-- 所属国家 -->
         <div class="product-quantity" style="font-size:16px">
-          所属国家：<i class="fa fa-map-marker" style="width:20px;"></i>美国
+          所属国家：<i class="fa fa-map-marker" style="width:20px;"></i>
+          <%= Product.find(@project.product_id).title%>
         </div>
 
       </div>
@@ -51,21 +52,9 @@
     <!-- 按钮区域 -->
     <div class="add-to-cart-buttom row">
       <!-- 加入购物车按钮 -->
-      <div class="col-sm-12">
-
-         <%= link_to("立即咨询", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger") %>
-
+      <div class="btn btn-danger">
+        立即咨询
       </div>
-
-      <!-- 收藏商品按钮 -->
-      <!-- <div class="col-sm-6 product-collection"> -->
-        <!-- <%= link_to("添加收藏 - 人气(26)", "#")%> -->
-        <!-- <% if current_user && current_user.is_member_of?(@product) %>
-          <%= link_to("已收藏（点击取消收藏）", quit_product_path(@product), method: :post) %>
-        <% else %>
-          <%= link_to("收藏商品", join_product_path(@product), method: :post) %>
-        <% end %>
-      </div> -->
     </div>
 
   </div>
