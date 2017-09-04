@@ -260,8 +260,6 @@
              精选北美移民项目
          </h4>
         <div class="container">
-
-
             <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
               <style>
                 /*------------------------------------默认样式--------------------------------------------*/
@@ -345,7 +343,7 @@
                 </div>
               <% end %>
               <%= link_to Banner.find(7).img_link do%>
-                <div class="img-rela" style="margin-top:5px;">
+                <div class="img-rela" style="margin-top:10px;">
                   <% if Banner.find(7).pic.present? %>
                      <%= image_tag(Banner.find(7).pic.url, class: "img-responsive img-center frontpage-img")%>
                   <% else %>
@@ -356,7 +354,6 @@
                 </div>
               <% end %>
             </div>
-
             <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
               <%= link_to Banner.find(9).img_link do %>
                 <div class="img-rela">
@@ -451,7 +448,6 @@
                 </div>
               <% end %>
             </div>
-
         </div>
 
 
