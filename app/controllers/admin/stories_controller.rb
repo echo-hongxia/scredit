@@ -21,7 +21,10 @@ class Admin::StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
     @story.user = current_user
-    @story.product_id = params[:product_id]
+
+    if !params[:product_id].blank?
+      @story.product_id = params[:product_id]
+    end
 
     if @story.save
       redirect_to admin_stories_path

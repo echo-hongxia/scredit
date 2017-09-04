@@ -21,7 +21,10 @@ class Admin::ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-    @article.article_category_id = params[:article_category_id]
+
+    if !params[:article_category_id].blank?
+      @article.article_category_id = params[:article_category_id]
+    end
     #@article.weight = params[:id]
 
     if @article.save
@@ -41,7 +44,7 @@ class Admin::ArticlesController < ApplicationController
     if params[:article_category_id].blank?
       params[:article_category_id] = @article.article_category_id
     end
-  
+
     @article.article_category_id = params[:article_category_id]
     #@article.weight = params[:id]
 

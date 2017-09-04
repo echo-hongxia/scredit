@@ -21,7 +21,9 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.country_category_id = params[:country_category_id]
+    if !params[:country_category_id].blank?
+      @product.country_category_id = params[:country_category_id]
+    end
 
     if @product.save
       redirect_to admin_products_path
@@ -41,6 +43,7 @@ class Admin::ProductsController < ApplicationController
       params[:country_category_id] = @product.product_id
     end
     @product.country_category_id = params[:country_category_id]
+    
     if @product.update(product_params)
       redirect_to admin_products_path
     else

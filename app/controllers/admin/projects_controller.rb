@@ -22,7 +22,10 @@ class Admin::ProjectsController < ApplicationController
     @project = Project.new(project_params) # 把新建的数据的content传给实体变量@project
     # @project.product = @product # 从def create 第一行里拿到的@product, 把它的值赋给@project的product。
     @project.user = current_user
-    @project.product_id = params[:product_id]
+    if !paramsparams[:product_id].blank?
+      @project.product_id = params[:product_id]
+    end
+
 
     if @project.save
       redirect_to admin_projects_path,notice: "添加项目成功！"
