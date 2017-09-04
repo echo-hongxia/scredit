@@ -260,196 +260,198 @@
              精选北美移民项目
          </h4>
         <div class="container">
-          <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <%= link_to Banner.find(6).img_link do%>
-              <div class="img-rela">
-                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a396bca1022.png", class: "img-responsive img-center frontpage-img") %> -->
 
-                <% if Banner.find(6).pic.present? %>
-                   <%= image_tag(Banner.find(6).pic.url, class: "img-responsive img-center frontpage-img")%>
-                <% else %>
-                  <%= image_tag("https://i.loli.net/2017/08/28/59a396bca1022.png", class: "img-responsive img-center frontpage-img")%>
-                <% end %>
-                <div class="img-rela-bg"></div>
-                <div class="img-rela-font"><%= raw Banner.find(6).title %></div>
-              </div>
-            <% end %>
-            <%= link_to Banner.find(7).img_link do%>
-              <div class="img-rela" style="margin-top:5px;">
-                <% if Banner.find(7).pic.present? %>
-                   <%= image_tag(Banner.find(7).pic.url, class: "img-responsive img-center frontpage-img")%>
-                <% else %>
-                  <%= image_tag("https://i.loli.net/2017/08/28/59a396e3a6d3a.png", class: "img-responsive img-center frontpage-img")%>
-                <% end %>
-                <div class="img-rela-bg"></div>
-                <div class="img-rela-font"><%= raw Banner.find(7).title %></div>
-              </div>
-            <% end %>
+            <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
+              <%= link_to Banner.find(6).img_link do%>
+                <div class="img-rela">
+                  <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a396bca1022.png", class: "img-responsive img-center frontpage-img") %> -->
 
-          </div>
-          <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <style>
-              /*------------------------------------默认样式--------------------------------------------*/
-              .img-rela.anim1 {position:relative;}
-              .img-rela.anim1 .img-rela-bg {position:absolute;top:0;left:0;bottom:0;right: 0;background: #333; opacity: 0.5;z-index: 1;}
-              .img-rela.anim1 .img-rela-font {position:absolute;top:0;left:0;bottom:0;right: 0;z-index: 2;text-align: center;color: white;font-size: 18px;}
-              .img-rela.anim1 .img-rela-bg{display: none;}
-              .img-rela.anim1:hover .img-rela-bg{display: block;}
-              .img-rela.anim1 .img-rela-font{display: block; overflow: hidden;}
-              .img-rela.anim1 .img-rela-font .font-title { width: 92%; line-height: 50px ;text-align: left; padding: 0 4%; display: none;}
-              .img-rela.anim1 .img-rela-font .font-line { display: none;width: 0;height: 2px; background: white; margin: 0 4% 10px;}
-              .img-rela.anim1 .img-rela-font .font-content{display: none;width: 92%; padding: 4%;line-height: 24px;font-size: 12px;text-align: left;  margin-left:100%;}
-              .img-rela.anim1:hover .img-rela-font .font-line { display: block;}
-              .img-rela.anim1:hover .img-rela-font .font-content{display: block;}
-              /*------------------------------------默认样式.end--------------------------------------------*/
-
-              /*------------------------------------声东击西--------------------------------------------*/
-              .img-rela.anim1.rela2 .img-rela-bg{display: none;}
-              .img-rela.anim1.rela2 .img-rela-font{display: none; top:45%; overflow: hidden;}
-              .img-rela.anim1.rela2 .img-rela-font .font-title{display: none; }
-              .img-rela.anim1.rela2:hover .img-rela-bg{display: block;}
-              .img-rela.anim1.rela2:hover .img-rela-font{display: block; overflow: hidden;}
-              .img-rela.anim1.rela2:hover .img-rela-font .font-title{display: block; }
-              /*------------------------------------声东击西.end--------------------------------------------*/
-            </style>
-              <%= link_to Banner.find(8).img_link do %>
-                <div class="img-rela anim1 rela1">
-                  <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a3970fa2ca7.png", class: "img-responsive img-center frontpage-img") %> -->
-                  <% if Banner.find(8).pic.present? %>
-                     <%= image_tag(Banner.find(8).pic.url, class: "img-responsive img-center frontpage-img")%>
+                  <% if Banner.find(6).pic.present? %>
+                     <%= image_tag(Banner.find(6).pic.url, class: "img-responsive img-center frontpage-img")%>
                   <% else %>
-                    <%= image_tag("https://i.loli.net/2017/08/28/59a3970fa2ca7.png", class: "img-responsive img-center frontpage-img")%>
+                    <%= image_tag("https://i.loli.net/2017/08/28/59a396bca1022.png", class: "img-responsive img-center frontpage-img")%>
+                  <% end %>
+                  <div class="img-rela-bg"></div>
+                  <div class="img-rela-font"><%= raw Banner.find(6).title %></div>
+                </div>
+              <% end %>
+              <%= link_to Banner.find(7).img_link do%>
+                <div class="img-rela" style="margin-top:5px;">
+                  <% if Banner.find(7).pic.present? %>
+                     <%= image_tag(Banner.find(7).pic.url, class: "img-responsive img-center frontpage-img")%>
+                  <% else %>
+                    <%= image_tag("https://i.loli.net/2017/08/28/59a396e3a6d3a.png", class: "img-responsive img-center frontpage-img")%>
+                  <% end %>
+                  <div class="img-rela-bg"></div>
+                  <div class="img-rela-font"><%= raw Banner.find(7).title %></div>
+                </div>
+              <% end %>
+
+            </div>
+            <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
+              <style>
+                /*------------------------------------默认样式--------------------------------------------*/
+                .img-rela.anim1 {position:relative;}
+                .img-rela.anim1 .img-rela-bg {position:absolute;top:0;left:0;bottom:0;right: 0;background: #333; opacity: 0.5;z-index: 1;}
+                .img-rela.anim1 .img-rela-font {position:absolute;top:0;left:0;bottom:0;right: 0;z-index: 2;text-align: center;color: white;font-size: 18px;}
+                .img-rela.anim1 .img-rela-bg{display: none;}
+                .img-rela.anim1:hover .img-rela-bg{display: block;}
+                .img-rela.anim1 .img-rela-font{display: block; overflow: hidden;}
+                .img-rela.anim1 .img-rela-font .font-title { width: 92%; line-height: 50px ;text-align: left; padding: 0 4%; display: none;}
+                .img-rela.anim1 .img-rela-font .font-line { display: none;width: 0;height: 2px; background: white; margin: 0 4% 10px;}
+                .img-rela.anim1 .img-rela-font .font-content{display: none;width: 92%; padding: 4%;line-height: 24px;font-size: 12px;text-align: left;  margin-left:100%;}
+                .img-rela.anim1:hover .img-rela-font .font-line { display: block;}
+                .img-rela.anim1:hover .img-rela-font .font-content{display: block;}
+                /*------------------------------------默认样式.end--------------------------------------------*/
+
+                /*------------------------------------声东击西--------------------------------------------*/
+                .img-rela.anim1.rela2 .img-rela-bg{display: none;}
+                .img-rela.anim1.rela2 .img-rela-font{display: none; top:45%; overflow: hidden;}
+                .img-rela.anim1.rela2 .img-rela-font .font-title{display: none; }
+                .img-rela.anim1.rela2:hover .img-rela-bg{display: block;}
+                .img-rela.anim1.rela2:hover .img-rela-font{display: block; overflow: hidden;}
+                .img-rela.anim1.rela2:hover .img-rela-font .font-title{display: block; }
+                /*------------------------------------声东击西.end--------------------------------------------*/
+              </style>
+                <%= link_to Banner.find(8).img_link do %>
+                  <div class="img-rela anim1 rela1">
+                    <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a3970fa2ca7.png", class: "img-responsive img-center frontpage-img") %> -->
+                    <% if Banner.find(8).pic.present? %>
+                       <%= image_tag(Banner.find(8).pic.url, class: "img-responsive img-center frontpage-img")%>
+                    <% else %>
+                      <%= image_tag("https://i.loli.net/2017/08/28/59a3970fa2ca7.png", class: "img-responsive img-center frontpage-img")%>
+                    <% end %>
+
+                    <div class="img-rela-bg"></div>
+                    <div class="img-rela-font">
+                      <div class="font-title"><%= raw Banner.find(8).title %></div>
+                      <hr class="font-line">
+                      <div class="font-content"><%= Banner.find(8).description %></div>
+                    </div>
+                    <script>
+                    $(function(){
+                        //默认样式浮动事件
+                        $(".img-rela.rela1").hover(function(){
+                          var obj =$(this); //保存当前对象
+                          $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
+                          $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
+                            'width':"92%"
+                          },300);
+                          $(this).find(".font-content").animate({
+                            'marginLeft':"0"
+                          },300);
+                        },function(){
+                          var obj =$(this);
+                          $(this).find(".font-line").animate({
+                            'width':"0"
+                          },100);
+                          $(this).find(".font-content").animate({
+                            'marginLeft':"100%"
+                          },100,function(){ //该动画完成后，将font-title隐藏
+                            $(obj).find(".font-title").hide();
+                          });
+                        })
+                    });
+                    </script>
+                  </div>
+               <% end %>
+            </div>
+
+            <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
+              <%= link_to Banner.find(9).img_link do %>
+                <div class="img-rela">
+                  <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397545cb54.png", class: "img-responsive img-center frontpage-img") %> -->
+                  <% if Banner.find(9).pic.present? %>
+                     <%= image_tag(Banner.find(9).pic.url, class: "img-responsive img-center frontpage-img")%>
+                  <% else %>
+                    <%=  image_tag("https://i.loli.net/2017/08/28/59a397545cb54.png", class: "img-responsive img-center frontpage-img") %>
+                  <% end %>
+                  <div class="img-rela-bg"></div>
+                  <div class="img-rela-font"><%= raw Banner.find(9).title %></div>
+                </div>
+              <% end %>
+              <%= link_to Banner.find(10).img_link do %>
+                <div class="img-rela anim1 rela2" style="margin-top:10px;">
+                  <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397547ce6c.png", class: "img-responsive img-center frontpage-img") %> -->
+                  <% if Banner.find(10).pic.present? %>
+                     <%= image_tag(Banner.find(10).pic.url, class: "img-responsive img-center frontpage-img")%>
+                  <% else %>
+                    <%= image_tag("https://i.loli.net/2017/08/28/59a397547ce6c.png", class: "img-responsive img-center frontpage-img") %>
                   <% end %>
 
                   <div class="img-rela-bg"></div>
-                  <div class="img-rela-font">
-                    <div class="font-title"><%= raw Banner.find(8).title %></div>
-                    <hr class="font-line">
-                    <div class="font-content"><%= Banner.find(8).description %></div>
+                  <div class="img-rela-font"><%= raw Banner.find(10).title %>
                   </div>
                   <script>
-                  $(function(){
-                      //默认样式浮动事件
-                      $(".img-rela.rela1").hover(function(){
-                        var obj =$(this); //保存当前对象
-                        $(obj).find(".font-title").show();  //找到当前对象下的font-title元素显示
-                        $(this).find(".font-line").animate({ //找到当前对象下的font-line元素，并将宽度以300毫秒的速度从默认样式变成92%
-                          'width':"92%"
-                        },300);
-                        $(this).find(".font-content").animate({
-                          'marginLeft':"0"
-                        },300);
-                      },function(){
-                        var obj =$(this);
-                        $(this).find(".font-line").animate({
-                          'width':"0"
-                        },100);
-                        $(this).find(".font-content").animate({
-                          'marginLeft':"100%"
-                        },100,function(){ //该动画完成后，将font-title隐藏
-                          $(obj).find(".font-title").hide();
-                        });
-                      })
-                  });
+                    //
+                    $(".img-rela.rela2").hover(function(){  //指定对象的浮动事件
+                      $(".img-rela.rela3 .font-title").show();  //需要显示的对象的font-title元素显示
+                      $(".img-rela.rela3 .img-rela-bg").show();
+                      $(".img-rela.rela3").find(".font-line").show().animate({
+                        'width':"92%"
+                      },300);
+                      $(".img-rela.rela3").find(".font-content").show().animate({
+                        'marginLeft':"0"
+                      },300);
+                    },function(){
+                      $(".img-rela.rela3").find(".font-line").animate({
+                        'width':"0"
+                      },100);
+                      $(".img-rela.rela3").find(".font-content").animate({
+                        'marginLeft':"100%"
+                      },100,function(){
+                        $(".img-rela.rela3 .img-rela-bg").hide();
+                        $(".img-rela.rela3 .font-title").hide();
+                      });
+                    })
                   </script>
                 </div>
-             <% end %>
-          </div>
+              <% end %>
 
-          <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <%= link_to Banner.find(9).img_link do %>
-              <div class="img-rela">
-                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397545cb54.png", class: "img-responsive img-center frontpage-img") %> -->
-                <% if Banner.find(9).pic.present? %>
-                   <%= image_tag(Banner.find(9).pic.url, class: "img-responsive img-center frontpage-img")%>
-                <% else %>
-                  <%=  image_tag("https://i.loli.net/2017/08/28/59a397545cb54.png", class: "img-responsive img-center frontpage-img") %>
-                <% end %>
-                <div class="img-rela-bg"></div>
-                <div class="img-rela-font"><%= raw Banner.find(9).title %></div>
-              </div>
-            <% end %>
-            <%= link_to Banner.find(10).img_link do %>
-              <div class="img-rela anim1 rela2" style="margin-top:10px;">
-                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397547ce6c.png", class: "img-responsive img-center frontpage-img") %> -->
-                <% if Banner.find(10).pic.present? %>
-                   <%= image_tag(Banner.find(10).pic.url, class: "img-responsive img-center frontpage-img")%>
-                <% else %>
-                  <%= image_tag("https://i.loli.net/2017/08/28/59a397547ce6c.png", class: "img-responsive img-center frontpage-img") %>
-                <% end %>
-
-                <div class="img-rela-bg"></div>
-                <div class="img-rela-font"><%= raw Banner.find(10).title %>
+            </div>
+            <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
+              <%= link_to Banner.find(11).img_link do %>
+                <div class="img-rela">
+                  <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397d0127c6.png", class: "img-responsive img-center frontpage-img") %> -->
+                  <% if Banner.find(11).pic.present? %>
+                     <%= image_tag(Banner.find(11).pic.url, class: "img-responsive img-center frontpage-img")%>
+                  <% else %>
+                    <%= image_tag("https://i.loli.net/2017/08/28/59a397d0127c6.png", class: "img-responsive img-center frontpage-img")%>
+                  <% end %>
+                  <div class="img-rela-bg"></div>
+                  <div class="img-rela-font"><%= raw Banner.find(11).title %></div>
                 </div>
-                <script>
-                  //
-                  $(".img-rela.rela2").hover(function(){  //指定对象的浮动事件
-                    $(".img-rela.rela3 .font-title").show();  //需要显示的对象的font-title元素显示
-                    $(".img-rela.rela3 .img-rela-bg").show();
-                    $(".img-rela.rela3").find(".font-line").show().animate({
-                      'width':"92%"
-                    },300);
-                    $(".img-rela.rela3").find(".font-content").show().animate({
-                      'marginLeft':"0"
-                    },300);
-                  },function(){
-                    $(".img-rela.rela3").find(".font-line").animate({
-                      'width':"0"
-                    },100);
-                    $(".img-rela.rela3").find(".font-content").animate({
-                      'marginLeft':"100%"
-                    },100,function(){
-                      $(".img-rela.rela3 .img-rela-bg").hide();
-                      $(".img-rela.rela3 .font-title").hide();
-                    });
-                  })
-                </script>
-              </div>
-            <% end %>
-
-          </div>
-          <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-            <%= link_to Banner.find(11).img_link do %>
-              <div class="img-rela">
-                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397d0127c6.png", class: "img-responsive img-center frontpage-img") %> -->
-                <% if Banner.find(11).pic.present? %>
-                   <%= image_tag(Banner.find(11).pic.url, class: "img-responsive img-center frontpage-img")%>
-                <% else %>
-                  <%= image_tag("https://i.loli.net/2017/08/28/59a397d0127c6.png", class: "img-responsive img-center frontpage-img")%>
-                <% end %>
-                <div class="img-rela-bg"></div>
-                <div class="img-rela-font"><%= raw Banner.find(11).title %></div>
-              </div>
-            <% end %>
-            <%= link_to Banner.find(12).img_link do %>
-              <div class="img-rela anim1 rela3" style="margin-top:5px;">
-                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397d01875b.png", class: "img-responsive img-center frontpage-img") %> -->
-                <% if Banner.find(12).pic.present? %>
-                   <%= image_tag(Banner.find(12).pic.url, class: "img-responsive img-center frontpage-img")%>
-                <% else %>
-                  <%= image_tag("https://i.loli.net/2017/08/28/59a397d01875b.png", class: "img-responsive img-center frontpage-img")%>
-                <% end %>
-                <div class="img-rela-bg"></div>
-                <div class="img-rela-font">
-                  <div class="font-title"><%= raw Banner.find(12).title %></div>
-                  <hr class="font-line">
-                  <div class="font-content"><%= Banner.find(12).description %></div>
+              <% end %>
+              <%= link_to Banner.find(12).img_link do %>
+                <div class="img-rela anim1 rela3" style="margin-top:5px;">
+                  <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397d01875b.png", class: "img-responsive img-center frontpage-img") %> -->
+                  <% if Banner.find(12).pic.present? %>
+                     <%= image_tag(Banner.find(12).pic.url, class: "img-responsive img-center frontpage-img")%>
+                  <% else %>
+                    <%= image_tag("https://i.loli.net/2017/08/28/59a397d01875b.png", class: "img-responsive img-center frontpage-img")%>
+                  <% end %>
+                  <div class="img-rela-bg"></div>
+                  <div class="img-rela-font">
+                    <div class="font-title"><%= raw Banner.find(12).title %></div>
+                    <hr class="font-line">
+                    <div class="font-content"><%= Banner.find(12).description %></div>
+                  </div>
                 </div>
-              </div>
-            <% end %>
-            <%= link_to Banner.find(13).img_link do %>
-              <div class="img-rela" style="margin-top:5px;">
-                <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397d00b52e.png", class: "img-responsive img-center frontpage-img") %> -->
-                <% if Banner.find(13).pic.present? %>
-                   <%= image_tag(Banner.find(13).pic.url, class: "img-responsive img-center frontpage-img")%>
-                <% else %>
-                  <%= image_tag("https://i.loli.net/2017/08/28/59a397d00b52e.png", class: "img-responsive img-center frontpage-img") %>
-                <% end %>
-                <div class="img-rela-bg"></div>
-                <div class="img-rela-font"><%= raw Banner.find(13).title %></div>
-              </div>
-            <% end %>
-          </div>
+              <% end %>
+              <%= link_to Banner.find(13).img_link do %>
+                <div class="img-rela" style="margin-top:5px;">
+                  <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a397d00b52e.png", class: "img-responsive img-center frontpage-img") %> -->
+                  <% if Banner.find(13).pic.present? %>
+                     <%= image_tag(Banner.find(13).pic.url, class: "img-responsive img-center frontpage-img")%>
+                  <% else %>
+                    <%= image_tag("https://i.loli.net/2017/08/28/59a397d00b52e.png", class: "img-responsive img-center frontpage-img") %>
+                  <% end %>
+                  <div class="img-rela-bg"></div>
+                  <div class="img-rela-font"><%= raw Banner.find(13).title %></div>
+                </div>
+              <% end %>
+            </div>
+
         </div>
 
 
@@ -675,7 +677,7 @@
                 <% if Banner.find(24).pic.present? %>
                    <%= image_tag(Banner.find(24).pic.url, class: "img-responsive img-center frontpage-img")%>
                 <% else %>
-                  <%= image_tag("https://i.loli.net/2017/08/28/59a40730db33f.png", class: "img-responsive img-center frontpage-img") %>
+                  <%= image_tag("https://i.loli.net/2017/09/04/59acb97ae0cd6.png", class: "img-responsive img-center frontpage-img") %>
                 <% end %>
                 <div class="img-rela-bg"></div>
                 <div class="img-rela-font"><%= raw Banner.find(24).title %></div>
@@ -687,7 +689,7 @@
                 <% if Banner.find(25).pic.present? %>
                    <%= image_tag(Banner.find(25).pic.url, class: "img-responsive img-center frontpage-img")%>
                 <% else %>
-                  <%= image_tag("https://i.loli.net/2017/08/28/59a40730e45a4.png", class: "img-responsive img-center frontpage-img") %>
+                  <%= image_tag("https://i.loli.net/2017/09/04/59acbb0fa4cd8.png", class: "img-responsive img-center frontpage-img") %>
                 <% end %>
                 <div class="img-rela-bg"></div>
                 <div class="img-rela-font"><%= raw Banner.find(25).title %></div>
