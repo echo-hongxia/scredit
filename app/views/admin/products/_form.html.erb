@@ -4,19 +4,10 @@
 
     所属类别：<%= select_tag(:country_category_id, options_for_select(@country_categories),:prompt => CountryCategory.find(@product.country_category_id).title) %>
     <%= f.input :description, :label => "简述" %>
-    <%= f.input :image, as: :file, :label => "商品主图" %>
-    <%= f.input :courseimg, as: :file, :label => "课程banner图（只需新增或编辑课程时上传）" %>
-    <%= f.input :particulars, as: :ckeditor, :label => "国家详情" %>
-
-
-
-
     <%= f.input :image, as: :file, :label => "封面" %>
-
-
-
     <hr>
 
+    <%= f.input :particulars, as: :ckeditor, :label => "国家详情" %>
   </div>
   <%= f.submit "提交", class: "btn btn-sm btn-default", data: {disable_with: "Submiting..."} %>
 <% end %>
