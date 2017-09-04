@@ -40,10 +40,10 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if params[:country_category_id].blank?
-      params[:country_category_id] = @product.product_id
+      params[:country_category_id] = @product.country_category_id
     end
     @product.country_category_id = params[:country_category_id]
-    
+
     if @product.update(product_params)
       redirect_to admin_products_path
     else

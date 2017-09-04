@@ -52,6 +52,7 @@ function browserRedirect() {
         //$(".hero hgroup .h1").css("font-size","2em");
         //$(".hero hgroup .h3").css("font-size","1.5em");
         $(".footer-sitelink").hide();
+        $(".tagline").hide();
         $(".header-logo-pc").hide();
         $(".topheader").hide();
         $(".customer-tel").hide();
@@ -70,6 +71,7 @@ function browserRedirect() {
         //alert("pctest");
         // $(".navbar-rwd").removeClass("navbar-rwd");
         $(".header-logo-phone").hide();
+        $(".tagline-phone").hide();
         $(".navbar-header").hide();
         $(".fade-carousel").css("height","616px");
         $(".fade-carousel .carousel-inner .item ").css("height","616px");
