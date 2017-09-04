@@ -261,33 +261,7 @@
          </h4>
         <div class="container">
 
-            <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
-              <%= link_to Banner.find(6).img_link do%>
-                <div class="img-rela">
-                  <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a396bca1022.png", class: "img-responsive img-center frontpage-img") %> -->
 
-                  <% if Banner.find(6).pic.present? %>
-                     <%= image_tag(Banner.find(6).pic.url, class: "img-responsive img-center frontpage-img")%>
-                  <% else %>
-                    <%= image_tag("https://i.loli.net/2017/09/04/59acc6c526067.png", class: "img-responsive img-center frontpage-img")%>
-                  <% end %>
-                  <div class="img-rela-bg"></div>
-                  <div class="img-rela-font"><%= raw Banner.find(6).title %></div>
-                </div>
-              <% end %>
-              <%= link_to Banner.find(7).img_link do%>
-                <div class="img-rela" style="margin-top:5px;">
-                  <% if Banner.find(7).pic.present? %>
-                     <%= image_tag(Banner.find(7).pic.url, class: "img-responsive img-center frontpage-img")%>
-                  <% else %>
-                    <%= image_tag("https://i.loli.net/2017/09/04/59acc53051159.png", class: "img-responsive img-center frontpage-img")%>
-                  <% end %>
-                  <div class="img-rela-bg"></div>
-                  <div class="img-rela-font"><%= raw Banner.find(7).title %></div>
-                </div>
-              <% end %>
-
-            </div>
             <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
               <style>
                 /*------------------------------------默认样式--------------------------------------------*/
@@ -355,6 +329,32 @@
                     </script>
                   </div>
                <% end %>
+            </div>
+            <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
+              <%= link_to Banner.find(6).img_link do%>
+                <div class="img-rela">
+                  <!-- <%= image_tag("https://i.loli.net/2017/08/28/59a396bca1022.png", class: "img-responsive img-center frontpage-img") %> -->
+
+                  <% if Banner.find(6).pic.present? %>
+                     <%= image_tag(Banner.find(6).pic.url, class: "img-responsive img-center frontpage-img")%>
+                  <% else %>
+                    <%= image_tag("https://i.loli.net/2017/08/28/59a396bca1022.png", class: "img-responsive img-center frontpage-img")%>
+                  <% end %>
+                  <div class="img-rela-bg"></div>
+                  <div class="img-rela-font"><%= raw Banner.find(6).title %></div>
+                </div>
+              <% end %>
+              <%= link_to Banner.find(7).img_link do%>
+                <div class="img-rela" style="margin-top:5px;">
+                  <% if Banner.find(7).pic.present? %>
+                     <%= image_tag(Banner.find(7).pic.url, class: "img-responsive img-center frontpage-img")%>
+                  <% else %>
+                    <%= image_tag("https://i.loli.net/2017/08/28/59a396e3a6d3a.png", class: "img-responsive img-center frontpage-img")%>
+                  <% end %>
+                  <div class="img-rela-bg"></div>
+                  <div class="img-rela-font"><%= raw Banner.find(7).title %></div>
+                </div>
+              <% end %>
             </div>
 
             <div class="col-xs-6  col-sm-6 col-md-3" style="padding-bottom:5px;">
