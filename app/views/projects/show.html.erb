@@ -30,7 +30,7 @@
 
 
 
-    <div class="" style="overflow:hidd;height:70px;background-color:#f3f7fb;">
+    <div class="" style="overflow:hidden;height:70px;background-color:#f3f7fb;">
       <div class="col-sm-12" >
         <!-- 所属国家 -->
         <div class="product-quantity" style="font-size:16px">
@@ -50,7 +50,7 @@
     </div>
 
     <!-- 按钮区域 -->
-    <div class="add-to-cart-buttom row">
+    <div class="add-to-cart-buttom">
       <!-- 加入购物车按钮 -->
       <div class="btn btn-danger">
         立即咨询
@@ -67,21 +67,25 @@
 
         <!-- 导航栏 -->
         <div class="row">
-          <ul class="nav nav-tabs nav-justified" style="font-size:16px;">
-            <li class="active">
-              <a href="#tab_default_1" data-toggle="tab">项目介绍</a>
-            </li>
-            <li>
-              <a href="#tab_default_2" data-toggle="tab">项目优势</a>
-            </li>
-            <li>
-              <a href="#tab_default_3" data-toggle="tab">项目考察</a>
-            </li>
-            <li>
-              <a href="#tab_default_4" data-toggle="tab">申请流程</a>
-            </li>
+      
 
-          </ul>
+            <ul class="nav nav-tabs nav-justified" style="font-size:16px;">
+              <li class="active">
+                <a href="#tab_default_1" data-toggle="tab">项目介绍</a>
+              </li>
+              <li>
+                <a href="#tab_default_2" data-toggle="tab">项目优势</a>
+              </li>
+              <li>
+                <a href="#tab_default_3" data-toggle="tab">项目考察</a>
+              </li>
+              <li>
+                <a href="#tab_default_4" data-toggle="tab">申请流程</a>
+              </li>
+
+            </ul>
+
+
         </div>
 
         <div class="tab-content">
@@ -103,10 +107,8 @@
             <%= simple_format(@project.apply) %>
           </div>
 
-
-
-
         </div>
+
 
       </div>
 
